@@ -1,0 +1,84 @@
+
+body {
+    background-color: tomato;
+    margin:0;
+    padding:0;
+    height:100%;
+}
+
+html {
+    margin:0;
+    padding:0;
+    height:100%;
+}
+
+.container {
+    background-color: white;
+    padding-right:0;
+    padding-left:0;
+    margin-right:auto;
+    margin-left:auto;
+    min-height: 100%;
+    position:relative;
+}
+
+.container-fluid {
+    padding-right:0;
+    padding-left:0;
+    margin-right:auto;
+    margin-left:auto;
+ }
+
+ .content {
+    padding-right:15px;
+    padding-left:15px;
+    margin-right:auto;
+    margin-left:auto;
+    padding-bottom: 60px;
+ }
+
+ .footer {
+    background-color: #151515;
+    color: #bbbbbb;
+    padding:15px;
+    margin-right:auto;
+    margin-left:auto;
+    height: 60px;
+    position:absolute;
+    bottom:0;
+    width: 100%;
+ }
+
+ .title {
+    text-align: center;
+    font-size: 60px;
+    font-family: "Georgia", Times, serif;
+    color: darkred;
+    margin-bottom: 0px;
+ }
+
+ .title2 {
+    text-align: center;
+    font-size: 40px;
+    font-family: "Georgia", Times, serif;
+    color: darkred;
+    margin-top: 0px;
+ }
+
+ .left {
+    float: left;
+ }
+
+ .right {
+    float: right;
+ }
+
+a {
+    color: #bbbbbb;
+ }
+
+a:hover, a:active {
+    color: white;
+    text-decoration: none;
+}
+
