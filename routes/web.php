@@ -126,7 +126,7 @@ Route::get('/coaches/{coachId}/delete', 'CoachesController@delete');
 //--------------------------------------------------------
 //Public, Coaches and Admin
 //Displays a list of teams
-Route::get('/teams', 'TeamsContoller@index');
+Route::get('/teams', 'TeamsController@index');
 
 //Admin
 //Creates a team
