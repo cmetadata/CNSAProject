@@ -19,13 +19,14 @@
     <nav class="navbar navbar-inverse navbar-static-top">
       <div class="container-fluid left">
         <ul class="nav navbar-nav">
-          <li class="active"><a href="#">Home</a></li>
-          <li><a href="#">Teams</a></li>
-          <li><a href="#">Players</a></li>
-          <li><a href="#">Games</a></li>
-          <li><a href="#">Schools</a></li>
-          <li><a href="#">Coaches</a></li>
-          <li><a href="#">Stadiums</a></li>
+          <li class="active"><a href="https://cnsa-project.herokuapp.com/">Home</a></li>
+          <li><a href="https://cnsa-project.herokuapp.com/teams">Teams</a></li>
+          <li><a href="https://cnsa-project.herokuapp.com/players">Players</a></li>
+          <li><a href="https://cnsa-project.herokuapp.com/games">Games</a></li>
+          <li><a href="https://cnsa-project.herokuapp.com/schools">Schools</a></li>
+          <li><a href="https://cnsa-project.herokuapp.com/coaches">Coaches</a></li>
+          <li><a href="https://cnsa-project.herokuapp.com/stadiums">Stadiums</a></li>
+          <li><a href="https://cnsa-project.herokuapp.com/contact">Contact Us</a></li>
         </ul>
       </div>
       <div class="container-fluid right">
