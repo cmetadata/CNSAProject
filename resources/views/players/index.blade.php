@@ -2,6 +2,6 @@
 
 @section ('content')
 
-  <p>This is some content</p>
+  <p>I actually know what I'm doing!</p>
 
 @endsection

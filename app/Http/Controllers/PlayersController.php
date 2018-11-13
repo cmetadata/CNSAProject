@@ -14,9 +14,9 @@ class PlayersController extends Controller
      */
     public function index()
     {
-        //
+        return view('players/index');
     }
-
+    
     /**
      * Show the form for creating a new resource.
      *

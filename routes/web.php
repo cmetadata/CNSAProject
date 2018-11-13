@@ -100,23 +100,23 @@ Route::get('/players/{playerId}/delete', 'PlayersController@delete');
 //--------------------------------------------------------
 //Public, Coaches and Admin
 //Displays a list of coaches 
-Route::get('/coach', 'CoachesController@index');
+Route::get('/coaches', 'CoachesController@index');
 
 //Admin
 //Creates a new coach
-Route::get('/coach/create', 'CoachesController@create');
+Route::get('/coaches/create', 'CoachesController@create');
 
 //Public, Coaches and Admin
 //Displays a certains coaches information
-Route::get('/coach/{coachId}', 'CoachesController@show');
+Route::get('/coaches/{coachId}', 'CoachesController@show');
 
 //Admin
 //Edits a coach
-Route::get('/coach/{coachId}/edit', 'CoachesController@edit');
+Route::get('/coaches/{coachId}/edit', 'CoachesController@edit');
 
 //Admin
 //Deletes the school information
-Route::get('/coach/{coachId}/delete', 'CoachesController@delete');
+Route::get('/coaches/{coachId}/delete', 'CoachesController@delete');
 
 
 //--------------------------------------------------------
@@ -126,23 +126,23 @@ Route::get('/coach/{coachId}/delete', 'CoachesController@delete');
 //--------------------------------------------------------
 //Public, Coaches and Admin
 //Displays a list of teams
-Route::get('/team', 'TeamsContoller@index');
+Route::get('/teams', 'TeamsController@index');
 
 //Admin
 //Creates a team
-Route::get('/team/create', 'TeamsController@create');
+Route::get('/teams/create', 'TeamsController@create');
 
 //Public, Coaches and Admin
 //Displays a teams roster 
-Route::get('/team/{teamId}', 'TeamsController@show');
+Route::get('/teams/{teamId}', 'TeamsController@show');
 
 //Coaches
 //Allows a coach to edit their team
-Route::get('/team/{teamId}/edit', 'TeamsController@edit');
+Route::get('/teams/{teamId}/edit', 'TeamsController@edit');
 
 //Admin
 //Deletes the school information
-Route::get('/team/{teamId}/delete', 'TeamsController@delete');
+Route::get('/teams/{teamId}/delete', 'TeamsController@delete');
 
 
 //--------------------------------------------------------
@@ -152,23 +152,23 @@ Route::get('/team/{teamId}/delete', 'TeamsController@delete');
 //--------------------------------------------------------
 //Public, Coaches and Admin
 //Displays the list of coaches
-Route::get('/game', 'GamesController@index');
+Route::get('/games', 'GamesController@index');
 
 //Public, Coaches and Admin
 //Displays a particular coaches information
-Route::get('/game/{gameId}', 'GamesController@show');
+Route::get('/games/{gameId}', 'GamesController@show');
 
 //Coaches and Admins
 //Allows to change information relating to the game
-Route::get('/game/{gameId}/edit', 'GamesController@edit');
+Route::get('/games/{gameId}/edit', 'GamesController@edit');
 
 //Coaches and Admins
 //Adds a game
-Route::get('/game/create', 'GamesController@create');
+Route::get('/games/create', 'GamesController@create');
 
 //Admin
 //Deletes the game information
-Route::get('/game/{gameId}/delete', 'GamesController@delete');
+Route::get('/games/{gameId}/delete', 'GamesController@delete');
 
 
 //--------------------------------------------------------
@@ -178,23 +178,23 @@ Route::get('/game/{gameId}/delete', 'GamesController@delete');
 //--------------------------------------------------------
 //Public, Coaches and Admin
 //Displays a list of schools
-Route::get('/school', 'SchoolsController@index');
+Route::get('/schools', 'SchoolsController@index');
 
 //Public, Coaches and Admin
 //Displays a particular schools information
-Route::get('/school/{schoolId}', 'SchoolsController@show');
+Route::get('/schools/{schoolId}', 'SchoolsController@show');
 
 //Admin
 //Allows adding schools
-Route::get('/school/create', 'SchoolsController@create');
+Route::get('/schools/create', 'SchoolsController@create');
 
 //Admin
 //Allows editing schools information
-Route::get('/school/{schoolId}/edit', 'SchoolsController@edit');
+Route::get('/schools/{schoolId}/edit', 'SchoolsController@edit');
 
 //Admin
 //Deletes the school information
-Route::get('/school/{schoolId}/delete', 'SchoolsController@delete');
+Route::get('/schools/{schoolId}/delete', 'SchoolsController@delete');
 
 //--------------------------------------------------------
 //--------------------------------------------------------
@@ -219,7 +219,7 @@ Route::get('/stadiums/{stadiumId}/edit', 'StadiumsController@edit');
 
 //Admin
 //Deletes the stadium information
-Route::get('/stadium/{stadiumId}/delete', 'StadiumsController@delete');
+Route::get('/stadiums/{stadiumId}/delete', 'StadiumsController@delete');
 
 //--------------------------------------------------------
 //--------------------------------------------------------
@@ -228,23 +228,23 @@ Route::get('/stadium/{stadiumId}/delete', 'StadiumsController@delete');
 //--------------------------------------------------------
 //Public, Coaches and Admin
 //Shows a list of injuries sustained by the students
-Route::get('/injury', 'InjuriesController@index');
+Route::get('/injuries', 'InjuriesController@index');
 
 //Coaches and Admin
 //Allows adding a injury 
-Route::get('/injury/create', 'InjuriesController@create');
+Route::get('/injuries/create', 'InjuriesController@create');
 
 //Coaches and Admin
 //Allows editing of an injury
-Route::get('/injury/{injuryId}/edit', 'InjuriesController@edit');
+Route::get('/injuries/{injuryId}/edit', 'InjuriesController@edit');
 
 //Coaches and Admin
 //Displays a particular stadiums information
-Route::get('/injury/{injuryId}', 'InjuriesController@show');
+Route::get('/injuries/{injuryId}', 'InjuriesController@show');
 
 //Admin
 //Deletes the injury information
-Route::get('/injury/{injuryId}/delete', 'InjuriesController@delete');
+Route::get('/injuries/{injuryId}/delete', 'InjuriesController@delete');
 
 //--------------------------------------------------------
 //--------------------------------------------------------
@@ -253,13 +253,13 @@ Route::get('/injury/{injuryId}/delete', 'InjuriesController@delete');
 //--------------------------------------------------------
 //Coaches and Admin
 //Shows information about a particular scholarship
-Route::get('/scholarship', 'ScholarshipsController@show');
+Route::get('/scholarships', 'ScholarshipsController@show');
 
 //Coaches and Admin
 //Adds a new scholarship
-Route::get('/schoalarship/create', 'ScholarshipsController@create');
+Route::get('/schoalarships/create', 'ScholarshipsController@create');
 
 //Coaches and Admin
 //Deletes a scholarship item
-Route::get('/scholarship/delete', 'ScholarshipsController@delete');
+Route::get('/scholarships/delete', 'ScholarshipsController@delete');
 
