@@ -14,7 +14,7 @@ class StadiumsController extends Controller
      */
     public function index()
     {
-        //
+        return view('stadium/index');
     }
 
     /**
