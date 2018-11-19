@@ -27,7 +27,6 @@ class CreatePlayerTable extends Migration
             $table->integer('playerRating');
             $table->integer('assists');
             $table->integer('saves');
-            $table->integer('playerId');
             $table->timestamps();
         });
     }

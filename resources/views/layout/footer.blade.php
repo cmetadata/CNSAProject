@@ -1,6 +1,6 @@
 <div class="footer">
 	<div class="left">
-		<a href="#">Contact Us</a>
+		<a href="https://cnsa-project.herokuapp.com/contact">Contact Us</a>
 	</div>
 	<div class="right">
 	    <p>&copy 2018</p>

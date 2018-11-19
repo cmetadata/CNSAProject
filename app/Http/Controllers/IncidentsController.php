@@ -14,7 +14,7 @@ class IncidentsController extends Controller
      */
     public function index()
     {
-        //
+        return view('incidents/index');
     }
 
     /**
