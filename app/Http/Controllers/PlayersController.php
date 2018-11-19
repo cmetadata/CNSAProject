@@ -12,10 +12,10 @@ class PlayersController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Players $players)
+    public function index(Player $players)
     {
         //Holds the value of 
-        $players = Players::all();
+        //$players = Player::all();
 
         return view('players.index', compact('players'));
     }
