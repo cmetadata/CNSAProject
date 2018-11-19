@@ -52,7 +52,7 @@ html {
  .title {
     text-align: center;
     font-size: 60px;
-    font-family: "Georgia", Times, serif;
+    font-family: "Helvetica", Times, sans-serif;
     color: darkred;
     margin-bottom: 0px;
  }
@@ -60,7 +60,7 @@ html {
  .title2 {
     text-align: center;
     font-size: 40px;
-    font-family: "Georgia", Times, serif;
+    font-family: "Helvetica", times, sans-serif;
     color: darkred;
     margin-top: 0px;
  }
@@ -82,3 +82,17 @@ a:hover, a:active {
     text-decoration: none;
 }
 
+.content-header {
+    text-align: center;
+    font-size: 40px;
+    color: darkred;
+}
+
+.object-div {
+    padding: 10px;
+    text-align: center;
+}
+
+.grey-back {
+    background-color: #dddddd;
+}
