@@ -12,11 +12,14 @@ class PlayersController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Players $players)
     {
-        return view('players.index');
+        //Holds the value of 
+        $players = Players::all();
+
+        return view('players.index', compact('players'));
     }
-    
+
     /**
      * Show the form for creating a new resource.
      *
@@ -35,8 +38,20 @@ class PlayersController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //Validating the data
+        $this->validate(request(), [
+            'firstName' => 'required|max:35',
+            'lastName' => 'required|max:30',
+            'schoolId' => 'required',
+            'yearEntered' => 'required',
+            'position' => 'required',
+            'playerRating' => 'required'
+        ]);
+
+        //Create the player
+        $player = Player::create(request(['firstName', 'lastName', 'schoolId', 'yearEntered', 'position', 'teamId', 'redCards', 'yellowCards', 'goals', 'playerRating', 'assists', 'saves', 'playerId' ]));
     }
+    
 
     /**
      * Display the specified resource.
