@@ -12,7 +12,7 @@ class PlayersController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Players $players)
+    public function index(Player $players)
     {
         //Holds the value of all players to be displayed
         $players = Players::all();
@@ -29,7 +29,7 @@ class PlayersController extends Controller
     public function create()
     {
         //Sends the user to the players.create page
-        return view('players.create')
+        return view('players.create', compact('player'));
     }
 
     /**
@@ -40,7 +40,31 @@ class PlayersController extends Controller
      */
     public function store(Request $request)
     {
+
+        //dd($request);
+        
+        //dd(request()->all());
+
+        //dd(request(['firstName', 'lastName']));
+        
+        $player = new Player;
+
+        $player->firstName = $request->firstName;
+
+        $player->lastName = $request->lastName;
+
+        $player->schoolId = $request->schoolId;
+        
+        $player->yearEntered = $request->yearEntered;
+
+        $player->position = $request->position;
+
+        $player->playerRating = $request->playerRating;
+
+        $player->save();
+
         //Validating the data
+
         $this->validate(request(), [
             'firstName' => 'required|max:35',
             'lastName' => 'required|max:30',
@@ -54,6 +78,12 @@ class PlayersController extends Controller
 
         //Flashing a message to confirm that the player has been entered into the database
         session()->flash('message', 'Player has been inserted');
+
+        // //Create the player
+        // $player = Player::create(request(['firstName', 'lastName', 'schoolId', 'yearEntered', 'position', 'teamId', 'redCards', 'yellowCards', 'goals', 'playerRating', 'assists', 'saves', 'playerId' ]));
+
+        // $player->save();
+
     }
     
 
@@ -70,7 +100,10 @@ class PlayersController extends Controller
         //How we decided to actually do it 
         return view('players.show', compact('playerId'));
 
-    }
+    //public function show(Player $player)
+    //{
+    //    return view('players.show', compact('player'));
+    //}
 
     /**
      * Show the form for editing the specified resource.

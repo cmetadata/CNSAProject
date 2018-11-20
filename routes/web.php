@@ -74,6 +74,8 @@ Route::get('/coachProfile/edit', 'ProfilesController@editCoach');
 //--------------------------------------------------------
 //Coaches and Admin
 //Creates a new player 
+
+
 Route::get('/players/create', 'PlayersController@create');
 
 //??????????????
@@ -83,6 +85,9 @@ Route::get('/players/{playerId}', 'PlayersController@show');
 //Public, Coaches and Admin
 //Displaying a list of players
 Route::get('/players', 'PlayersController@index');
+
+
+Route::post('/players', 'PlayersController@store');
 
 //Public, Coaches and Admin
 //Editing a players information
@@ -131,6 +136,9 @@ Route::get('/teams', 'TeamsController@index');
 //Admin
 //Creates a team
 Route::get('/teams/create', 'TeamsController@create');
+
+//Store
+Route::post('/teams', 'TeamsController@store');
 
 //Public, Coaches and Admin
 //Displays a teams roster 
