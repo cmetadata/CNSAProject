@@ -40,21 +40,25 @@ class PlayersController extends Controller
     public function store(Request $request)
     {
 
-        $player = new Player;
+        dd(request()->all());
 
-        $player->firstName = $request->firstName;
-
-        $player->lastName = $request->lastName;
-
-        $player->schoolId = $request->schoolId;
+        dd(request(['firstName', 'lastName']));
         
-        $player->yearEntered = $request->yearEntered;
+        // $player = new Player;
 
-        $player->position = $request->position;
+        // $player->firstName = $request->firstName;
 
-        $player->playerRating = $request->playerRating;
+        // $player->lastName = $request->lastName;
 
-        $player->save();
+        // $player->schoolId = $request->schoolId;
+        
+        // $player->yearEntered = $request->yearEntered;
+
+        // $player->position = $request->position;
+
+        // $player->playerRating = $request->playerRating;
+
+        // $player->save();
 
         //Validating the data
         // $this->validate(request(), [

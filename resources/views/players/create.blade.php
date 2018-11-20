@@ -4,7 +4,7 @@
 
     <h1 class="content-header grey-back">Register Player</h1>
 
-    <form method="POST" action="/players">
+    <form method="POST" action="/players/create">
 
         {{ csrf_field() }}
         
