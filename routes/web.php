@@ -74,6 +74,8 @@ Route::get('/coachProfile/edit', 'ProfilesController@editCoach');
 //--------------------------------------------------------
 //Coaches and Admin
 //Creates a new player 
+
+
 Route::get('/players/create', 'PlayersController@create');
 
 //??????????????
