@@ -25,6 +25,7 @@ class TeamsController extends Controller
     public function create()
     {
         //
+        return view('teams.create', compact('teams'));
     }
 
     /**
@@ -36,10 +37,21 @@ class TeamsController extends Controller
     public function store(Request $request)
     {
         //
+        //dd(request()->all());
+
+        $teams = new Teams;
+
+        $teams->teamId = $request->teamId;
+
+        $teams->teamName = $request->teamName;
+
+        $teams->schoolId = $request->schoolId;
+
+        $teams->save();
     }
 
     /**
-     * Display the specified resource.
+     * Display the specifiedd(request()->all());d resource.
      *
      * @param  \App\c  $c
      * @return \Illuminate\Http\Response
