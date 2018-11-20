@@ -15,18 +15,18 @@ class CreatePlayerTable extends Migration
     {
         Schema::create('player', function (Blueprint $table) {
             $table->increments('playerId');
-            $table->string('firstName');
-            $table->string('lastName');
+            $table->string('firstName', 35);
+            $table->string('lastName', 30);
             $table->integer('schoolId');
             $table->integer('yearEntered');
-            $table->string('position');
+            $table->string('position', 25);
             $table->integer('teamId');
-            $table->integer('redCards');
-            $table->integer('yellowCards');
-            $table->integer('goals');
-            $table->integer('playerRating');
-            $table->integer('assists');
-            $table->integer('saves');
+            $table->integer('redCards')->default(0); 
+            $table->integer('yellowCards')->default(0); 
+            $table->integer('goals')->default(0);
+            $table->integer('playerRating')->default(0);
+            $table->integer('assists')->default(0);
+            $table->integer('saves')->default(0); 
             $table->timestamps();
         });
     }

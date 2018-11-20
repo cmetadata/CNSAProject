@@ -12,15 +12,18 @@
 </div>
 
   <h1 class="content-header grey-back">All Teams</h1>
-
-  <div class="object-div grey-back">
-    <table width="100%">
-    	<tr>
-    		<td width="50%"><a href=#>Team Name Here</a></td>
-    		<td width="40%"><a href=#>Associated School</a></td>
-    		<td width="10%">NumPlayers</td>
-    	</tr>
-    </table>
-  </div>
+<!-- =======
+<div>
+    <div class='btn-toolbar pull-right'>
+        <div class='btn-group'>
+            <button name="create-button" type='button' class='btn btn-default new-button grey-back'>Add New Team</button>
+        </div>
+    </div>
+     <h1 class="content-header grey-back">All Teams</h1>
+</div>
+<hr/>
+>>>>>>> 1d118259ef315429b7df28c883ff8ce83e5441ed
+ -->
+@include('teams.team')
 
 @endsection

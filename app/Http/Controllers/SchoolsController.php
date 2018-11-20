@@ -24,7 +24,13 @@ class SchoolsController extends Controller
      */
     public function create()
     {
-        //
+        //Validates information for the school
+        $this->validate(request(), [
+            'schoolName' => 'required|max:50'
+        ]);
+
+        //Create the school
+        $school = School::create(request(['schoolName']));
     }
 
     /**
@@ -57,7 +63,13 @@ class SchoolsController extends Controller
      */
     public function edit(c $c)
     {
-        //
+        //Validates that the information being input is valid
+        $this->validate(request(), [
+            'schoolName' => 'required|max:50',
+            'schoolRanking' => 'required'
+        ]);
+
+        $school = School::edit(request(['schoolName']))
     }
 
     /**
