@@ -37,9 +37,11 @@ class PlayersController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store()
     {
 
+        //dd($request);
+        
         dd(request()->all());
 
         //dd(request(['firstName', 'lastName']));
