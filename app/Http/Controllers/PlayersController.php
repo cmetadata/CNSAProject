@@ -17,7 +17,7 @@ class PlayersController extends Controller
         //Holds the value of 
         //$players = Player::all();
 
-        return view('players.index', compact('players'));
+        return view('players.index', compact('player'));
     }
 
     /**
