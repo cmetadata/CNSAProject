@@ -14,4 +14,6 @@
     </table>
   </div>
 
+ <button type="submit" class="btn btn-default" href="https://cnsa-project.herokuapp.com/players/create">Add Player</button>
+
 @endsection
