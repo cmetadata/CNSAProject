@@ -137,6 +137,9 @@ Route::get('/teams', 'TeamsController@index');
 //Creates a team
 Route::get('/teams/create', 'TeamsController@create');
 
+//Store
+Route::post('/teams', 'TeamsController@store');
+
 //Public, Coaches and Admin
 //Displays a teams roster 
 Route::get('/teams/{teamId}', 'TeamsController@show');
