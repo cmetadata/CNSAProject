@@ -1,24 +1,26 @@
 @extends ('layout.header')
 
-@section('content')
+@section ('content')
 
-        <div class="card-header">{{ __('Register Player') }}</div>
+    <h1 class="content-header grey-back">Register Player</h1>
 
-                    <form method="POST" >
-                    @csrf
+<form>
+    @csrf
+    <div class="form-group">
+        <label for="email">Email address:</label>
+        <input type="email" class="form-control" id="email">
+    </div>
 
-                        <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
-                        <input id="name" type="text" class="form-control" name="name" required autofocus>
-                    
+    <div class="form-group">
+        <label for="pwd">Password:</label>
+        <input type="password" class="form-control" id="pwd">
+    </div>
+
+    <div class="checkbox">
+        <label><input type="checkbox"> Remember me</label>
+    </div>
+    <button type="submit" class="btn btn-default">Submit</button>
+</form> 
 
 
-                        <div class="form-group row mb-0">
-                            <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Register') }}
-                                </button>
-                            </div>
-                        </div>                    
-                    </form>        
-        </div>
 @endsection
