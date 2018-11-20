@@ -4,8 +4,8 @@
 
   <h1 class="content-header grey-back">[Player Name]</h1>
 
-  <div class="object-div grey-back">
-    <a href=#>[Team Name]</a>
+  <div class=info-page>
+    <a href=#>[Team Name]</a><br/>
     <a href=#>[School Name]</a>
   </div>
 

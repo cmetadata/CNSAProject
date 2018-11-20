@@ -60,9 +60,9 @@ class PlayersController extends Controller
      * @param  \App\c  $c
      * @return \Illuminate\Http\Response
      */
-    public function show(Teams $team)
+    public function show(Player $player)
     {
-        //
+        return view('players.show', compact('player'));
     }
 
     /**

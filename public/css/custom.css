@@ -73,19 +73,13 @@ html {
     float: right;
  }
 
-a {
-    color: #bbbbbb;
- }
-
-a:hover, a:active {
-    color: white;
-    text-decoration: none;
-}
-
 .content-header {
-    text-align: center;
-    font-size: 40px;
+    font-size: 40;
     color: darkred;
+    padding: 5px;
+    padding-left: 20px;
+
+    width: 84%;
 }
 
 .object-div {
@@ -95,4 +89,31 @@ a:hover, a:active {
 
 .grey-back {
     background-color: #dddddd;
+}
+
+a {
+    color: #000000;
+ }
+
+a:hover, a:active {
+    color: #444444;
+    text-decoration: none;
+}
+
+a.footerlink {
+    color: #bbbbbb;
+ }
+
+a.footerlink:hover, a.footerlink:active {
+    color: white;
+    text-decoration: none;
+}
+
+.info-page {
+    font-size: 18;
+}
+
+.new-button {
+    height: 55px;
+    font-size: 16;
 }
