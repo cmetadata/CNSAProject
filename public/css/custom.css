@@ -84,14 +84,13 @@ html {
 
 .object-div {
     padding: 10px;
-    text-align: center;
 }
 
 .grey-back {
     background-color: #dddddd;
 }
 
-a {
+a:link, a:visited {
     color: #000000;
  }
 
@@ -100,7 +99,7 @@ a:hover, a:active {
     text-decoration: none;
 }
 
-a.footerlink {
+a.footerlink:link, a.footerlink:visited {
     color: #bbbbbb;
  }
 
