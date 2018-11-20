@@ -51,6 +51,9 @@ class PlayersController extends Controller
 
         //Create the player
         $player = Player::create(request(['firstName', 'lastName', 'schoolId', 'yearEntered', 'position', 'teamId', 'redCards', 'yellowCards', 'goals', 'playerRating', 'assists', 'saves', 'playerId' ]));
+
+        $player->save();
+
     }
     
 
