@@ -6,7 +6,7 @@
     <div>
         <div class='btn-toolbar pull-right'>
             <div class='btn-group'>
-                <button type='button' class='btn btn-default new-button grey-back'>Add New Player</button>
+                <a class="btn btn-default new-button grey-back" href="/players/create">Add New Player</a>
             </div>
         </div>
          <h1 class="content-header grey-back">All Players</h1>

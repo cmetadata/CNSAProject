@@ -17,7 +17,7 @@ class PlayersController extends Controller
         //Holds the value of 
         //$players = Player::all();
 
-        return view('players.index', compact('player'));
+        return view('players.index', compact('players'));
     }
 
     /**
@@ -28,7 +28,7 @@ class PlayersController extends Controller
     public function create()
     {
         //
-        return view('players.create');
+        return view('players.create', compact('player'));
     }
 
     /**
@@ -42,7 +42,7 @@ class PlayersController extends Controller
 
         dd(request()->all());
 
-        dd(request(['firstName', 'lastName']));
+        //dd(request(['firstName', 'lastName']));
         
         // $player = new Player;
 
