@@ -28,7 +28,7 @@ class PlayersController extends Controller
     public function create()
     {
         //
-        return view('players.new', compact('players'));
+        return view('players.new');
     }
 
     /**
