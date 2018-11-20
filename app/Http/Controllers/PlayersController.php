@@ -39,20 +39,37 @@ class PlayersController extends Controller
      */
     public function store(Request $request)
     {
-        //Validating the data
-        $this->validate(request(), [
-            'firstName' => 'required|max:35',
-            'lastName' => 'required|max:30',
-            'schoolId' => 'required',
-            'yearEntered' => 'required',
-            'position' => 'required',
-            'playerRating' => 'required'
-        ]);
 
-        //Create the player
-        $player = Player::create(request(['firstName', 'lastName', 'schoolId', 'yearEntered', 'position', 'teamId', 'redCards', 'yellowCards', 'goals', 'playerRating', 'assists', 'saves', 'playerId' ]));
+        $player = new Player;
+
+        $player->firstName = $request->firstName;
+
+        $player->lastName = $request->lastName;
+
+        $player->schoolId = $request->schoolId;
+        
+        $player->yearEntered = $request->yearEntered;
+
+        $player->position = $request->position;
+
+        $player->playerRating = $request->playerRating;
 
         $player->save();
+
+        //Validating the data
+        // $this->validate(request(), [
+        //     'firstName' => 'required|max:35',
+        //     'lastName' => 'required|max:30',
+        //     'schoolId' => 'required',
+        //     'yearEntered' => 'required',
+        //     'position' => 'required',
+        //     'playerRating' => 'required'
+        // ]);
+
+        // //Create the player
+        // $player = Player::create(request(['firstName', 'lastName', 'schoolId', 'yearEntered', 'position', 'teamId', 'redCards', 'yellowCards', 'goals', 'playerRating', 'assists', 'saves', 'playerId' ]));
+
+        // $player->save();
 
     }
     
