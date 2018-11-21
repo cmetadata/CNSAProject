@@ -40,13 +40,6 @@ class PlayersController extends Controller
      */
     public function store(Request $request)
     {
-
-        //dd($request);
-        
-        //dd(request()->all());
-
-        //dd(request(['firstName', 'lastName']));
-
         //Validating the data
         $this->validate(request(), [
             'firstName' => 'required|max:35',
@@ -56,7 +49,13 @@ class PlayersController extends Controller
             'position' => 'required'
         ]);
 
-        /*
+        //dd($request);
+        
+        //dd(request()->all());
+
+        //dd(request(['firstName', 'lastName']));
+
+
         $player = new Player;
 
         $player->firstName = $request->firstName;
@@ -71,11 +70,10 @@ class PlayersController extends Controller
 
         $player->playerRating = $request->playerRating;
 
-        $player->save(); */
+        $player->save();
 
-        
         //Create the player
-        $player = Player::create(request(['playerId', 'firstName', 'lastName', 'schoolId', 'yearEntered', 'position', 'teamId', 'redCards', 'yellowCards', 'goals', 'playerRating', 'assists', 'saves' ]));
+        //$player = Player::create(request(['playerId', 'firstName', 'lastName', 'schoolId', 'yearEntered', 'position', 'teamId', 'redCards', 'yellowCards', 'goals', 'playerRating', 'assists', 'saves' ]));
 
         //Flashing a message to confirm that the player has been entered into the database
         session()->flash('message', 'Player has been inserted');
@@ -101,21 +99,15 @@ class PlayersController extends Controller
         //How we decided to actually do it 
         return view('players.show', compact('playerId'));
     }
-    //public function show(Player $player)
-    //{
-    //    return view('players.show', compact('player'));
-    //}
 
     /**
-     * Show the form for editing the specified resource.
+     * Allows editing of the players record
      *
      * @param  \App\Player  $playerId
      * @return \Illuminate\Http\Response
      */
     public function edit($playerId, Request $request)
-    {
-        //Finds a certain player
-        $task = Player::find($playerId);
+    {       
 
         // Validating the information that is being entered into the database
         $this->validate(request(), [
@@ -127,21 +119,44 @@ class PlayersController extends Controller
         ]);
 
         //Retrieves the player
-        //Build system boundary diagram
-        
-        //Updates the player
+        $player = Player::find($playerId);
 
+        //Updates the player
+        $player->firstName = $request->firstName;
+
+        $player->lastName = $request->lastName;
+
+        $player->schoolId = $request->schoolId;
+        
+        $player->yearEntered = $request->yearEntered;
+
+        $player->position = $request->position;
+
+        $player->playerRating = $request->playerRating;
 
         //Saves the player
-
+        $player->save();
 
         //Redirects the user back to the players page
         return redirect()-back();
-
     }
 
     /**
-     * Update the specified resource in storage.
+     * Deletes the Players record from the database.
+     *
+     * @param  \App\Player  $playerId
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy(Player $playerId)
+    {
+        //Validates that the id entered is an actual Player object
+        $this->validate(request(), [
+        ]); 
+
+    }
+
+        /**
+     * Don't know what this is going to do ?
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  \App\c  $c
@@ -152,14 +167,4 @@ class PlayersController extends Controller
         //
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\c  $c
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(c $c)
-    {
-        //
-    }
 }

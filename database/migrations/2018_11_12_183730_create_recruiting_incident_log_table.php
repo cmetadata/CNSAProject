@@ -13,7 +13,7 @@ class CreateRecruitingIncidentLogTable extends Migration
      */
     public function up()
     {
-        Schema::create('recruiting_incident_log', function (Blueprint $table) {
+        Schema::create('recruiting_incident_logs', function (Blueprint $table) {
             $table->increments('incidentCode');
             $table->date('incidentDate');
             $table->integer('schoolId');

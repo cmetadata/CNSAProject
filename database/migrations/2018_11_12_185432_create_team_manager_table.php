@@ -13,7 +13,7 @@ class CreateTeamManagerTable extends Migration
      */
     public function up()
     {
-        Schema::create('team_manager', function (Blueprint $table) {
+        Schema::create('team_managers', function (Blueprint $table) {
             $table->increments('managerId');
             $table->integer('schoolId');
             $table->integer('teamId');

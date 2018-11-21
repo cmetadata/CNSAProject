@@ -13,7 +13,7 @@ class CreateInjuryLogTable extends Migration
      */
     public function up()
     {
-        Schema::create('injury_log', function (Blueprint $table) {
+        Schema::create('injury_logs', function (Blueprint $table) {
             $table->increments('injuryId');
             $table->date('injuryDate');
             $table->integer('playerId');
