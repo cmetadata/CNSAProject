@@ -11,34 +11,19 @@
         <div class="object-div grey-back">
 
             <div class="form-group">
-                <label for="firstName">Team Name:</label>
-                <input type="text" class="form-control" id="firstName" name="firstName">
+                <label for="teamId">Team ID:</label>
+                <input type="text" class="form-control" id="teamId" name="teamId">
             </div>
 
             <div class="form-group">
-                <label for="lastName">Last Name:</label>
-                <input type="text" class="form-control" id="lastName" name="lastName">
-            </div>
-
-            <div class="form-group">
-                <label for="yearEntered">Year Entered:</label>
-                <input type="text" class="form-control" id="yearEntered" name="yearEntered">
-            </div>            
-
-            <div class="form-group">
-                <label for="playerRating">Player Rating:</label>
-                <input type="text" class="form-control" id="playerRating" name="playerRating">
-            </div>            
-
-            <div class="form-group">
-                <label for="playerPosition">Position:</label>
-                <input type="text" class="form-control" id="playerPosition" name="playerPosition">
+                <label for="teamName">Team Name:</label>
+                <input type="text" class="form-control" id="teamName" name="teamName">
             </div>
 
             <div class="form-group">
                 <label for="schoolId">School:</label>
                 <input type="text" class="form-control" id="schoolId" name="schoolId">
-            </div>
+            </div>            
 
             <button type="submit" class="btn btn-default">Submit</button>
 
