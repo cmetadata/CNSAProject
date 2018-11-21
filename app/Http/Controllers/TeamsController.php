@@ -12,9 +12,12 @@ class TeamsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Team $team)
     {
-        return view('teams/index');
+         $team = Team::all();
+
+        //Gives the view of all the players
+        return view('teams.index', compact('team'));
     }
 
     /**
@@ -25,7 +28,7 @@ class TeamsController extends Controller
     public function create()
     {
         //
-        return view('teams.create', compact('teams'));
+        return view('teams.create', compact('team'));
     }
 
     /**
@@ -66,10 +69,10 @@ class TeamsController extends Controller
      * @param  \App\c  $c
      * @return \Illuminate\Http\Response
      */
-    public function show(Teams $teamId)
+    public function show(Team $team)
     {
         //
-        return view('teams.show', compact('teamId'));
+        return view('teams.show', compact('team'));
     }
 
     /**
