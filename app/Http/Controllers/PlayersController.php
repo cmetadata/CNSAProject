@@ -103,7 +103,8 @@ class PlayersController extends Controller
     public function show(Request $request) 
     {
         $player = Player::find($request->playerId);
-        return view('players.show', compact('player'));
+        $team = Team::find($request->teamId);
+        return view('players.show', compact(['player', 'team']));
     }
 
 
