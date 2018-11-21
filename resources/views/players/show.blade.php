@@ -4,7 +4,7 @@
 
   <h1 class="content-header grey-back">{{$player->firstName}} {{$player->lastName}}</h1>
 
-  {{$team = Team::find($player->teamId)}}
+  {{$team = $player->team}}
 
   <div class=info-page>
   	{{$player->position}}<br/>
