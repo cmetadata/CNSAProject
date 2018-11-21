@@ -41,13 +41,13 @@ class PlayersController extends Controller
     public function store(Request $request)
     {
         //Validating the data
-        $this->validate(request(), [
-            'firstName' => 'required|max:35',
-            'lastName' => 'required|max:30',
-            'schoolId' => 'required',
-            'yearEntered' => 'required',
-            'position' => 'required'
-        ]);
+        // $this->validate(request(), [
+        //     'firstName' => 'required|max:35',
+        //     'lastName' => 'required|max:30',
+        //     'schoolId' => 'required',
+        //     'yearEntered' => 'required',
+        //     'position' => 'required'
+        // ]);
 
         //dd($request);
         
@@ -77,6 +77,8 @@ class PlayersController extends Controller
 
         //Flashing a message to confirm that the player has been entered into the database
         session()->flash('message', 'Player has been inserted');
+
+        dd(request()->all());
 
         // //Create the player
         // $player = Player::create(request(['firstName', 'lastName', 'schoolId', 'yearEntered', 'position', 'teamId', 'redCards', 'yellowCards', 'goals', 'playerRating', 'assists', 'saves', 'playerId' ]));
