@@ -89,11 +89,11 @@ Route::get('/players/create', 'PlayersController@create');
 
 //??????????????
 //Displays a particular players information
-//Route::get('/players/{playerId}', 'PlayersController@show');
-Route::get('/players/{playerId}', function($playerId) {
-	$player = Player::find($playerId);
-	return view('players.show', compact('player'));
-});
+Route::get('/players/{playerId}', 'PlayersController@show');
+// Route::get('/players/{playerId}', function($playerId) {
+// 	$player = Player::find($playerId);
+// 	return view('players.show', compact('player'));
+// });
 
 //Public, Coaches and Admin
 //Displaying a list of players
