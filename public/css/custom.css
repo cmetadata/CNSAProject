@@ -123,3 +123,12 @@ a.footerlink:hover, a.footerlink:active {
     font-size: 16;
     width: 150px;
 }
+
+.login-form {
+    width:60%;
+    display:inline-block;
+}
+
+.parent-div {
+    text-align: center;
+}

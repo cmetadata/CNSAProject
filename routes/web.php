@@ -271,3 +271,7 @@ Route::get('/schoalarships/create', 'ScholarshipsController@create');
 //Deletes a scholarship item
 Route::get('/scholarships/delete', 'ScholarshipsController@delete');
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
