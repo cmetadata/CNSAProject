@@ -2,8 +2,6 @@
 
 @section ('content')
 
-    <h1 class="content-header grey-back">Register Player</h1>
-
     <form method="POST" action="/players">
 
         {{ csrf_field() }}
@@ -12,6 +10,8 @@
         
         <div class="login-form">
         
+        <h1 class="content-header grey-back">Register Player</h1>
+
         <div class="object-div grey-back">
 
             <div class="form-group">
