@@ -66,7 +66,7 @@ class PlayersController extends Controller
 
         $player->playerRating = $request->playerRating;
 
-        $player->playerPosition = $request->playerPosition;
+        $player->position = $request->position;
 
         $player->schoolId = $request->schoolId;
 
