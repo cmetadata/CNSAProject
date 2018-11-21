@@ -7,6 +7,10 @@
     <form method="POST" action="/players">
 
         {{ csrf_field() }}
+
+        <div class="parent-div"> 
+        
+        <div class="login-form">
         
         <div class="object-div grey-back">
 
@@ -50,6 +54,8 @@
 
         </div>
 
+    </div>
+    </div>
     </form> 
 
 
