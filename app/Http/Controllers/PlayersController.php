@@ -61,14 +61,14 @@ class PlayersController extends Controller
         $player->firstName = $request->firstName;
 
         $player->lastName = $request->lastName;
-
-        $player->schoolId = $request->schoolId;
         
         $player->yearEntered = $request->yearEntered;
 
+        $player->playerRating = $request->playerRating;
+
         $player->position = $request->position;
 
-        $player->playerRating = $request->playerRating;
+        $player->schoolId = $request->schoolId;
 
         $player->save();
 
