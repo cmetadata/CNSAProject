@@ -11,9 +11,7 @@ class Player extends Model
 
     public function team()
     {
-        //return $this->belongsTo(Team::class);
-        $team = Team::find($this->teamId);
-        return $team;
+        return $this->belongsTo(Team::class);
     }
 
     public function injuries()
