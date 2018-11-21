@@ -12,13 +12,9 @@
 </div>
 <hr/>
 
-
-{{--This will be how we do it once we have actual data.
 @foreach ($players as $player)
-	@include ('player')
-@endforeach --}}
-
-<!--includes the players/player.blade.php view to display a player-->
-@include('players.player')
+	@include ('players.player')
+	<br/>
+@endforeach
 
 @endsection

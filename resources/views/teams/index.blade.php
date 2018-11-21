@@ -13,6 +13,8 @@
 
   <h1 class="content-header grey-back">All Teams</h1>
 
+  <hr/>
+
 @include('teams.team')
 
 @endsection
