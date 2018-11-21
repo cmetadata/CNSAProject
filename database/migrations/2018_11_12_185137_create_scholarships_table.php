@@ -17,7 +17,7 @@ class CreateScholarshipsTable extends Migration
             $table->increments('scholarshipId');
             $table->string('scholarshipName', 200);
             $table->integer('playerId');
-            $table->decimal('scholarshipTotal');// can default make this formatted as a currency
+            $table->decimal('scholarshipTotal');
             $table->timestamps();
         });
     }

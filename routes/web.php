@@ -89,11 +89,11 @@ Route::get('/players/create', 'PlayersController@create');
 
 //??????????????
 //Displays a particular players information
-//Route::get('/players/{playerId}', 'PlayersController@show');
-Route::get('/players/{playerId}', function($playerId) {
-	$player = Player::find($playerId);
-	return view('players.show', compact('player'));
-});
+Route::get('/players/{playerId}', 'PlayersController@show');
+// Route::get('/players/{playerId}', function($playerId) {
+// 	$player = Player::find($playerId);
+// 	return view('players.show', compact('player'));
+// });
 
 //Public, Coaches and Admin
 //Displaying a list of players
@@ -159,11 +159,20 @@ Route::post('/teams', 'TeamsController@store');
 
 //Public, Coaches and Admin
 //Displays a teams roster 
+
+
+//Route::get('/teams/{teamId}', 'TeamsController@show');
+Route::get('/teams/{teamId}', function($teamId) {
+	$teams = Team::find($teamId);
+	return view('teams.show', compact('teams'));
+});
+
 //Route::get('/teams/{teamId}', 'TeamsController@show');
 Route::get('/teams/{teamId}', function($teamId) {
 	$team = Team::find($teamId);
 	return view('team.show', compact('team'));
 });
+
 
 //Coaches
 //Allows a coach to edit their team

@@ -28,6 +28,6 @@ class CreateTeamManagerTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('team_manager');
+        Schema::dropIfExists('team_managers');
     }
 }
