@@ -25,6 +25,7 @@ class TeamsController extends Controller
     public function create()
     {
         //
+        return view('teams.create', compact('teams'));
     }
 
     /**
@@ -36,10 +37,31 @@ class TeamsController extends Controller
     public function store(Request $request)
     {
         //
+        //dd(request()->all());
+
+        //Validating the data
+        $this->validate(request(), [
+            'teamId' => 'required',
+            'teamName' => 'required|max:50',
+            'schoolId' => 'required'
+        ]);
+
+        $teams = new Team;
+
+        $teams->teamId = $request->teamId;
+
+        $teams->teamName = $request->teamName;
+
+        $teams->schoolId = $request->schoolId;
+
+        $teams->save();
+
+         //Flashing a message to confirm that a team has been entered into the database
+        session()->flash('message', 'Team has been inserted');
     }
 
     /**
-     * Display the specified resource.
+     * Display the specifiedd(request()->all());d resource.
      *
      * @param  \App\c  $c
      * @return \Illuminate\Http\Response

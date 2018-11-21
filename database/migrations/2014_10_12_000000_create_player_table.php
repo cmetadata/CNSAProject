@@ -30,7 +30,6 @@ class CreatePlayerTable extends Migration
             $table->timestamps();
         });
 
-        Schema::create('')
     }
 
     /**

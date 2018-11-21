@@ -31,8 +31,8 @@
             </div>            
 
             <div class="form-group">
-                <label for="playerPosition">Position:</label>
-                <input type="text" class="form-control" id="playerPosition" name="playerPosition">
+                <label for="position">Position:</label>
+                <input type="text" class="form-control" id="position" name="position">
             </div>
 
             <div class="form-group">
