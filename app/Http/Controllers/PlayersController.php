@@ -15,7 +15,7 @@ class PlayersController extends Controller
     public function index(Player $players)
     {
         //Holds the value of all players to be displayed
-        $players = Players::all();
+        $players = Player::all();
 
         //Gives the view of all the players
         return view('players.index', compact('players'));
@@ -46,7 +46,17 @@ class PlayersController extends Controller
         //dd(request()->all());
 
         //dd(request(['firstName', 'lastName']));
-        
+
+        //Validating the data
+        $this->validate(request(), [
+            'firstName' => 'required|max:35',
+            'lastName' => 'required|max:30',
+            'schoolId' => 'required',
+            'yearEntered' => 'required',
+            'position' => 'required'
+        ]);
+
+        /*
         $player = new Player;
 
         $player->firstName = $request->firstName;
@@ -61,18 +71,9 @@ class PlayersController extends Controller
 
         $player->playerRating = $request->playerRating;
 
-        $player->save();
+        $player->save(); */
 
-        //Validating the data
-
-        $this->validate(request(), [
-            'firstName' => 'required|max:35',
-            'lastName' => 'required|max:30',
-            'schoolId' => 'required',
-            'yearEntered' => 'required',
-            'position' => 'required'
-        ]);
-
+        
         //Create the player
         $player = Player::create(request(['playerId', 'firstName', 'lastName', 'schoolId', 'yearEntered', 'position', 'teamId', 'redCards', 'yellowCards', 'goals', 'playerRating', 'assists', 'saves' ]));
 
@@ -99,7 +100,7 @@ class PlayersController extends Controller
         //$player = Player::find($playerId)
         //How we decided to actually do it 
         return view('players.show', compact('playerId'));
-
+    }
     //public function show(Player $player)
     //{
     //    return view('players.show', compact('player'));
