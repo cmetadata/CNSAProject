@@ -2,13 +2,17 @@
 
 @section ('content')
 
-    <h1 class="content-header grey-back">Register Team</h1>
-
     <form method="POST" action="/teams">
 
         {{ csrf_field() }}
+
+        <div class="parent-div"> 
         
-        <div class="object-div grey-back">
+        <div class="login-form">
+
+        <h1 class="title2 grey-back">Register Team</h1>
+        
+        <div class="grey-back buffer">
 
             <div class="form-group">
                 <label for="teamId">Team ID:</label>
@@ -26,6 +30,10 @@
             </div>            
 
             <button type="submit" class="btn btn-default">Submit</button>
+
+        </div>
+
+        </div>
 
         </div>
 

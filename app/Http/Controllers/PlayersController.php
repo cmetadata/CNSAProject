@@ -93,12 +93,12 @@ class PlayersController extends Controller
      * @param  \App\c  $c
      * @return \Illuminate\Http\Response
      */
-    public function show($playerId)
+    public function show(Player $player)
     {
         //Shows an individual player
         //$player = Player::find($playerId)
         //How we decided to actually do it 
-        return view('players.show', compact('playerId'));
+        return view('players.show', compact('player'));
     }
 
     /**
