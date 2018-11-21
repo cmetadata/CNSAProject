@@ -7,8 +7,9 @@
     <div class=info-page>
     <a href=#>[Team Name]</a><br/>
     <a href=#>[School Name]</a>
+
+    
     <br/></br/>
-    Injuries: {{$teams->teamInjuries}}<br/>
   </div>
 
 @endsection
