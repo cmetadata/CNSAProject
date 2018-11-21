@@ -14,8 +14,10 @@ class PlayersTableSeeder extends Seeder
         DB::table('players') ->insert([
         	'firstName' 	=> str_random(35),
         	'lastName'		=> str_random(30),
+            'schoolId'      => mt_rand(0, 99),
         	'yearEntered' 	=> mt_rand(2000, 2018),
         	'position' 		=> str_random(25),
+            'teamId'        => mt_rand(0, 99),
         	'redCards' 		=> mt_rand(0, 99),
         	'yellowCards' 	=> mt_rand(0, 99),
         	'goals' 		=> mt_rand(0, 99),
