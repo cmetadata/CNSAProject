@@ -160,7 +160,7 @@ Route::post('/teams', 'TeamsController@store');
 //Public, Coaches and Admin
 //Displays a teams roster 
 //Route::get('/teams/{teamId}', 'TeamsController@show');
-Route::get('/team/{teamId}', function($teamId) {
+Route::get('/teams/{teamId}', function($teamId) {
 	$team = Team::find($teamId);
 	return view('team.show', compact('team'));
 });
