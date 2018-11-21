@@ -167,13 +167,6 @@ Route::get('/teams/{teamId}', function($teamId) {
 	return view('teams.show', compact('teams'));
 });
 
-//Route::get('/teams/{teamId}', 'TeamsController@show');
-Route::get('/team/{teamId}', function($teamId) {
-	$team = Team::find($teamId);
-	return view('team.show', compact('team'));
-});
-
-
 //Coaches
 //Allows a coach to edit their team
 Route::get('/teams/{teamId}/edit', 'TeamsController@edit');
