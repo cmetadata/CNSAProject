@@ -13,7 +13,7 @@ use Faker\Generator as Faker;
 |Player
 */
 
-$factory->define(App\User::class, function (Faker $faker) {
+$factory->define(App\Player::class, function (Faker $faker) {
     	return [
 		'firstName' 	=> $faker->first_name,
 		'lastName' 		=> $faker->last_name,
@@ -26,23 +26,5 @@ $factory->define(App\User::class, function (Faker $faker) {
 		'goals' 		=> $faker->number,
 		'playerRating' 	=> $faker->number,
 		'assists'		=> $faker->number,
-		'saves' 		=> $faker->number,
-});
-
-$factory->define(App\Player::class, function (Faker\Generator $faker) {	
-	//Creating random data for the database Player table
-	return [
-		'firstName' 	=> $faker->first_name,
-		'lastName' 		=> $faker->last_name,
-		'schoolId' 		=> $faker->number,
-		'yearEntered' 	=> $faker->date,
-		'position' 		=> str_random(10),
-		'teamId' 		=> $faker->number,
-		'redCards' 		=> $faker->number,
-		'yellowCards' 	=> $faker->number,
-		'goals' 		=> $faker->number,
-		'playerRating' 	=> $faker->number,
-		'assists'		=> $faker->number,
 		'saves' 		=> $faker->number
-	];
 });
