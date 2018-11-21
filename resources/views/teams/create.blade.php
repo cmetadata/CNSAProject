@@ -25,7 +25,7 @@
             </div>
 
             <div class="form-group">
-                <label for="schoolId">School:</label>
+                <label for="schoolId">School ID:</label>
                 <input type="text" class="form-control" id="schoolId" name="schoolId" required>
             </div>            
 

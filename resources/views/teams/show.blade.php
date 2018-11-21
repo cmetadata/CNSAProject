@@ -2,16 +2,13 @@
 
 @section ('content')
 
-  <h1 class="content-header grey-back">{{$team->firstName}}</h1>
+  <h1 class="content-header grey-back">{{$teams->teamName}}</h1>
 
     <div class=info-page>
+    <a href=#>[Team Name]</a><br/>
     <a href=#>[School Name]</a>
-    Score: [Team Score]<br/>
-    Injuries: [Injuries]<br/>
-    <br/>
-
-    [INCLUDE HERE A LIST OF ALL PLAYERS IN THE TEAM]
-
+    <br/></br/>
+    Injuries: {{$teams->teamInjuries}}<br/>
   </div>
 
 @endsection
