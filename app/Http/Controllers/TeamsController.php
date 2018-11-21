@@ -69,6 +69,7 @@ class TeamsController extends Controller
     public function show(Teams $team)
     {
         //
+        return view('teams.show', compact('teamId'));
     }
 
     /**
