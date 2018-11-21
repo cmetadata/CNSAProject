@@ -71,6 +71,8 @@ class PlayersController extends Controller
 
         $player->schoolId = $request->schoolId;
 
+        $player->teamId = $request->teamId;
+
         $player->save();
 
         //Create the player

@@ -36,9 +36,15 @@
             </div>
 
             <div class="form-group">
-                <label for="schoolId">School:</label>
+                <label for="schoolId">School ID:</label>
                 <input type="text" class="form-control" id="schoolId" name="schoolId">
             </div>
+
+            <div class="form-group">
+                <label for="teamId">Team ID:</label>
+                <input type="text" class="form-control" id="teamId" name="teamId">
+            </div>
+            
 
             <button type="submit" class="btn btn-default">Submit</button>
 
