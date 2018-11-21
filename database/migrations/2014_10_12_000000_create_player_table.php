@@ -13,7 +13,7 @@ class CreatePlayerTable extends Migration
      */
     public function up()
     {
-        Schema::create('player', function (Blueprint $table) {
+        Schema::create('players', function (Blueprint $table) {
             $table->increments('playerId');
             $table->string('firstName', 35);
             $table->string('lastName', 30);
@@ -29,6 +29,8 @@ class CreatePlayerTable extends Migration
             $table->integer('saves')->default(0); 
             $table->timestamps();
         });
+
+        Schema::create('')
     }
 
     /**

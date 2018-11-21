@@ -13,7 +13,7 @@ class CreateTeamTable extends Migration
      */
     public function up()
     {
-        Schema::create('team', function (Blueprint $table) {
+        Schema::create('teams', function (Blueprint $table) {
             $table->increments('teamId');
             $table->string('teamName', 50);
             $table->integer('teamScore')->default(0);
