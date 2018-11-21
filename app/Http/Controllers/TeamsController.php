@@ -66,7 +66,7 @@ class TeamsController extends Controller
      * @param  \App\c  $c
      * @return \Illuminate\Http\Response
      */
-    public function show(Teams $team)
+    public function show(Teams $teamId)
     {
         //
         return view('teams.show', compact('teamId'));
@@ -78,9 +78,31 @@ class TeamsController extends Controller
      * @param  \App\c  $c
      * @return \Illuminate\Http\Response
      */
-    public function edit(c $c)
+    public function edit($teamId, Request request)
     {
         //
+         // Validating the information that is being entered into the database
+        $this->validate(request(), [
+            'teamId'    => $teamId,
+            'teamName'  => 'required|max:50',         
+            'schoolId'  => 'required'
+        ]);
+
+        //Retrieves the team
+        $teams = Team::find($teamId);
+
+        //Updates the team
+        $teams->teamName = $request->teamName;
+        $teams->schoolId = $request->schoolId;
+
+        //Saves the team
+        $teams->save();
+
+        //Flashes a message to let the user know that they have updated a team
+        session()->flash('message', 'Team has been updated');
+
+        //Redirects the user back to the teams page
+        return redirect()-back();
     }
 
     /**
