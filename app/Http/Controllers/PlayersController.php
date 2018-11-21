@@ -42,20 +42,21 @@ class PlayersController extends Controller
     {
         //Validating the data
         $this->validate(request(), [
-            'firstName' => 'required|max:35',
-            'lastName' => 'required|max:30',
-            'schoolId' => 'required',
+            'firstName'   => 'required|max:35',
+            'lastName'    => 'required|max:30',
+            'schoolId'    => 'required',
             'yearEntered' => 'required',
-            'position' => 'required'
+            'position'    => 'required'
         ]);
 
+        //USED FOR TESTING
         //dd($request);
         
         //dd(request()->all());
 
         //dd(request(['firstName', 'lastName']));
 
-
+        //Creating a new player object and populating it // THIS IS A TEMPORARY FIX UNTIL MODEL IS CREATED
         $player = new Player;
 
         $player->firstName = $request->firstName;
@@ -75,13 +76,11 @@ class PlayersController extends Controller
         //Create the player
         //$player = Player::create(request(['playerId', 'firstName', 'lastName', 'schoolId', 'yearEntered', 'position', 'teamId', 'redCards', 'yellowCards', 'goals', 'playerRating', 'assists', 'saves' ]));
 
-        //Flashing a message to confirm that the player has been entered into the database
-        session()->flash('message', 'Player has been inserted');
-
-        // //Create the player
-        // $player = Player::create(request(['firstName', 'lastName', 'schoolId', 'yearEntered', 'position', 'teamId', 'redCards', 'yellowCards', 'goals', 'playerRating', 'assists', 'saves', 'playerId' ]));
-
+        //Saves the player
         // $player->save();
+
+        //Flashing a message to confirm that the player has been entered into the database
+        session()->flash('message', 'Player has been inserted');  
 
     }
     
@@ -111,11 +110,12 @@ class PlayersController extends Controller
 
         // Validating the information that is being entered into the database
         $this->validate(request(), [
-            'firstName' => 'required|max:35',
-            'lastName' => 'required|max:30',
-            'schoolId' => 'required',
+            'playerId'    => $playerId,
+            'firstName'   => 'required|max:35',
+            'lastName'    => 'required|max:30',
+            'schoolId'    => 'required',
             'yearEntered' => 'required',
-            'position' => 'required'
+            'position'    => 'required'
         ]);
 
         //Retrieves the player
@@ -137,6 +137,9 @@ class PlayersController extends Controller
         //Saves the player
         $player->save();
 
+        //Flashes a message to let the user know that they have updated a player
+        session()->flash('message', 'Player has been updated');
+
         //Redirects the user back to the players page
         return redirect()-back();
     }
@@ -151,20 +154,20 @@ class PlayersController extends Controller
     {
         //Validates that the id entered is an actual Player object
         $this->validate(request(), [
+            'playerId' => $playerId
         ]); 
 
-    }
+        //Retrieves player information
+        $player = Player::find($playerId);
 
-        /**
-     * Don't know what this is going to do ?
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\c  $c
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, c $c)
-    {
-        //
-    }
+        //Deletes the player record
+        $player->delete();
 
+        //Flashes a message to let the user know that they have deleted a player
+        seesion()->flash('message', 'Player has been deleted');
+
+        //Redirects the user back to the previous page
+        return redirect()-back();
+
+    }
 }

@@ -28,6 +28,6 @@ class CreateRecruitingIncidentLogTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('recruiting_incident_log');
+        Schema::dropIfExists('recruiting_incident_logs');
     }
 }

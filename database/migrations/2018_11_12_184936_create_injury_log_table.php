@@ -29,6 +29,6 @@ class CreateInjuryLogTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('injury_log');
+        Schema::dropIfExists('injury_logs');
     }
 }
