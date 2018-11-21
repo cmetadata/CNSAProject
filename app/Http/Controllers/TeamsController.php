@@ -78,7 +78,7 @@ class TeamsController extends Controller
      * @param  \App\c  $c
      * @return \Illuminate\Http\Response
      */
-    public function edit($teamId, Request request)
+    public function edit($teamId, Request $request)
     {
         //
          // Validating the information that is being entered into the database
