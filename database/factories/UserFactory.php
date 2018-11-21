@@ -13,7 +13,7 @@ use Faker\Generator as Faker;
 |Player
 */
 
-$factory->define(App\Player::class, function (Faker\Generator $faker) {
+$factory->define(App\Player::class, function ($faker) {
     	return [
 		'firstName' 	=> $faker->first_name,
 		'lastName' 		=> $faker->last_name,
