@@ -132,3 +132,7 @@ a.footerlink:hover, a.footerlink:active {
 .parent-div {
     text-align: center;
 }
+
+.buffer {
+    padding: 20px;
+}

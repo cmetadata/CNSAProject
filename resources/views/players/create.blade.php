@@ -2,17 +2,16 @@
 
 @section ('content')
 
-    <form method="POST" action="/players">
-
-        {{ csrf_field() }}
-
         <div class="parent-div"> 
         
         <div class="login-form">
         
-        <h1 class="content-header grey-back">Register Player</h1>
+        <h1 class="title2 grey-back">Register Player</h1>
+        <br/>
+        <div class="grey-back buffer">
 
-        <div class="object-div grey-back">
+            <form method="POST" action="/players">
+                {{ csrf_field() }}
 
             <div class="form-group">
                 <label for="firstName">First Name:</label>
@@ -52,11 +51,11 @@
 
             <button type="submit" class="btn btn-default">Submit</button>
 
+        </form>
         </div>
 
     </div>
     </div>
-    </form> 
 
 
 @endsection
