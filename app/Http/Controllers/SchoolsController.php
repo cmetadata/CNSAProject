@@ -69,7 +69,7 @@ class SchoolsController extends Controller
             'schoolRanking' => 'required'
         ]);
 
-        $school = School::edit(request(['schoolName']))
+        $school = School::edit(request(['schoolName']));
     }
 
     /**
