@@ -146,11 +146,11 @@ Route::post('/teams', 'TeamsController@store');
 
 //Public, Coaches and Admin
 //Displays a teams roster 
-//Route::get('/teams/{teamId}', 'TeamsController@show');
-Route::get('/teams/{teamId}', function($teamId) {
-	$teams = teams::find($teamId);
+Route::get('/teams/{teamId}', 'TeamsController@show');
+/*Route::get('/teams/{teamId}', function($teamId) {
+	$teams = Team::find($teamId);
 	return view('teams.show', compact('teams'));
-});
+});*/
 
 //Coaches
 //Allows a coach to edit their team
