@@ -39,7 +39,14 @@ class TeamsController extends Controller
         //
         //dd(request()->all());
 
-        $teams = new Teams;
+        //Validating the data
+        $this->validate(request(), [
+            'teamId' => 'required',
+            'teamName' => 'required|max:50',
+            'schoolId' => 'required'
+        ]);
+
+        $teams = new Team;
 
         $teams->teamId = $request->teamId;
 
@@ -48,6 +55,9 @@ class TeamsController extends Controller
         $teams->schoolId = $request->schoolId;
 
         $teams->save();
+
+         //Flashing a message to confirm that a team has been entered into the database
+        session()->flash('message', 'Team has been inserted');
     }
 
     /**
