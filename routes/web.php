@@ -1,5 +1,14 @@
 <?php
+
 use App\Player;
+use App\Coach;
+use App\Game;
+use App\Incident;
+use App\Injury;
+use App\Team;
+use App\User;
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -117,7 +126,11 @@ Route::get('/coaches/create', 'CoachesController@create');
 
 //Public, Coaches and Admin
 //Displays a certains coaches information
-Route::get('/coaches/{coachId}', 'CoachesController@show');
+//Route::get('/coaches/{coachId}', 'CoachesController@show');
+Route::get('/coaches/{coachId}', function($coachId) {
+	$coach = Coach::find($coachId);
+	return view('coach.show', compact('coach'));
+});
 
 //Admin
 //Edits a coach
@@ -146,7 +159,11 @@ Route::post('/teams', 'TeamsController@store');
 
 //Public, Coaches and Admin
 //Displays a teams roster 
-Route::get('/teams/{teamId}', 'TeamsController@show');
+//Route::get('/teams/{teamId}', 'TeamsController@show');
+Route::get('/team/{teamId}', function($teamId) {
+	$team = Team::find($teamId);
+	return view('team.show', compact('team'));
+});
 
 //Coaches
 //Allows a coach to edit their team
