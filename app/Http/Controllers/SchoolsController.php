@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\School;
+use App\Team;
 use Illuminate\Http\Request;
 
 class SchoolsController extends Controller
@@ -50,9 +51,13 @@ class SchoolsController extends Controller
      * @param  \App\c  $c
      * @return \Illuminate\Http\Response
      */
-    public function show(c $c)
+    public function show(Request $request)
     {
-        //
+        $school = School::find($request->schoolId);
+        $teams = Team::all();
+        
+        //dd($school);
+        return view('schools.show', compact(['school', 'teams']));
     }
 
     /**
