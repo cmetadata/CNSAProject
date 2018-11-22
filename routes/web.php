@@ -216,6 +216,8 @@ Route::get('/schools/{schoolId}', 'SchoolsController@show');
 //Allows adding schools
 Route::get('/schools/create', 'SchoolsController@create');
 
+Route::post('/schools', 'SchoolsController@store');
+
 //Admin
 //Allows editing schools information
 Route::get('/schools/{schoolId}/edit', 'SchoolsController@edit');

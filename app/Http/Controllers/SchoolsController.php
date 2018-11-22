@@ -29,13 +29,16 @@ class SchoolsController extends Controller
      */
     public function create()
     {
+
+        return view('schools.create', compact('player'));
+
         //Validates information for the school
-        $this->validate(request(), [
-            'schoolName' => 'required|max:50'
-        ]);
+        // $this->validate(request(), [
+        //     'schoolName' => 'required|max:50'
+        // ]);
 
         //Create the school
-        $school = School::create(request(['schoolName']));
+        // $school = School::create(request(['schoolName']));
     }
 
     /**
@@ -47,6 +50,22 @@ class SchoolsController extends Controller
     public function store(Request $request)
     {
         //
+        //Validating the data
+        $this->validate(request(), [
+            'schoolName' => 'required|max:50'
+            'schoolRanking' => 'required|max:50'
+        ]);
+
+        $schools = new School;
+
+        $schools->schoolName = $request->schoolName;
+
+        $schools->schoolRanking = $request->schoolRanking;
+
+        $schools->save();
+
+        //Flashing a message to confirm that a team has been entered into the database
+        session()->flash('message', 'School has been inserted');        
     }
 
     /**
