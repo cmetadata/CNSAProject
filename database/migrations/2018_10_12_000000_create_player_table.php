@@ -14,6 +14,7 @@ class CreatePlayerTable extends Migration
      */
     public function up()
     {
+        Schema::enableForeignKeyConstraints();
         Schema::create('players', function (Blueprint $table) {
             $table->increments('playerId');
             $table->string('firstName', 40);
@@ -30,7 +31,7 @@ class CreatePlayerTable extends Migration
             $table->timestamps();
 
             //Setting up the relationships for the database
-            $table->foreign('teamId')->references('teamId')->on('teams');
+            //$table->foreign('teamId')->references('teamId')->on('teams');
         });
 
     }
