@@ -27,8 +27,6 @@ $factory->define(App\Player::class, function ($faker) {
 		'playerRating' 	=> $faker->number,
 		'assists'		=> $faker->number,
 		'saves' 		=> $faker->number
-
-]
-
+];
 
 };
