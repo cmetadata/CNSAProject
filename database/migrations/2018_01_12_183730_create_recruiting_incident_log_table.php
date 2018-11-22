@@ -18,7 +18,7 @@ class CreateRecruitingIncidentLogTable extends Migration
         Schema::create('recruiting_incident_logs', function (Blueprint $table) {
             $table->increments('incidentCode');
             $table->date('incidentDate');
-            $table->integer('schoolId');
+            //$table->integer('schoolId');
             $table->string('incidentDescription');
             $table->timestamps();
 

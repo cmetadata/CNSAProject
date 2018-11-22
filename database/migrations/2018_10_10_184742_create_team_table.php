@@ -18,7 +18,7 @@ class CreateTeamTable extends Migration
         Schema::create('teams', function (Blueprint $table) {
             $table->increments('teamId');
             $table->string('teamName', 50);
-            $table->integer('schoolId');
+            //$table->integer('schoolId');
             $table->timestamps();
 
             //Creating relationships for the database

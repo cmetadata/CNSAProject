@@ -17,9 +17,9 @@ class CreateGameStatsTable extends Migration
         Schema::enableForeignKeyConstraints();
         Schema::create('game_stats', function (Blueprint $table) {
             $table->increments('statId');
-            $table->integer('teamId');
+            //$table->integer('teamId');
             $table->integer('teamScore');
-            $table->integer('gameId');
+            //$table->integer('gameId');
             $table->timestamps();
 
             //Creates the relationships for the database

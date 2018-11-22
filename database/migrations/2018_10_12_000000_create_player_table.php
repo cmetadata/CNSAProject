@@ -22,7 +22,7 @@ class CreatePlayerTable extends Migration
             $table->string('lastName', 40);
             $table->integer('yearEntered');
             $table->string('position', 25);
-            $table->integer('teamId');
+            //$table->integer('teamId');
             $table->integer('redCards')->default(0); 
             $table->integer('yellowCards')->default(0); 
             $table->integer('goals')->default(0);
