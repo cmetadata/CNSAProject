@@ -5,13 +5,16 @@
 <div>
     <div class='btn-toolbar pull-right'>
         <div class='btn-group'>
-            <button name="create-button" type='button' class='btn btn-default new-button grey-back'>Add New Stadium</button>
+            <a class="btn btn-default new-button grey-back" href="/stadiums/create">Add New Stadium</a>
         </div>
     </div>
      <h1 class="content-header grey-back">All Stadiums</h1>
 </div>
 <hr/>
 
-@include('stadiums.stadium')
+@foreach ($stadiums as $stadium)
+	@include ('stadiums.stadium')
+	<br/>
+@endforeach
 
 @endsection
