@@ -1,5 +1,10 @@
 <!--This displays a single item from the database, to be used in the index view.-->
 
+{{
+	$team = Team::find($player->teamId);
+    $school = School::find($team->schoolId);
+}}
+
 <div>
     <div class='btn-toolbar pull-right'>
         <div class='btn-group'>

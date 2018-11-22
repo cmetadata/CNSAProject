@@ -13,10 +13,6 @@
 <hr/>
 
 @foreach ($players as $player)
-
-    $team = Team::find($player->teamId);
-    $school = School::find($team->schoolId);
-
 	@include ('players.player')
 	<br/>
 @endforeach
