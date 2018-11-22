@@ -162,10 +162,7 @@ Route::post('/teams', 'TeamsController@store');
 
 
 //Route::get('/teams/{teamId}', 'TeamsController@show');
-Route::get('/teams/{teamId}', function($teamId) {
-	$teams = Team::find($teamId);
-	return view('teams.show', compact('teams'));
-});
+Route::get('/teams/{teamId}', 'TeamsController@show';
 
 //Coaches
 //Allows a coach to edit their team

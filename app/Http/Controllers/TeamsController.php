@@ -69,10 +69,11 @@ class TeamsController extends Controller
      * @param  \App\c  $c
      * @return \Illuminate\Http\Response
      */
-    public function show(Team $teams)
+    public function show(Request $request)
     {
         //
-        return view('teams.show', compact('teams'));
+        $team = Team::find($request->teamId);    
+        return view('teams.show', compact('team'));
     }
 
     /**

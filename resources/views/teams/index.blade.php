@@ -15,6 +15,9 @@
 
   <hr/>
 
-@include('teams.team')
+@foreach ($players as $player)
+	@include ('players.player')
+	<br/>
+@endforeach
 
 @endsection
