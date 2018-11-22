@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Player;
+use App\Team;
 use Illuminate\Http\Request;
 
 class PlayersController extends Controller
