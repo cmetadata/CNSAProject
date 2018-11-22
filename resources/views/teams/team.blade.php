@@ -10,8 +10,6 @@
       <table width="100%">
         <tr>
             <td width="40%"><a href="/teams/{{$team->teamId}}">{{$team->teamName}} </a></td>
-
-
         </tr>
       </table>
     </div>
