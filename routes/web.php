@@ -208,13 +208,13 @@ Route::get('/games/{gameId}/delete', 'GamesController@delete');
 //Displays a list of schools
 Route::get('/schools', 'SchoolsController@index');
 
-//Public, Coaches and Admin
-//Displays a particular schools information
-Route::get('/schools/{schoolId}', 'SchoolsController@show');
-
 //Admin
 //Allows adding schools
 Route::get('/schools/create', 'SchoolsController@create');
+
+//Public, Coaches and Admin
+//Displays a particular schools information
+Route::get('/schools/{schoolId}', 'SchoolsController@show');
 
 // POST (http mode post) route to /schools, calls store function
 Route::post('/schools', 'SchoolsController@store');
