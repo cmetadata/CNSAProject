@@ -14,7 +14,11 @@ class StadiumsController extends Controller
      */
     public function index()
     {
-        return view('stadiums/index');
+        //Holds the value of all players to be displayed
+        $stadiums = Stadium::all();
+
+        //Gives the view of all the players
+        return view('stadiums.index', compact('stadiums'));
     }
 
     /**
