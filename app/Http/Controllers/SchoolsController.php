@@ -15,7 +15,11 @@ class SchoolsController extends Controller
      */
     public function index()
     {
-        return view('schools/index');
+        //Holds the value of all players to be displayed
+        $schools = School::all();
+
+        //Gives the view of all the players
+        return view('schools.index', compact('schools'));
     }
 
     /**
