@@ -1,8 +1,8 @@
 <!--This displays a single item from the database, to be used in the index view.-->
 
 {{
-	$team = Team::find($player->teamId);
-    $school = School::find($team->schoolId);
+	$team = Team::find($player->teamId)
+    $school = School::find($team->schoolId)
 }}
 
 <div>
