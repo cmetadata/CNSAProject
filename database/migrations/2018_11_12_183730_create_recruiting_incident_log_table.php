@@ -17,7 +17,7 @@ class CreateRecruitingIncidentLogTable extends Migration
             $table->increments('incidentCode');
             $table->date('incidentDate');
             $table->integer('schoolId');
-            $table->string('incidentDescription')
+            $table->string('incidentDescription');
             $table->timestamps();
 
             //Creates the relationships for the database
