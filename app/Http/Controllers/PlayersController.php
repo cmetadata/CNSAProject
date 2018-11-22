@@ -107,7 +107,7 @@ class PlayersController extends Controller
         $player = Player::find($request->playerId);
         $team = Team::find($player->teamId);
         
-        dd($player, $team);
+        //dd($player, $team);
         return view('players.show', compact(['player', 'team']));
     }
 
