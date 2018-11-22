@@ -10,8 +10,8 @@
 	    <table width="100%">
 	    	<tr>
 	    		<td width="25%"><a href="/players/{{$player->playerId}}">{{$player->firstName}} {{$player->lastName}}</a></td>
-	    		<td width="25%"><a href="/teams/{{$team->teamId}}">{{$team[$loop->index]->teamName}}</a></td>
-				<td width="25%"><a href="/schools/{{$school->schoolId}}">{{$school[$loop->index]->schoolName}}</a></td>
+	    		<td width="25%"><a href="/teams/{{$team[$loop->index]->teamId}}">{{$team[$loop->index]->teamName}}</a></td>
+				<td width="25%"><a href="/schools/{{$school[$loop->index]->schoolId}}">{{$school[$loop->index]->schoolName}}</a></td>
 	    		<td width="25%">{{$player->position}}</td>
 	    	</tr>
 	    </table>
