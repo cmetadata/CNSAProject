@@ -13,6 +13,8 @@ class CreateInjuryLogTable extends Migration
      */
     public function up()
     {
+        Schema::dropIfExists('injury_logs');
+        Schema::enableForeignKeyConstraints();
         Schema::create('injury_logs', function (Blueprint $table) {
             $table->increments('injuryId');
             $table->date('injuryDate');

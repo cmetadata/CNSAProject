@@ -13,6 +13,8 @@ class CreateGameStatsTable extends Migration
      */
     public function up()
     {
+        Schema::dropIfExists('game_stats');
+        Schema::enableForeignKeyConstraints();
         Schema::create('game_stats', function (Blueprint $table) {
             $table->increments('statId');
             $table->integer('teamId');
