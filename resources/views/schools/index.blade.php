@@ -12,6 +12,9 @@
 </div>
 <hr/>
 
-@include('schools.school')
+@foreach ($schools as $school)
+	@include ('schools.school')
+	<br/>
+@endforeach
 
 @endsection

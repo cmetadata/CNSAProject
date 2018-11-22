@@ -9,9 +9,17 @@
     <div class="object-div grey-back">
       <table width="100%">
         <tr>
-          <td width="40%"><a href="/teams/{{$teams->teamId}}">{{$team->teamName}} </a></td>
-	    		<td width="50%"><a href=#>Team Here</a></td>
-	    		<td width="10%">{{$player->position}}</td>
+            <td width="40%"><a href="/teams/{{$team->teamId}}">{{$team->teamName}} </a></td>
+
+
+            <!-- foreach loop which displays player
+            
+                @foreach ($players as $player)
+                    @include ('players.player')
+                    <br/>
+                @endforeach     
+            
+             -->
         </tr>
       </table>
     </div>

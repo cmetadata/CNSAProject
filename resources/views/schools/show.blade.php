@@ -2,13 +2,18 @@
 
 @section ('content')
 
-  <h1 class="content-header grey-back">[School Name]</h1>
+  <h1 class="content-header grey-back">{{$school->schoolName}}</h1>
 
     <div class=info-page>
-    Rating: [School Rating]<br/>
+    Rating: {{$school->schoolRanking}}<br/>
     <br/>
 
-    [INCLUDE HERE A LIST OF ALL THE SCHOOL'S TEAMS]
+    <!--Include a list of all teams belonging to the school-->
+    Teams for this school:<br/>
+    @foreach ($teams as $team)
+		@include ('teams.team')
+		<br/>
+	@endforeach
 
   </div>
 
