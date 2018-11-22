@@ -24,7 +24,7 @@ class PlayersController extends Controller
         {
             $team[$i] = Team::find($player->teamId);
             $school[$i] = School::find($team->schoolId);
-            $i += 1
+            $i += 1;
         }
 
         //Gives the view of all the players
