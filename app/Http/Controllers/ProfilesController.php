@@ -45,7 +45,60 @@ class ProfilesController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(ProfilesController $request)
+    public function storeCoach(ProfilesController $request)
+    {
+        //Validating the data
+        $this->validate(request(), [
+            'firstName'   => 'required|max:40',
+            'lastName'    => 'required|max:40',
+            'schoolId'    => 'required',
+            'yearEntered' => 'required',
+            'position'    => 'required'
+        ]);
+
+        //USED FOR TESTING
+        //dd($request);
+        
+        //dd(request()->all());
+
+        //dd(request(['firstName', 'lastName']));
+
+        //Creating a new player object and populating it // THIS IS A TEMPORARY FIX UNTIL MODEL IS CREATED
+        $player = new Player;
+
+        $player->firstName = $request->firstName;
+
+        $player->lastName = $request->lastName;
+        
+        $player->yearEntered = $request->yearEntered;
+
+        $player->playerRating = $request->playerRating;
+
+        $player->position = $request->position;
+
+        $player->schoolId = $request->schoolId;
+
+        $player->teamId = $request->teamId;
+
+        $player->save();
+
+        //Create the player
+        //$player = Player::create(request(['playerId', 'firstName', 'lastName', 'schoolId', 'yearEntered', 'position', 'teamId', 'redCards', 'yellowCards', 'goals', 'playerRating', 'assists', 'saves' ]));
+
+        //Saves the player
+        // $player->save();
+
+        //Flashing a message to confirm that the player has been entered into the database
+        session()->flash('message', 'Player has been inserted');  
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function storeAdmin(ProfilesController $request)
     {
         //
     }
