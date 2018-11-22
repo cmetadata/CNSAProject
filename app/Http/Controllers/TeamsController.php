@@ -13,7 +13,7 @@ class TeamsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Team $teams)
+    public function index(Request $request)
     {
          $teams = Team::all();
          $player = Player::find($request->playerId);    
