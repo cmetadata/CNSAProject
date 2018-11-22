@@ -44,9 +44,9 @@ class GamesController extends Controller
      * @param  \App\c  $c
      * @return \Illuminate\Http\Response
      */
-    public function show(c $c)
+    public function show(Request $request)
     {
-        //
+        return view('games/show');
     }
 
     /**

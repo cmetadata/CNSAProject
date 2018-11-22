@@ -13,6 +13,8 @@ class CreateRecruitingIncidentLogTable extends Migration
      */
     public function up()
     {
+        Schema::dropIfExists('recruiting_incident_logs');
+        Schema::enableForeignKeyConstraints();
         Schema::create('recruiting_incident_logs', function (Blueprint $table) {
             $table->increments('incidentCode');
             $table->date('incidentDate');

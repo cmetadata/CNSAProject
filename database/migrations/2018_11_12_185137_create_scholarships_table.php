@@ -13,6 +13,8 @@ class CreateScholarshipsTable extends Migration
      */
     public function up()
     {
+        Schema::dropIfExists('scholarships');
+        Schema::enableForeignKeyConstraints();
         Schema::create('scholarships', function (Blueprint $table) {
             $table->increments('scholarshipId');
             $table->string('scholarshipName', 200);

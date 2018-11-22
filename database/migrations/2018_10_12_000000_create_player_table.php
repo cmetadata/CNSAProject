@@ -14,6 +14,8 @@ class CreatePlayerTable extends Migration
      */
     public function up()
     {
+        Schema::dropIfExists('players');
+        Schema::enableForeignKeyConstraints();
         Schema::create('players', function (Blueprint $table) {
             $table->increments('playerId');
             $table->string('firstName', 40);

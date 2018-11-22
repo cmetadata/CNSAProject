@@ -13,6 +13,8 @@ class CreateStadiumsTable extends Migration
      */
     public function up()
     {
+        Schema::dropIfExists('stadiums');
+        Schema::enableForeignKeyConstraints();
         Schema::create('stadiums', function (Blueprint $table) {
             $table->increments('stadiumId');
             $table->string('stadiumName', 50);

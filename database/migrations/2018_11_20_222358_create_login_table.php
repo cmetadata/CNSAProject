@@ -13,6 +13,8 @@ class CreateLoginTable extends Migration
      */
     public function up()
     {
+        Schema::dropIfExists('logins');
+        Schema::enableForeignKeyConstraints();
         Schema::create('logins', function (Blueprint $table) {
             $table->increments('loginId');
             $table->string('password', 255);

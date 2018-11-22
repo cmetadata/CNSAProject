@@ -19,7 +19,7 @@
     <nav class="navbar navbar-inverse navbar-static-top">
       <div class="container-fluid left">
         <ul class="nav navbar-nav">
-          <!--<li class="active">--><li><a href="https://cnsa-project.herokuapp.com/">Home</a></li>
+          <!--<li class="active">--><li><a href="/">Home</a></li>
           <li><a href="/teams">Teams</a></li>
           <li><a href="/players">Players</a></li>
           <li><a href="/games">Games</a></li>
