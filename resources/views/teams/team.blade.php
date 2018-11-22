@@ -12,14 +12,6 @@
             <td width="40%"><a href="/teams/{{$team->teamId}}">{{$team->teamName}} </a></td>
 
 
-            <!-- foreach loop which displays player
-            
-                @foreach ($players as $player)
-                    @include ('players.player')
-                    <br/>
-                @endforeach     
-            
-             -->
         </tr>
       </table>
     </div>
