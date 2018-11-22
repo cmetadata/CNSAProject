@@ -15,9 +15,10 @@ class TeamsController extends Controller
     public function index(Team $teams)
     {
          $teams = Team::all();
+         $player = Player::find($request->playerId);    
 
         //Gives the view of all the players
-        return view('teams.index', compact('teams'));
+        return view('teams.index', compact('teams', 'player'));
     }
 
     /**

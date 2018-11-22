@@ -13,6 +13,8 @@ class CreateTeamManagerTable extends Migration
      */
     public function up()
     {
+        Schema::dropIfExists('team_managers');
+
         Schema::create('team_managers', function (Blueprint $table) {
             $table->increments('managerId');
             $table->integer('teamId');
