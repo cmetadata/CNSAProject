@@ -109,7 +109,7 @@ class PlayersController extends Controller
         $team = Team::find($player->teamId);
         $school = School::find($team->schoolId);
         
-        //dd($player, $team);
+        dd($player, $team, $school);
         return view('players.show', compact(['player', 'team', 'school']));
     }
 

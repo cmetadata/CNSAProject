@@ -6,8 +6,8 @@
 
   <div class=info-page>
   	{{$player->position}}<br/>
-    <a href=#>{{$team->teamName}}</a><br/>
-    <a href=#>{{$school->schoolName}}</a>
+    <a href="/teams/{{$team->teamId}}">{{$team->teamName}}</a><br/>
+    <a href="/schools/{{$school->schoolId}}">{{$school->schoolName}}</a>
     <br/></br/>
     Rating: {{$player->playerRating}}<br/>
     Joined in: {{$player->yearEntered}}<br/>
