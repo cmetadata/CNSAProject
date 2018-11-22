@@ -29,7 +29,7 @@ class SchoolsController extends Controller
      */
     public function create()
     {
-        return view('schools.create', compact('schools'));
+        return view('schools.create');
     }
 
     /**
@@ -40,7 +40,6 @@ class SchoolsController extends Controller
      */
     public function store(Request $request)
     {
-        //
         //Validating the data
         $this->validate(request(), [
             'schoolName' => 'required|max:50',
