@@ -14,10 +14,16 @@ class CreateGameStatsTable extends Migration
     public function up()
     {
         Schema::create('game_stats', function (Blueprint $table) {
-            $table->increments('gameId');
-            $table->date('gameDate');
-            $table->integer('stadiumId');
+            $table->increments('statId');
+            $table->integer('teamId')
+            $table->date('teamScore');
+            $table->integer('gameId');
             $table->timestamps();
+
+            //Creates the relationships for the database
+            $table->foreign('teamId')->references('teamId')->on('teams');
+
+            $table->foreign('gameId')->references('gameId')->on('games');
         });
     }
 

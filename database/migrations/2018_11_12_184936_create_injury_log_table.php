@@ -19,6 +19,9 @@ class CreateInjuryLogTable extends Migration
             $table->integer('playerId');
             $table->string('injury', 50);
             $table->timestamps();
+
+            //Creating relationships for the database
+            $table->foreign('playerId')->references('playerId')->on('players');
         });
     }
 
