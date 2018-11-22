@@ -103,9 +103,11 @@ class PlayersController extends Controller
     // }
     public function show(Request $request) 
     {
-        dd(request()->all());
+        
         $player = Player::find($request->playerId);
         $team = Team::find($request->teamId);
+        
+        dd($player, $team);
         return view('players.show', compact(['player', 'team']));
     }
 
