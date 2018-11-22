@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Player;
 use App\Team;
+use App\School;
 use Illuminate\Http\Request;
 
 class PlayersController extends Controller
@@ -106,9 +107,10 @@ class PlayersController extends Controller
         
         $player = Player::find($request->playerId);
         $team = Team::find($player->teamId);
+        $school = School::find($team->schoolId);
         
         //dd($player, $team);
-        return view('players.show', compact(['player', 'team']));
+        return view('players.show', compact(['player', 'team', 'school']));
     }
 
 
