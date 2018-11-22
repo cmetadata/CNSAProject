@@ -52,7 +52,7 @@ class SchoolsController extends Controller
         //
         //Validating the data
         $this->validate(request(), [
-            'schoolName' => 'required|max:50'
+            'schoolName' => 'required|max:50',
             'schoolRanking' => 'required|max:50'
         ]);
 
