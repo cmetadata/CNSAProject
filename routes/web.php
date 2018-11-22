@@ -216,6 +216,7 @@ Route::get('/schools/{schoolId}', 'SchoolsController@show');
 //Allows adding schools
 Route::get('/schools/create', 'SchoolsController@create');
 
+// POST (http mode post) route to /schools, calls store function
 Route::post('/schools', 'SchoolsController@store');
 
 //Admin
