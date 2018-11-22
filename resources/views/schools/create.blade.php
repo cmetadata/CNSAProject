@@ -20,7 +20,7 @@
             </div>
 
             <div class="form-group">
-                <label for="schoolRanking">School Name:</label>
+                <label for="schoolRanking">School Ranking:</label>
                 <input type="text" class="form-control" id="schoolRanking" name="schoolRanking" required>
             </div>
             
