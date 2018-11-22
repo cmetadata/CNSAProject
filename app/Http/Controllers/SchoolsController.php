@@ -29,16 +29,7 @@ class SchoolsController extends Controller
      */
     public function create()
     {
-
-        return view('schools.create', compact('player'));
-
-        //Validates information for the school
-        // $this->validate(request(), [
-        //     'schoolName' => 'required|max:50'
-        // ]);
-
-        //Create the school
-        // $school = School::create(request(['schoolName']));
+        return view('schools.create', compact('schools'));
     }
 
     /**
