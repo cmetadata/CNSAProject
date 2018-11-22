@@ -31,7 +31,7 @@ class CreatePlayerTable extends Migration
             $table->timestamps();
 
             //Setting up the relationships for the database
-            $table->foreign('teamId')->references('teamId')->on('teams');
+            //$table->foreign('teamId')->references('teamId')->on('teams');
         });
 
     }

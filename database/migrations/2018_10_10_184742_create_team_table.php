@@ -20,7 +20,7 @@ class CreateTeamTable extends Migration
             $table->timestamps();
 
             //Creating relationships for the database
-            $table->foreign('schoolId')->references('schoolId')->on('schools');
+            //$table->foreign('schoolId')->references('schoolId')->on('schools');
         });
     }
 

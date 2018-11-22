@@ -21,9 +21,9 @@ class CreateGameStatsTable extends Migration
             $table->timestamps();
 
             //Creates the relationships for the database
-            $table->foreign('teamId')->references('teamId')->on('teams');
+            //$table->foreign('teamId')->references('teamId')->on('teams');
 
-            $table->foreign('gameId')->references('gameId')->on('games');
+            //$table->foreign('gameId')->references('gameId')->on('games');
         });
     }
 

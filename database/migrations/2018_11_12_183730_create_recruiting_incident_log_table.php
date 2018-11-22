@@ -21,7 +21,7 @@ class CreateRecruitingIncidentLogTable extends Migration
             $table->timestamps();
 
             //Creates the relationships for the database
-            $table->foreign('schoolId')->references('schoolId')->on('schools');
+            //$table->foreign('schoolId')->references('schoolId')->on('schools');
         });
     }
 

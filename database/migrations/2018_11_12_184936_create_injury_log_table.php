@@ -21,7 +21,7 @@ class CreateInjuryLogTable extends Migration
             $table->timestamps();
 
             //Creating relationships for the database
-            $table->foreign('playerId')->references('playerId')->on('players');
+            //$table->foreign('playerId')->references('playerId')->on('players');
         });
     }
 
