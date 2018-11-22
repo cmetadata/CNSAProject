@@ -9,7 +9,7 @@
     <div class="object-div grey-back">
       <table width="100%">
         <tr>
-          <td width="40%"><a href="/teams/{{$teams->teamId}}">{{$team->teamName}} </a></td>
+          <td width="40%"><a href="/teams/{{$team->teamId}}">{{$team->teamName}} </a></td>
 	    		<td width="10%">{{$player->position}}</td>
         </tr>
       </table>
