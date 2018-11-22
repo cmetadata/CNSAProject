@@ -1,5 +1,5 @@
 <!--Displays one record from the database for the index page-->
-
+{{--$team = Team::find($coach->teamId);--}}
 <div>
     <div class='btn-toolbar pull-right'>
         <div class='btn-group'>
@@ -9,8 +9,8 @@
 	  <div class="object-div grey-back">
 	    <table width="100%">
 	    	<tr>
-	    		<td width="50%"><a href=#>Coach Name</a></td>
-    		    <td width="50%"><a href=#>Team Here</a></td>
+	    		<td width="50%"><a href="/coaches/{{$coach->managerId}}">{{$coach->firstName}} {{$coach->lastName}}</a></td>
+    		    <td width="50%"><a href=#>{{--$team->teamName--}}Team Here</a></td>
 	    	</tr>
 	    </table>
 	  </div>
