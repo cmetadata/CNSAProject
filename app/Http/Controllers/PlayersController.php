@@ -46,7 +46,6 @@ class PlayersController extends Controller
         $this->validate(request(), [
             'firstName'   => 'required|max:35',
             'lastName'    => 'required|max:30',
-            'schoolId'    => 'required',
             'yearEntered' => 'required',
             'position'    => 'required'
         ]);
