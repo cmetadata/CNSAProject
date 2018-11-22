@@ -14,7 +14,11 @@ class CoachesController extends Controller
      */
     public function index()
     {
-        return view('coaches/index');
+        //Holds the value of all coaches to be displayed
+        $coaches = Coach::all();
+
+        //Gives the view of all the coaches
+        return view('coaches.index', compact('coaches'));
     }
 
     /**
