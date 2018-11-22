@@ -15,9 +15,13 @@ class CreateTeamManagerTable extends Migration
     {
         Schema::create('team_managers', function (Blueprint $table) {
             $table->increments('managerId');
-            $table->integer('schoolId');
             $table->integer('teamId');
+            $table->string('firstName', 40);
+            $table->string('lastName', 40);
             $table->timestamps();
+
+            //Setting up the relationships
+            $table->foreign('teamId')->references('teamId')->on('teams');
         });
     }
 

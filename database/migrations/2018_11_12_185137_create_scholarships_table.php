@@ -17,8 +17,11 @@ class CreateScholarshipsTable extends Migration
             $table->increments('scholarshipId');
             $table->string('scholarshipName', 200);
             $table->integer('playerId');
-            $table->decimal('scholarshipTotal');
+            $table->decimal('scholarshipAmount');
             $table->timestamps();
+
+            //Creating relationships for database
+            $table->foreign('playerId')->references('playerId')->on('players');
         });
     }
 

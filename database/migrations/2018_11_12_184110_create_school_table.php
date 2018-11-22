@@ -17,7 +17,7 @@ class CreateSchoolTable extends Migration
             $table->increments('schoolId');
             $table->string('schoolName');
             $table->integer('schoolRanking');
-            $table->timestamps();
+            $table->timestamps();           
         });
     }
 

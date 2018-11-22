@@ -16,9 +16,8 @@ class CreatePlayerTable extends Migration
     {
         Schema::create('players', function (Blueprint $table) {
             $table->increments('playerId');
-            $table->string('firstName', 35);
-            $table->string('lastName', 30);
-            $table->integer('schoolId');
+            $table->string('firstName', 40);
+            $table->string('lastName', 40);
             $table->integer('yearEntered');
             $table->string('position', 25);
             $table->integer('teamId');
@@ -29,6 +28,9 @@ class CreatePlayerTable extends Migration
             $table->integer('assists')->default(0);
             $table->integer('saves')->default(0); 
             $table->timestamps();
+
+            //Setting up the relationships for the database
+            $table->foreign('teamId')->references('teamId')->on('teams');
         });
 
     }

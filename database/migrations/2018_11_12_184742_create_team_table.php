@@ -18,6 +18,9 @@ class CreateTeamTable extends Migration
             $table->string('teamName', 50);
             $table->integer('schoolId');
             $table->timestamps();
+
+            //Creating relationships for the database
+            $table->foreign('schoolId')->references('schoolId')->on('schools');
         });
     }
 
