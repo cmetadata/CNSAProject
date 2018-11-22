@@ -6,7 +6,7 @@
 
   <div class=info-page>
   	{{$player->position}}<br/>
-    <a href=#>Meh</a><br/>
+    <a href=#>{{$team->teamName}}</a><br/>
     <a href=#>[School Name]</a>
     <br/></br/>
     Rating: {{$player->playerRating}}<br/>
