@@ -19,8 +19,16 @@ class PlayersController extends Controller
         //Holds the value of all players to be displayed
         $players = Player::all();
 
+        $i = 0
+        foreach ($players as $player)
+        {
+            $team[$i] = Team::find($player->teamId);
+            $school[$i] = School::find($team->schoolId);
+            $i += 1
+        }
+
         //Gives the view of all the players
-        return view('players.index', compact('players'));
+        return view('players.index', compact('players', 'team', 'school'));
     }
 
     /**
