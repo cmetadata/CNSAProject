@@ -18,7 +18,7 @@ class PlayersController extends Controller
     {
         //Holds the value of all players to be displayed
         $players = Player::all();
-        $team = Team::find($player->teamId);
+        $team = Team::find($players->teamId);
         $school = School::find($team->schoolId);
 
         //Gives the view of all the players
