@@ -19,7 +19,7 @@ class PlayersController extends Controller
         //Holds the value of all players to be displayed
         $players = Player::all();
 
-        $i = 0
+        $i = 0;
         foreach ($players as $player)
         {
             $team[$i] = Team::find($player->teamId);
