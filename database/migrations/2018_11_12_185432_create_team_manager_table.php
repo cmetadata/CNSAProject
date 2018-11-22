@@ -23,7 +23,7 @@ class CreateTeamManagerTable extends Migration
             $table->timestamps();
 
             //Setting up the relationships
-            //$table->foreign('teamId')->references('teamId')->on('teams');
+            $table->foreign('teamId')->references('teamId')->on('teams');
         });
     }
 
