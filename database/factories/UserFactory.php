@@ -15,8 +15,8 @@ use Faker\Generator as Faker;
 
 $factory->define(App\Player::class, function ($faker) {
     	return [
-		'firstName' 	=> $faker->first_name,
-		'lastName' 		=> $faker->last_name,
+		'firstName' 	=> $faker->name,
+		'lastName' 		=> $faker->name,
 		'schoolId' 		=> $faker->number,
 		'yearEntered' 	=> $faker->date,
 		'position' 		=> str_random(10),
