@@ -78,7 +78,7 @@ class TeamsController extends Controller
         $teams = Team::find($request->teamId);    
         $players = Player::all()->where('teamId', $request->teamId);
 
-        return view('teams.show', compact('teams', 'school'));
+        return view('teams.show', compact('teams', 'players'));
     }
 
     /**
