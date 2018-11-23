@@ -76,7 +76,7 @@ class TeamsController extends Controller
     {
         //
         $teams = Team::find($request->teamId);    
-        $school = School::find($request->teamId);    
+        $school = School::find($request->schoolId);    
 
         return view('teams.show', compact('teams', 'school'));
     }
