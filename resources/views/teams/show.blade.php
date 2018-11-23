@@ -2,7 +2,7 @@
 
 @section ('content')
 
-  <h1 class="content-header grey-back">{{$team->teamName}}</h1>
+  <h1 class="content-header grey-back">{{$team[0]->teamName}}</h1>
 
     <div class=info-page>
     <!-- players -->
