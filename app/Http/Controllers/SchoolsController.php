@@ -67,7 +67,10 @@ class SchoolsController extends Controller
     public function show(Request $request)
     {
         $school = School::find($request->schoolId);
-        $teams = Team::find($request->teamId);
+
+        // must find teams by schoolId        
+        // needs to return a collection or it wont work
+        $teams = Team::all()->where('schoolId', $request->schoolId);
         
         //dd($school);
         return view('schools.show', compact(['school', 'teams']));
