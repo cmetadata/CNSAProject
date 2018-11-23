@@ -67,7 +67,7 @@ class SchoolsController extends Controller
     public function show(Request $request)
     {
         $school = School::find($request->schoolId);
-        $teams = Team::all();
+        $teams = Team::find($request->teamId);
         
         //dd($school);
         return view('schools.show', compact(['school', 'teams']));
