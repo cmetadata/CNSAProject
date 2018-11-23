@@ -5,7 +5,11 @@
   <h1 class="content-header grey-back">{{$teams->teamName}}</h1>
 
     <div class=info-page>
-    {{ $teams->teamRanking }} 
+    <!-- players -->
+    @foreach ($players as $player)
+      @include ('players.player')
+      <br/>
+    @endforeach
     <br/></br/>
   </div>
 
