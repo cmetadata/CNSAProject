@@ -78,7 +78,15 @@ class TeamsController extends Controller
         $team = Team::all()->where('teamId', $request->teamId);    
         $players = Player::all()->where('teamId', $request->teamId);
 
-        return view('teams.show', compact('team', 'players'));
+        $i = 0;
+        foreach ($players as $player)
+        {
+            $school[$i] = School::find($team[$i]->schoolId);
+            $i += 1;
+        }
+
+
+        return view('teams.show', compact('team', 'players', 'school'));
     }
 
     /**
