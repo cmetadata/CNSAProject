@@ -18,6 +18,9 @@
 						{{ $team[$loop->index]->teamName }}
 					@endisset
 
+					@empty($team[$loop->index])
+						{{ $team->first()->teamName }}
+					@endempty
 				</a></td>
 				<td width="25%"><a href="/schools/{{$school[$loop->index]->schoolId}}">{{$school[$loop->index]->schoolName}}</a></td>
 	    		<td width="25%">{{$player->position}}</td>
