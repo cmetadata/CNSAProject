@@ -18,9 +18,9 @@ class CreateInjuryLogTable extends Migration
         Schema::create('injury_logs', function (Blueprint $table) {
             $table->increments('injuryId');
             $table->date('injuryDate');
-            // fk
-            $table->integer('playerId')->unsigned();
             $table->string('injury', 50);
+            // fk
+            $table->integer('playerId')->unsigned();            
             $table->timestamps();
 
         });

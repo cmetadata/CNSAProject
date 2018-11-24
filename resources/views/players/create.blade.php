@@ -14,13 +14,8 @@
                 {{ csrf_field() }}
 
             <div class="form-group">
-                <label for="firstName">First Name:</label>
-                <input type="text" class="form-control" id="firstName" name="firstName" required>
-            </div>
-
-            <div class="form-group">
-                <label for="lastName">Last Name:</label>
-                <input type="text" class="form-control" id="lastName" name="lastName" required>
+                <label for="personId">Person ID:</label>
+                <input type="text" class="form-control" id="personId" name="personId" required>
             </div>
 
             <div class="form-group">

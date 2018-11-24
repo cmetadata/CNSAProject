@@ -124,6 +124,9 @@ Route::get('/coaches', 'CoachesController@index');
 //Creates a new coach
 Route::get('/coaches/create', 'CoachesController@create');
 
+Route::post('/coaches', 'CoachesController@store');
+
+
 //Public, Coaches and Admin
 //Displays a certains coaches information
 //Route::get('/coaches/{coachId}', 'CoachesController@show');
@@ -182,6 +185,12 @@ Route::get('/teams/{teamId}/delete', 'TeamsController@delete');
 //Displays the list of coaches
 Route::get('/games', 'GamesController@index');
 
+Route::post('games', 'GamesController@store');
+
+//Coaches and Admins
+//Adds a game
+Route::get('/games/create', 'GamesController@create');
+
 //Public, Coaches and Admin
 //Displays a particular coaches information
 Route::get('/games/{gameId}', 'GamesController@show');
@@ -189,10 +198,6 @@ Route::get('/games/{gameId}', 'GamesController@show');
 //Coaches and Admins
 //Allows to change information relating to the game
 Route::get('/games/{gameId}/edit', 'GamesController@edit');
-
-//Coaches and Admins
-//Adds a game
-Route::get('/games/create', 'GamesController@create');
 
 //Admin
 //Deletes the game information

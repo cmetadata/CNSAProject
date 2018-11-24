@@ -19,8 +19,8 @@ class CreateTeamManagerTable extends Migration
             $table->increments('managerId');
             // fk
             $table->integer('teamId')->unsigned();
-            $table->string('firstName', 40);
-            $table->string('lastName', 40);
+            // fk
+            $table->integer('personId')->unsigned();
             $table->timestamps();
 
         });
@@ -29,6 +29,7 @@ class CreateTeamManagerTable extends Migration
         Schema::table('team_managers', function($table) {
             //Setting up the relationships
             $table->foreign('teamId')->references('teamId')->on('teams')->onDelete('cascade');            
+            $table->foreign('personId')->references('personId')->on('teams')->onDelete('cascade');
         });
 
     }

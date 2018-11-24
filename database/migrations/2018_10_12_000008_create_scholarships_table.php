@@ -18,9 +18,9 @@ class CreateScholarshipsTable extends Migration
         Schema::create('scholarships', function (Blueprint $table) {
             $table->increments('scholarshipId');
             $table->string('scholarshipName', 200);
-            // fk
-            $table->integer('playerId')->unsigned();
             $table->decimal('scholarshipAmount');
+            // fk
+            $table->integer('playerId')->unsigned();            
             $table->timestamps();
 
         });

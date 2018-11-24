@@ -44,6 +44,7 @@ class SchoolsController extends Controller
         $this->validate(request(), [
             'schoolName' => 'required|max:50',
             'schoolRanking' => 'required|max:50'
+            'schoolPopulation' => 'required|max:10'
         ]);
 
         $schools = new School;
@@ -51,6 +52,8 @@ class SchoolsController extends Controller
         $schools->schoolName = $request->schoolName;
 
         $schools->schoolRanking = $request->schoolRanking;
+
+        $schools->schoolPopulation = $request->schoolPopulation;
 
         $schools->save();
 

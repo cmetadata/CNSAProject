@@ -24,6 +24,11 @@
                 <input type="text" class="form-control" id="schoolRanking" name="schoolRanking" required>
             </div>
             
+            <div class="form-group">
+                <label for="schoolPopulation">School Population:</label>
+                <input type="text" class="form-control" id="schoolPopulation" name="schoolPopulation" required>
+            </div>
+
 
             <button type="submit" class="btn btn-default">Submit</button>
 

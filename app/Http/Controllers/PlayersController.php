@@ -68,9 +68,7 @@ class PlayersController extends Controller
         //Creating a new player object and populating it // THIS IS A TEMPORARY FIX UNTIL MODEL IS CREATED
         $player = new Player;
 
-        $player->firstName = $request->firstName;
-
-        $player->lastName = $request->lastName;
+        $player->personId = $request->personId;
         
         $player->yearEntered = $request->yearEntered;
 
