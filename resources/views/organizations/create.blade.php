@@ -15,8 +15,8 @@
         <div class="grey-back buffer">
 
             <div class="form-group">
-                <label for="schoolName">Organization Name:</label>
-                <input type="text" class="form-control" id="schoolName" name="schoolName" required>
+                <label for="organizationName">Organization Name:</label>
+                <input type="text" class="form-control" id="organizationName" name="organizationName" required>
             </div>
 
             <button type="submit" class="btn btn-default">Submit</button>
