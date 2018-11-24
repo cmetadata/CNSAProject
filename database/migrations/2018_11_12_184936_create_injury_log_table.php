@@ -18,11 +18,15 @@ class CreateInjuryLogTable extends Migration
         Schema::create('injury_logs', function (Blueprint $table) {
             $table->increments('injuryId');
             $table->date('injuryDate');
-            //$table->integer('playerId');
+            // fk
+            $table->integer('playerId');
             $table->string('injury', 50);
             $table->timestamps();
 
-            //Creating relationships for the database
+        });
+
+        Schema::table('injury_logs', function($table) {
+            //Setting up the relationships
             $table->foreign('playerId')->references('playerId')->on('players');
         });
     }

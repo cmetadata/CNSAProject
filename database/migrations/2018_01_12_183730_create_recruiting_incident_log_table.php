@@ -18,13 +18,21 @@ class CreateRecruitingIncidentLogTable extends Migration
         Schema::create('recruiting_incident_logs', function (Blueprint $table) {
             $table->increments('incidentCode');
             $table->date('incidentDate');
-            //$table->integer('schoolId');
+            // fk
+            $table->integer('schoolId');
+            // fk
+            $table->integer('playerId');
             $table->string('incidentDescription');
             $table->timestamps();
-
-            //Creates the relationships for the database
-            $table->foreign('schoolId')->references('schoolId')->on('schools');
         });
+
+        Schema::table('recruiting_incident_logs', function($table) {
+            //Setting up the relationships
+            $table->foreign('schoolId')->references('schoolId')->on('schools');
+            $table->foreign('playerId')->references('playerId')->on('players');
+        });
+
+
     }
 
     /**

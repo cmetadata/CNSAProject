@@ -17,10 +17,19 @@ class CreateStadiumsTable extends Migration
         Schema::enableForeignKeyConstraints();
         Schema::create('stadiums', function (Blueprint $table) {
             $table->increments('stadiumId');
+            // fk -- might need teamId?
+            // $table->integer('teamId');
             $table->string('stadiumName', 50);
             $table->integer('stadiumCapacity');
             $table->timestamps();
+
         });
+
+        Schema::table('stadiums', function($table) {
+            //Setting up the relationships
+            //$table->foreign('teamId')->references('teamId')->on('teams');            
+        });
+
     }
 
     /**
