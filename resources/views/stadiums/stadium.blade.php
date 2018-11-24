@@ -8,7 +8,7 @@
       <table width="100%">
         <tr>
           <td width="80%"><a href=#>{{$stadium->stadiumName}}</a></td>
-    		  <td width="20%">{{stadium->stadiumCapacity}}</td>
+    		  <td width="20%">{{$stadium->stadiumCapacity}}</td>
         </tr>
       </table>
     </div>
