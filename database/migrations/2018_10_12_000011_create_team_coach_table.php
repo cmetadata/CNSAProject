@@ -29,7 +29,7 @@ class CreateTeamCoachTable extends Migration
         Schema::table('team_coaches', function($table) {
             //Setting up the relationships
             $table->foreign('teamId')->references('teamId')->on('teams')->onDelete('cascade');
-            $table->foreign('personId')->references('personId')->on('teams')->onDelete('cascade');
+            $table->foreign('personId')->references('personId')->on('persons')->onDelete('cascade');
         });
 
     }
