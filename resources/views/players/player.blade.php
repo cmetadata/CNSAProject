@@ -9,6 +9,8 @@
 	<div class="object-div grey-back">
 	    <table width="100%">
 	    	<tr>
+				<td width="25%"><a href="/players/{{$player->playerId}}">Player ID: {{$player->playerId}}</a></td>
+
 	    		<td width="25%"><a href="/players/{{$player->playerId}}">{{$player->firstName}} {{$player->lastName}}</a></td>
 	    		<td width="25%"><a href="/teams/@isset($team[$loop->index])
 						{{ $team[$loop->index]->teamId }}

@@ -9,8 +9,8 @@
     <div class="object-div grey-back">
       <table width="100%">
         <tr>
+          <td width="25%">School Id: {{$school->schoolId }} </td>
           <td width="25%"><a href="/schools/{{$school->schoolId}}">{{$school->schoolName}}</a></td>
-          <td width="25%">High School Athletes: </td>
           <td width="25%">School Population: {{$school->schoolPopulation}} </td>
           <td width="25%">School Rating: {{$school->schoolRanking}}</td>
         </tr>
