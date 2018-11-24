@@ -25,10 +25,10 @@ class CreateStadiumsTable extends Migration
 
         });
 
-        Schema::table('stadiums', function($table) {
-            //Setting up the relationships
-            //$table->foreign('teamId')->references('teamId')->on('teams');            
-        });
+        // Schema::table('stadiums', function($table) {
+        //     //Setting up the relationships
+        //     //$table->foreign('teamId')->references('teamId')->on('teams');            
+        // });
 
     }
 

@@ -28,8 +28,8 @@ class CreateRecruitingIncidentLogTable extends Migration
 
         Schema::table('recruiting_incident_logs', function($table) {
             //Setting up the relationships
-            $table->foreign('schoolId')->references('schoolId')->on('schools');
-            $table->foreign('playerId')->references('playerId')->on('players');
+            $table->foreign('schoolId')->references('schoolId')->on('schools')->onDelete('cascade');
+            $table->foreign('playerId')->references('playerId')->on('players')->onDelete('cascade');
         });
 
 

@@ -26,7 +26,7 @@ class CreateTeamTable extends Migration
 
         Schema::table('teams', function($table) {
             //Setting up the relationships
-            $table->foreign('schoolId')->references('schoolId')->on('schools');
+            $table->foreign('schoolId')->references('schoolId')->on('schools')->onDelete('cascade');
         });
 
     }

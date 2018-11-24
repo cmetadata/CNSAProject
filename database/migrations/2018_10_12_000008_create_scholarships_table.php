@@ -27,7 +27,7 @@ class CreateScholarshipsTable extends Migration
 
         Schema::table('scholarships', function($table) {
             //Setting up the relationships
-            $table->foreign('playerId')->references('playerId')->on('players');
+            $table->foreign('playerId')->references('playerId')->on('players')->onDelete('cascade');
         });
     }
 

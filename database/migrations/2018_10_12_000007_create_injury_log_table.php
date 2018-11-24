@@ -27,7 +27,7 @@ class CreateInjuryLogTable extends Migration
 
         Schema::table('injury_logs', function($table) {
             //Setting up the relationships
-            $table->foreign('playerId')->references('playerId')->on('players');
+            $table->foreign('playerId')->references('playerId')->on('players')->onDelete('cascade');
         });
     }
 

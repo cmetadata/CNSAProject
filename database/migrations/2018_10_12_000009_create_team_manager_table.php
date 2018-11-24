@@ -28,7 +28,7 @@ class CreateTeamManagerTable extends Migration
 
         Schema::table('team_managers', function($table) {
             //Setting up the relationships
-            $table->foreign('teamId')->references('teamId')->on('teams');            
+            $table->foreign('teamId')->references('teamId')->on('teams')->onDelete('cascade');            
         });
 
     }

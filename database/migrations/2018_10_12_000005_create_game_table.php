@@ -26,7 +26,7 @@ class CreateGameTable extends Migration
 
         Schema::table('games', function($table) {
             //Setting up the relationships
-            $table->foreign('stadiumId')->references('stadiumId')->on('stadiums');
+            $table->foreign('stadiumId')->references('stadiumId')->on('stadiums')->onDelete('cascade');
         });
 
 
