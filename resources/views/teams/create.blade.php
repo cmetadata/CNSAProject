@@ -15,11 +15,6 @@
         <div class="grey-back buffer">
 
             <div class="form-group">
-                <label for="teamId">Team ID:</label>
-                <input type="text" class="form-control" id="teamId" name="teamId" required>
-            </div>
-
-            <div class="form-group">
                 <label for="teamName">Team Name:</label>
                 <input type="text" class="form-control" id="teamName" name="teamName" required>
             </div>

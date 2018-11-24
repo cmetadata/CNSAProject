@@ -305,3 +305,32 @@ Route::get('/scholarships/delete', 'ScholarshipsController@delete');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+
+//--------------------------------------------------------
+//--------------------------------------------------------
+//ORGANIZATIONS
+//--------------------------------------------------------
+//--------------------------------------------------------
+//organizations
+//Displays a list of organizations
+Route::get('/organizations', 'OrganizationsController@index');
+
+//organizations
+//Adds a new organizations
+Route::get('/organizations/create', 'OrganizationsController@create');
+
+Route::post('/organizations', 'OrganizationsController@store');
+
+//Public, Coaches and Admin
+//Displays a particular organizations information
+Route::get('/organizations/{organizationId}', 'OrganizationsController@show');
+
+//Public, Coaches and Admin
+//Allows editing a organizations information 
+Route::get('/organizations/{organizationId}/edit', 'OrganizationsController@edit');
+
+//Admin
+//Deletes the organizations information
+Route::get('/organizations/{organizationId}/delete', 'OrganizationsController@delete');
+

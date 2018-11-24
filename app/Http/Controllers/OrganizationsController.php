@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Game;
+use App\Organization;
 use Illuminate\Http\Request;
 
-class GamesController extends Controller
+class OrganizationsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,11 @@ class GamesController extends Controller
      */
     public function index()
     {
-        return view('games.index');
+        //Holds the value of all players to be displayed
+        $organizations = Organization::all();
+
+        //Gives the view of all the players
+        return view('organizations.index', compact('organizations'));
     }
 
     /**
@@ -25,7 +29,7 @@ class GamesController extends Controller
     public function create()
     {
         //
-        return view('games.create');
+        return view('organizations.create');
     }
 
     /**
@@ -35,28 +39,23 @@ class GamesController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {    
-        // declare stat models
-        // $stat1 = new Stat:
-        // $stat2 = new Stat:
-        // $games = new Game;
-        
+    {
+        //
+        //Validating the data
+        $this->validate(request(), [
+            'organizationName' => 'required|max:50',
+        ]);
 
-        // needs to pull request parameters out and save twice to stats table
-       
-        // save once for game table
-        // creates game ID
+        $organizations = new organization;
 
-    
-        // save once for stat #1 -> stat table 
-        // use game ID^
+        $organizations->organizationId = $request->organizationId;
 
+        $organizations->organizationName = $request->organizationName;
 
+        $organizations->save();
 
-        // save once for stat #2 -> stat table 
-        // use game ID^
-
-
+        //Flashing a message to confirm that a team has been entered into the database
+        session()->flash('message', 'organization has been inserted');                
     }
 
     /**
@@ -65,9 +64,9 @@ class GamesController extends Controller
      * @param  \App\c  $c
      * @return \Illuminate\Http\Response
      */
-    public function show(Request $request)
+    public function show(c $c)
     {
-        return view('games.show');
+        //
     }
 
     /**

@@ -47,14 +47,11 @@ class TeamsController extends Controller
 
         //Validating the data
         $this->validate(request(), [
-            'teamId' => 'required',
             'teamName' => 'required|max:50',
             'schoolId' => 'required'
         ]);
 
         $teams = new Team;
-
-        $teams->teamId = $request->teamId;
 
         $teams->teamName = $request->teamName;
 

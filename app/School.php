@@ -10,6 +10,7 @@ class School extends Model
 
     public function teams()
     {
-        return $this->hasMany(Teams::class);
+        // Teams had an s here -- mistake ?
+        return $this->hasMany(Team::class);
     }
 }
