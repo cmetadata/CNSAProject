@@ -48,8 +48,6 @@ class OrganizationsController extends Controller
 
         $organizations = new organization;
 
-        $organizations->organizationId = $request->organizationId;
-
         $organizations->organizationName = $request->organizationName;
 
         $organizations->save();
