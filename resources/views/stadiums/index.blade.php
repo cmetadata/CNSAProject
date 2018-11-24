@@ -12,5 +12,9 @@
 </div>
 <hr/>
 
+@foreach ($stadiums as $stadium)
+	@include ('stadiums.stadium')
+	<br/>
+@endforeach
 
 @endsection
