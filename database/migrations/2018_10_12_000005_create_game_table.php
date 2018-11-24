@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateGameStatsTable extends Migration
+class CreateGameTable extends Migration
 {
     /**
      * Run the migrations.
@@ -39,6 +39,6 @@ class CreateGameStatsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('game_stats');
+        Schema::dropIfExists('games');
     }
 }
