@@ -19,6 +19,7 @@ class CreateGameStatsTable extends Migration
             $table->increments('statId');
             //$table->integer('teamId');
             $table->integer('teamScore');
+            $table->integer('attendance');
             //$table->integer('gameId');
             $table->timestamps();
 
@@ -26,6 +27,8 @@ class CreateGameStatsTable extends Migration
             $table->foreign('teamId')->references('teamId')->on('teams');
 
             $table->foreign('gameId')->references('gameId')->on('games');
+
+            $table->foreign('stadiumId')->references('stadiumId')->on('stadiums');
         });
     }
 

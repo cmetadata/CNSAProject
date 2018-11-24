@@ -18,7 +18,7 @@ class CreateStadiumsTable extends Migration
         Schema::create('stadiums', function (Blueprint $table) {
             $table->increments('stadiumId');
             $table->string('stadiumName', 50);
-            $table->integer('attendance');
+            $table->integer('stadiumCapacity');
             $table->timestamps();
         });
     }

@@ -240,6 +240,8 @@ Route::get('/stadiums', 'StadiumsController@index');
 //Adds a new school
 Route::get('/stadiums/create', 'StadiumsController@create');
 
+Route::post('/stadiums', 'StadiumsController@store');
+
 //Public, Coaches and Admin
 //Displays a particular stadiums information
 Route::get('/stadiums/{stadiumId}', 'StadiumsController@show');
