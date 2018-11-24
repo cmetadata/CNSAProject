@@ -18,6 +18,7 @@ class CreateGameStatsTable extends Migration
         Schema::create('games', function (Blueprint $table) {
             $table->increments('gameId');
             $table->integer('gameDate');
+            $table->integer('attendance');
             // fk
             $table->integer('stadiumId')->unsigned();
             $table->timestamps();
