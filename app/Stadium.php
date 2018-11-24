@@ -8,10 +8,10 @@ class Stadium extends Model
 {
     protected $primaryKey = 'stadiumId';
 
-    public function team()
-    {
-    	return $this->belongsTo(Team::class);
-    }
+    // public function team()
+    // {
+    // 	return $this->belongsTo(Team::class);
+    // }
 
     public function games()
     {
