@@ -19,15 +19,18 @@ class CreateStadiumsTable extends Migration
             $table->increments('stadiumId');
             $table->string('stadiumName', 50);
             $table->integer('stadiumCapacity');
+            // fk
+            $table->integer('organizationId')->unsigned();
             // fk -- might need teamId?
             // $table->integer('teamId')->unsigned();
             $table->timestamps();
         });
 
-        // Schema::table('stadiums', function($table) {
-        //     //Setting up the relationships
-        //     //$table->foreign('teamId')->references('teamId')->on('teams');            
-        // });
+        Schema::table('stadiums', function($table) {
+            //Setting up the relationships
+            $table->foreign('organizationId')->references('organizationId')->on('organizations')->onDelete('cascade');                        
+            //$table->foreign('teamId')->references('teamId')->on('teams');            
+        });
 
     }
 

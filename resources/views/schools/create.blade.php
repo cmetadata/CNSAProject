@@ -20,6 +20,11 @@
             </div>
 
             <div class="form-group">
+                <label for="organizationId">Organization Id:</label>
+                <input type="text" class="form-control" id="organizationId" name="organizationId" required>
+            </div>
+
+            <div class="form-group">
                 <label for="schoolRanking">School Ranking:</label>
                 <input type="text" class="form-control" id="schoolRanking" name="schoolRanking" required>
             </div>

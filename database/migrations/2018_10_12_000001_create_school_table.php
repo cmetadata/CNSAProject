@@ -20,8 +20,16 @@ class CreateSchoolTable extends Migration
             $table->string('schoolName');
             $table->integer('schoolRanking');
             $table->integer('schoolPopulation');
+            // fk
+            $table->integer('organizationId')->unsigned();
             $table->timestamps();           
         });
+
+        Schema::table('schools', function($table) {
+            //Setting up the relationships
+            $table->foreign('organizationId')->references('organizationId')->on('organizations')->onDelete('cascade');
+        });
+
     }
 
     /**

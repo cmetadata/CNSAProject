@@ -49,6 +49,8 @@ class StadiumsController extends Controller
 
         $stadiums = new Stadium;
 
+        $stadiums->organizationId = $request->organizationId;
+
         $stadiums->stadiumName = $request->stadiumName;
 
         $stadiums->stadiumCapacity = $request->stadiumCapacity;

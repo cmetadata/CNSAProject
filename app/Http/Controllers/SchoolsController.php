@@ -51,6 +51,8 @@ class SchoolsController extends Controller
 
         $schools->schoolName = $request->schoolName;
 
+        $schools->organizationId = $request->organizationId;
+
         $schools->schoolRanking = $request->schoolRanking;
 
         $schools->schoolPopulation = $request->schoolPopulation;
