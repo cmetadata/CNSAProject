@@ -13,27 +13,18 @@ class CreateGameStatsTable extends Migration
      */
     public function up()
     {
-        Schema::dropIfExists('game_stats');
+        Schema::dropIfExists('games');
         Schema::enableForeignKeyConstraints();
-        Schema::create('game_stats', function (Blueprint $table) {
-            $table->increments('statId');
-            $table->integer('teamScore');
-            $table->integer('attendance');
-            // fk
-            $table->integer('teamId')->unsigned();
-            // fk
-            $table->integer('gameId')->unsigned();
+        Schema::create('games', function (Blueprint $table) {
+            $table->increments('gameId');
+            $table->integer('gameDate');
             // fk
             $table->integer('stadiumId')->unsigned();
             $table->timestamps();
         });
 
-        Schema::table('game_stats', function($table) {
+        Schema::table('games', function($table) {
             //Setting up the relationships
-            $table->foreign('teamId')->references('teamId')->on('teams');
-
-            $table->foreign('gameId')->references('gameId')->on('games');
-
             $table->foreign('stadiumId')->references('stadiumId')->on('stadiums');
         });
 
