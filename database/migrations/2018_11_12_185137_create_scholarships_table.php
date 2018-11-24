@@ -19,7 +19,7 @@ class CreateScholarshipsTable extends Migration
             $table->increments('scholarshipId');
             $table->string('scholarshipName', 200);
             // fk
-            $table->integer('playerId');
+            $table->integer('playerId')->unsigned();
             $table->decimal('scholarshipAmount');
             $table->timestamps();
 

@@ -19,7 +19,7 @@ class CreateInjuryLogTable extends Migration
             $table->increments('injuryId');
             $table->date('injuryDate');
             // fk
-            $table->integer('playerId');
+            $table->integer('playerId')->unsigned();
             $table->string('injury', 50);
             $table->timestamps();
 

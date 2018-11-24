@@ -19,9 +19,9 @@ class CreateRecruitingIncidentLogTable extends Migration
             $table->increments('incidentCode');
             $table->date('incidentDate');
             // fk
-            $table->integer('schoolId');
+            $table->integer('schoolId')->unsigned();
             // fk
-            $table->integer('playerId');
+            $table->integer('playerId')->unsigned();
             $table->string('incidentDescription');
             $table->timestamps();
         });

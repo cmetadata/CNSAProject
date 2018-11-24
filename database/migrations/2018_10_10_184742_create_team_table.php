@@ -19,7 +19,7 @@ class CreateTeamTable extends Migration
             $table->increments('teamId');
             $table->string('teamName', 50);
             // fk
-            $table->integer('schoolId');
+            $table->integer('schoolId')->unsigned();
             $table->timestamps();
 
         });
