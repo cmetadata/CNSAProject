@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Player;
 use App\Person;
 use App\Team;
+use App\Incident;
 use App\IncidentLog;
 use App\School;
 use Illuminate\Http\Request;
