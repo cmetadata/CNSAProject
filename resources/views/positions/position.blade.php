@@ -9,12 +9,12 @@
     <div class="object-div grey-back">
       <table width="100%">
         <tr>
-            <td width="16%">Person ID: {{$position->personId}}</td>
-            <td width="16%">Team ID: {{$position->teamId}}</td>
-            <td width="16%">Position ID: {{$position->positionId}}</td>
-            <td width="16%">Position Name: {{$position->positionDescription}}</td>
-            <td width="16%">Start Date: {{$position->positionStartDate}}</td>
-            <td width="16%">End Date: {{$position->positionEndDate}}</td>
+            <td width="10%">Person ID: {{$position->personId}}</td>
+            <td width="10%">Team ID: {{$position->teamId}}</td>
+            <td width="10%">Position ID: {{$position->positionId}}</td>
+            <td width="20%">Position Name: {{$position->positionDescription}}</td>
+            <td width="25%">Start Date: {{$position->positionStartDate}}</td>
+            <td width="25%">End Date: {{$position->positionEndDate}}</td>
         </tr>
       </table>
     </div>
