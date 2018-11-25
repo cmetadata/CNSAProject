@@ -9,8 +9,8 @@
     <div class="object-div grey-back">
       <table width="100%">
         <tr>
-          <td width="50%"><a href="/schools/{{$organization->organizationId}}">{{$organization->organizationName}}</a></td>
-          <td width="50%"><a href="/schools/{{$organization->organizationId}}">Organization Id: {{$organization->organizationId}}</a></td>
+          <td width="50%"><a href="/organizations/{{$organization->organizationId}}">{{$organization->organizationName}}</a></td>
+          <td width="50%"><a href="/organizations/{{$organization->organizationId}}">Organization Id: {{$organization->organizationId}}</a></td>
         </tr>
       </table>
     </div>
