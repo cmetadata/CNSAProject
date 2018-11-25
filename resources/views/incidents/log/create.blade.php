@@ -20,13 +20,13 @@
             </div>
 
             <div class="form-group">
-                <label for="schoolId">Incident Id:</label>
+                <label for="schoolId">School Id:</label>
                 <input type="text" class="form-control" id="schoolId" name="schoolId" required>
             </div>                        
             
             <div class="form-group">
-                <label for="schoolId">School Id:</label>
-                <input type="text" class="form-control" id="schoolId" name="schoolId" required>
+                <label for="incidentId">Incident Id:</label>
+                <input type="text" class="form-control" id="incidentId" name="incidentId" required>
             </div>     
 
              <div class="form-group">
