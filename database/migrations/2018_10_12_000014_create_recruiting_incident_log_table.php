@@ -21,8 +21,6 @@ class CreateRecruitingIncidentLogTable extends Migration
             // fk
             $table->integer('incidentId')->unsigned();
             // fk
-            $table->integer('schoolId')->unsigned();
-            // fk
             $table->integer('playerId')->unsigned();
             $table->timestamps();
         });
@@ -30,7 +28,6 @@ class CreateRecruitingIncidentLogTable extends Migration
         Schema::table('recruiting_incident_logs', function($table) {
             //Setting up the relationships
             $table->foreign('incidentId')->references('incidentId')->on('recruiting_incident')->onDelete('cascade');
-            $table->foreign('schoolId')->references('schoolId')->on('schools')->onDelete('cascade');
             $table->foreign('playerId')->references('playerId')->on('players')->onDelete('cascade');
         });
 

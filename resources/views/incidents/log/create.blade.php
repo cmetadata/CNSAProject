@@ -20,14 +20,14 @@
             </div>
             
             <div class="form-group">
-                <label for="incidentId">Incident Id:</label>
-                <input type="text" class="form-control" id="incidentId" name="incidentId" required>
-            </div>     
-
-             <div class="form-group">
                 <label for="incidentDate">Incident Date:</label>
                 <input type="date" class="form-control" id="incidentDate" name="incidentDate" required>
             </div>                             
+
+            <div class="form-group">
+                <label for="incidentId">Incident Id:</label>
+                <input type="text" class="form-control" id="incidentId" name="incidentId" required>
+            </div>     
 
             <button type="submit" class="btn btn-default">Submit</button>
 

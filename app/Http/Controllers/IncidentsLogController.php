@@ -39,10 +39,10 @@ class IncidentsLogController extends Controller
 
         $incidents->playerId = $request->playerId;
 
-        $incidents->incidentId = $request->incidentId;
-
         $incidents->incidentDate = $request->incidentDate;
- 
+
+        $incidents->incidentId = $request->incidentId;
+        
         $incidents->save();
 
         //Flashing a message to confirm that a team has been entered into the database
