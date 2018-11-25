@@ -348,7 +348,7 @@ Route::post('/injuries_log', 'InjuriesLogController@store');
 //Shows information about a particular scholarship
 Route::get('/scholarships', 'ScholarshipsController@show');
 
-Route::post('/scholarships', 'InjuriesContrScholarshipsControlleroller@store');
+Route::post('/scholarships', 'ScholarshipsController@store');
 
 //Coaches and Admin
 //Adds a new scholarship
