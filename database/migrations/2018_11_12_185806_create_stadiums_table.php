@@ -19,7 +19,10 @@ class CreateStadiumsTable extends Migration
             $table->increments('stadiumId');
             $table->string('stadiumName', 50);
             $table->integer('attendance');
+            $table->integer('schoolId');
             $table->timestamps();
+
+            $table->foreign('schoolId')->references('schoolId')->on('schools');
         });
     }
 
