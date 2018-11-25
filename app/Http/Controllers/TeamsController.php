@@ -75,6 +75,7 @@ class TeamsController extends Controller
         $team = Team::all()->where('teamId', $request->teamId);    
         $players = Player::all()->where('teamId', $request->teamId);
 
+
         $i = 0;
         foreach ($players as $player)
         {

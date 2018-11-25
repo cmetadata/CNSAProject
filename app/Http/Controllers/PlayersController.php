@@ -31,7 +31,7 @@ class PlayersController extends Controller
 
 
         //Gives the view of all the players
-        return view('players.index', compact('players', 'team', 'school', 'person'));
+        return view('players.index', compact('players', 'team', 'person', 'school'));
     }
 
     /**
