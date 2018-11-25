@@ -81,7 +81,7 @@ class TeamsController extends Controller
         foreach ($players as $player)
         {
             $school[$i] = School::find($team->first()->schoolId);
-            $person[$i] = Person::find($players[$i]->personId);
+            $person[$i] = Person::find($player[$i]->personId);
             $i += 1;
         }
 
