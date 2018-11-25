@@ -11,6 +11,7 @@
     <br/></br/>
     Rating: {{$player->playerRating}}<br/>
     Joined in: {{$player->yearEntered}}<br/>
+    High School: {{$player->highSchool}}<br/>
     <br/>
     Goals: {{$player->goals}}<br/>
     Saves: {{$player->saves}}<br/>
