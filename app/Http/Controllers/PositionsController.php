@@ -117,9 +117,9 @@ class PositionsController extends Controller
 
         //Retrieves player information
         $position = Position::find($positionId);
-d
+
         //Deletes the player record
-        $player->delete();
+        $position->delete();
 
         //Flashes a message to let the user know that they have deleted a player
         seesion()->flash('message', 'Position has been deleted');
