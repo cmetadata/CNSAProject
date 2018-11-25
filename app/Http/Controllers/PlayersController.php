@@ -7,6 +7,10 @@ use App\Person;
 use App\Team;
 use App\Incident;
 use App\IncidentLog;
+use App\Scholarship;
+use App\ScholarshipLog;
+use App\Injury;
+use App\InjuryLog;
 use App\School;
 use Illuminate\Http\Request;
 
