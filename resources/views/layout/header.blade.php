@@ -20,6 +20,8 @@
       <div class="container-fluid left">
         <ul class="nav navbar-nav">
           <!--<li class="active">--><li><a href="/">Home</a></li>
+          <li><a href="/persons">Directory</a></li>
+          <li><a href="/positions">Positions</a></li>
           <li><a href="/teams">Teams</a></li>
           <li><a href="/players">Players</a></li>
           <li><a href="/coaches">Coaches</a></li>
