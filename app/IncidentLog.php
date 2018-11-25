@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Incident extends Model
+class IncidentLog extends Model
 {
 	protected $table = 'recruiting_incident_logs';
 	protected $primaryKey = 'logId';

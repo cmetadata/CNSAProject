@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Injury extends Model
+class InjuryLog extends Model
 {
     //Setting the primary key to be named something other than id
     //injury_logs
