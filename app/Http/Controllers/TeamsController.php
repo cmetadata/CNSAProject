@@ -80,11 +80,12 @@ class TeamsController extends Controller
         foreach ($players as $player)
         {
             $school[$i] = School::find($team->first()->schoolId);
+            $person[$i] = Person::find($players[$loop->index]->personId)
             $i += 1;
         }
 
 
-        return view('teams.show', compact('team', 'players', 'school'));
+        return view('teams.show', compact('team', 'players', 'school', 'person'));
     }
 
     /**
