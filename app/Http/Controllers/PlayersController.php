@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Player;
 use App\Person;
 use App\Team;
+use App\IncidentLog;
 use App\School;
 use Illuminate\Http\Request;
 
@@ -115,12 +116,13 @@ class PlayersController extends Controller
     {
         
         $player = Player::find($request->playerId);
+        $incidents = IncidentLog::find($request->playerId);
         $person = Person::find($player->personId);
         $team = Team::find($player->teamId);
         $school = School::find($team->schoolId);
         
         //dd($player, $team, $school);
-        return view('players.show', compact(['player', 'team', 'school', 'person']));
+        return view('players.show', compact(['player', 'team', 'school', 'person', 'incidents']));
     }
 
 

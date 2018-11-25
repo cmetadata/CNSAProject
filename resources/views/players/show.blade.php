@@ -21,4 +21,12 @@
     Yellow Cards: {{$player->yellowCards}}<br/>
   </div>
 
+    <!--Include a list of all teams belonging to the school-->
+    Incidents for this player:<br/>
+    @foreach ($incidents as $incident)
+      @include ('incidents.incident')
+      <br/>
+    @endforeach
+
+
 @endsection
