@@ -334,3 +334,61 @@ Route::get('/organizations/{organizationId}/edit', 'OrganizationsController@edit
 //Deletes the organizations information
 Route::get('/organizations/{organizationId}/delete', 'OrganizationsController@delete');
 
+
+//--------------------------------------------------------
+//--------------------------------------------------------
+//Persons
+//--------------------------------------------------------
+//--------------------------------------------------------
+//Persons
+//Displays a list of Persons
+Route::get('/persons', 'PersonsController@index');
+
+//Persons
+//Adds a new Persons
+Route::get('/persons/create', 'PersonsController@create');
+
+Route::post('/persons', 'PersonsController@store');
+
+//Public, Coaches and Admin
+//Displays a particular Persons information
+Route::get('/persons/{personId}', 'PersonsController@show');
+
+//Public, Coaches and Admin
+//Allows editing a Persons information 
+Route::get('/persons/{personId}/edit', 'PersonsController@edit');
+
+//Admin
+//Deletes the Persons information
+Route::get('/persons/{personId}/delete', 'PersonsController@delete');
+
+
+//--------------------------------------------------------
+//--------------------------------------------------------
+//Positions
+//--------------------------------------------------------
+//--------------------------------------------------------
+//Positions
+//Displays a list of Positions
+Route::get('/positions', 'PositionsController@index');
+
+//Positions
+//Adds a new Positions
+Route::get('/positions/create', 'PositionsController@create');
+
+Route::post('/positions', 'PositionsController@store');
+
+//Public, Coaches and Admin
+//Displays a particular Positions information
+Route::get('/positions/{positionId}', 'PositionsController@show');
+
+//Public, Coaches and Admin
+//Allows editing a Positions information 
+Route::get('/positions/{positionId}/edit', 'PositionsController@edit');
+
+//Admin
+//Deletes the Positions information
+Route::get('/positions/{positionId}/delete', 'PositionsController@delete');
+
+
+
