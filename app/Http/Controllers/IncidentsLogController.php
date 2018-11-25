@@ -33,7 +33,6 @@ class IncidentsLogController extends Controller
             'playerId' => 'required',
             'incidentId' => 'required',
             'incidentDate' => 'required',
-            'schoolId' => 'required',
         ]);
 
         $incidents = new IncidentLog;
@@ -43,8 +42,6 @@ class IncidentsLogController extends Controller
         $incidents->incidentId = $request->incidentId;
 
         $incidents->incidentDate = $request->incidentDate;
-
-        $injuries->schoolId = $request->schoolId;
  
         $incidents->save();
 

@@ -18,11 +18,6 @@
                 <label for="playerId">Player Id:</label>
                 <input type="text" class="form-control" id="playerId" name="playerId" required>
             </div>
-
-            <div class="form-group">
-                <label for="schoolId">School Id:</label>
-                <input type="text" class="form-control" id="schoolId" name="schoolId" required>
-            </div>                        
             
             <div class="form-group">
                 <label for="incidentId">Incident Id:</label>
