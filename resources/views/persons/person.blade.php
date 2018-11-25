@@ -9,9 +9,11 @@
     <div class="object-div grey-back">
       <table width="100%">
         <tr>
-          <td width="33%">Person ID: {{$person->personId}}</td>
-          <td width="33%">{{$person->personFirstName}}</td>
-          <td width="33%">{{$person->personLastName}}</td>
+        <a href="/persons/{{$person->personId}}">
+            <td width="33%">Person ID: {{$person->personId}}</td>
+            <td width="33%">{{$person->personFirstName}}</td>
+            <td width="33%">{{$person->personLastName}}</td>
+        </a>
         </tr>
       </table>
     </div>
