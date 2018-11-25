@@ -30,7 +30,7 @@
 
 
     <!--Include a list of all teams belonging to the school-->
-    Scholarships for this player:<br/>
+    Injuries for this player:<br/>
     @foreach ($injuries as $injury)
       @include ('injuries.injury')
       <br/>
@@ -38,7 +38,7 @@
 
 
     <!--Include a list of all teams belonging to the school-->
-    Injuries for this player:<br/>
+    Scholarships for this player:<br/>
     @foreach ($scholarships as $scholarship)
       @include ('scholarships.scholarship')
       <br/>
