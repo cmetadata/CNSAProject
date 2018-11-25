@@ -116,7 +116,7 @@ class PlayersController extends Controller
     {
         
         $player = Player::find($request->playerId);
-        $incidents = IncidentLog::find($request->playerId);
+        $incidents = IncidentLog::all()->where('playerId', $request->playerId);
         $person = Person::find($player->personId);
         $team = Team::find($player->teamId);
         $school = School::find($team->schoolId);
