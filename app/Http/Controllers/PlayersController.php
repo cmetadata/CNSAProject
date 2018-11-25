@@ -76,6 +76,8 @@ class PlayersController extends Controller
         
         $player->yearEntered = $request->yearEntered;
 
+        $player->highSchool = $request->highSchool;
+
         $player->playerRating = $request->playerRating;
 
         $player->position = $request->position;
