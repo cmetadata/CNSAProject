@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Organization;
 use App\School;
+use App\Stadium;
 use Illuminate\Http\Request;
 
 class OrganizationsController extends Controller
