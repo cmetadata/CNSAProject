@@ -105,22 +105,6 @@ class PersonsController extends Controller
      */
     public function destroy(Person $personId)
     {
-        //Validates that the id entered is an actual Player object
-        $this->validate(request(), [
-            'personId' => $personId
-        ]); 
-
-        //Retrieves player information
-        $person = Person::find($personId);
-d
-        //Deletes the player record
-        $person->delete();
-
-        //Flashes a message to let the user know that they have deleted a player
-        seesion()->flash('message', 'Person has been deleted');
-
-        //Redirects the user back to the previous page
-        return redirect()-back();
 
     }
 }

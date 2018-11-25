@@ -110,22 +110,6 @@ class PositionsController extends Controller
      */
     public function destroy(Position $positionId)
     {
-        //Validates that the id entered is an actual Player object
-        $this->validate(request(), [
-            'positionId' => $positionId
-        ]); 
-
-        //Retrieves player information
-        $position = Position::find($positionId);
-
-        //Deletes the player record
-        $position->delete();
-
-        //Flashes a message to let the user know that they have deleted a player
-        seesion()->flash('message', 'Position has been deleted');
-
-        //Redirects the user back to the previous page
-        return redirect()-back();
 
     }
 }
