@@ -13,11 +13,12 @@
 
 	    		<td width="25%"><a href="/players/{{$player->playerId}}">
 				
-				@isset($team[$loop->index])
-						{{ $team[$loop->index]->teamName }}
+				@isset($person[$loop->index])
+						{{ $person[$loop->index]->personFirstName }}
+						{{ $person[$loop->index]->personLastName }}
 				@endisset
 
-				@empty($team[$loop->index])
+				@empty($person[$loop->index])
 						{{ $person->first()->personFirstName }}
 						{{ $person->first()->personLastName }}
 				@endempty
