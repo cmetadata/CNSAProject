@@ -114,7 +114,7 @@ class PersonsController extends Controller
         $person = Person::find($personId);
 d
         //Deletes the player record
-        $personId->delete();
+        $person->delete();
 
         //Flashes a message to let the user know that they have deleted a player
         seesion()->flash('message', 'Person has been deleted');
