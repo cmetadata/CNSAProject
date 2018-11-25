@@ -71,9 +71,12 @@ class OrganizationsController extends Controller
         // must find teams by schoolId        
         // needs to return a collection or it wont work
         $schools = School::all()->where('organizationId', $request->organizationId);
+
+        $stadiums = Stadium::all()->where('organizationId', $request->organizationId);
+
         
         //dd($school);
-        return view('organizations.show', compact(['organization', 'schools']));
+        return view('organizations.show', compact(['organization', 'schools', 'stadiums']));
     }
 
     /**

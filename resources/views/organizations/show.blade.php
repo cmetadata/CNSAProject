@@ -16,6 +16,13 @@
       <br/>
     @endforeach
 
+    Stadiums for this organization:<br/>
+    @foreach ($stadiums as $stadium)
+      @include ('stadiums.stadium')
+      <br/>
+    @endforeach
+    
+
   </div>
 
 @endsection
