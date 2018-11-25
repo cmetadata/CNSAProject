@@ -8,8 +8,8 @@ class Injury extends Model
 {
     //Setting the primary key to be named something other than id
     //injury_logs
-    protected $table = 'injuries';
-    protected $primaryKey = 'injuryId';
+    protected $table = 'injury_logs';
+    protected $primaryKey = 'logId';
 
     public function player()
     {

@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateRecruitingIncidentLogTable extends Migration
+class CreateScholarshipsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,26 +13,24 @@ class CreateRecruitingIncidentLogTable extends Migration
      */
     public function up()
     {
-        Schema::dropIfExists('recruiting_incident_logs');
+        Schema::dropIfExists('scholarships_log');
         Schema::enableForeignKeyConstraints();
-        Schema::create('recruiting_incident_logs', function (Blueprint $table) {
-            $table->increments('incidentCode');
-            $table->date('incidentDate');
-            $table->string('incidentDescription');
+        Schema::create('scholarships_log', function (Blueprint $table) {
+            $table->increments('logId');
+            $table->date('scholarshipDate');
             // fk
-            $table->integer('schoolId')->unsigned();
+            $table->integer('scholarshipId')->unsigned();
             // fk
             $table->integer('playerId')->unsigned();            
             $table->timestamps();
+
         });
 
-        Schema::table('recruiting_incident_logs', function($table) {
+        Schema::table('scholarships_log', function($table) {
             //Setting up the relationships
-            $table->foreign('schoolId')->references('schoolId')->on('schools')->onDelete('cascade');
+            $table->foreign('scholarshipId')->references('scholarshipId')->on('scholarships')->onDelete('cascade');
             $table->foreign('playerId')->references('playerId')->on('players')->onDelete('cascade');
         });
-
-
     }
 
     /**
@@ -42,6 +40,6 @@ class CreateRecruitingIncidentLogTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('recruiting_incident_logs');
+        Schema::dropIfExists('scholarships_log');
     }
 }

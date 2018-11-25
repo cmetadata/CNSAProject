@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\c;
+use App\Injury;
+use App\InjuryLog;
+use App\Player;
 use Illuminate\Http\Request;
 
 class InjuriesController extends Controller
@@ -14,7 +16,10 @@ class InjuriesController extends Controller
      */
     public function index()
     {
-        return view('injuries/index');
+        //Holds the value of all injuries to be displayed
+        $injuries = Injury::all();
+        
+        return view('injuries.index', compact('injuries'));
     }
 
     /**
@@ -25,6 +30,7 @@ class InjuriesController extends Controller
     public function create()
     {
         //
+        return view('injuries.create');
     }
 
     /**
@@ -36,26 +42,57 @@ class InjuriesController extends Controller
     public function store(Request $request)
     {
         //
+        //Validating the data
+        $this->validate(request(), [
+            'injury' => 'required|max:50',
+        ]);
+
+        $injuries = new Injury;
+
+        $injuries->injury = $request->injury;
+ 
+        $injuries->save();
+
+        //Flashing a message to confirm that a team has been entered into the database
+        session()->flash('message', 'injuries has been inserted');                
+
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\c  $c
+     * @param  \App\Injury  $injury
      * @return \Illuminate\Http\Response
      */
-    public function show(c $c)
+    public function show(Injury $injury)
     {
-        //
+
+        // WILL USE INJURY LOG
+
+
+        
+        // use playerscontroller show()
+        // to send all() where of playerId on injury table
+        // &
+        // to send all() where of playerId on incident table
+        
+        // $injury = Injury::find($request->injuryId);
+
+        // // must find teams by schoolId        
+        // // needs to return a collection or it wont work
+        // $players = Player::all()->where('playerId', $request->playerId);
+        
+        // //dd($school);
+        // return view('players.show', compact(['injury', 'players', 'stadiums']));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\c  $c
+     * @param  \App\Injury  $Injury
      * @return \Illuminate\Http\Response
      */
-    public function edit(c $c)
+    public function edit(Injury $injury)
     {
         //
     }
@@ -67,7 +104,7 @@ class InjuriesController extends Controller
      * @param  \App\c  $c
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, c $c)
+    public function update(Request $request, Injury $injury)
     {
         //
     }
@@ -78,7 +115,7 @@ class InjuriesController extends Controller
      * @param  \App\c  $c
      * @return \Illuminate\Http\Response
      */
-    public function destroy(c $c)
+    public function destroy(Injury $injury)
     {
         //
     }

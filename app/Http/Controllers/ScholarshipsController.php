@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Scholarship;
+use App\ScholarshipLog;
 use Illuminate\Http\Request;
 
 class ScholarshipsController extends Controller
@@ -15,6 +16,11 @@ class ScholarshipsController extends Controller
     public function index()
     {
         //
+        //Holds the value of all incidents to be displayed
+        $scholarships = Scholarship::all();
+
+
+        return view('scholarships.index', compact('scholarships'));        
     }
 
     /**
@@ -25,6 +31,7 @@ class ScholarshipsController extends Controller
     public function create()
     {
         //
+        return view('scholarships.create');
     }
 
     /**
@@ -35,7 +42,21 @@ class ScholarshipsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //Validating the data
+        $this->validate(request(), [
+            'scholarshipName' => 'required|max:50',
+        ]);
+
+        $scholarships = new Scholarship;
+
+        $scholarships->scholarshipName = $request->scholarshipName;
+
+        $scholarships->scholarshipAmount = $request->scholarshipAmount;
+ 
+        $scholarships->save();
+
+        //Flashing a message to confirm that a team has been entered into the database
+        session()->flash('message', 'scholarships has been inserted');                        
     }
 
     /**
@@ -44,9 +65,10 @@ class ScholarshipsController extends Controller
      * @param  \App\c  $c
      * @return \Illuminate\Http\Response
      */
-    public function show(c $c)
+    public function show(Scholarship $scholarship)
     {
         //
+        
     }
 
     /**
@@ -55,7 +77,7 @@ class ScholarshipsController extends Controller
      * @param  \App\c  $c
      * @return \Illuminate\Http\Response
      */
-    public function edit(c $c)
+    public function edit(Scholarship $scholarship)
     {
         //
     }
@@ -67,7 +89,7 @@ class ScholarshipsController extends Controller
      * @param  \App\c  $c
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, c $c)
+    public function update(Request $request, Scholarship $scholarship)
     {
         //
     }
@@ -78,7 +100,7 @@ class ScholarshipsController extends Controller
      * @param  \App\c  $c
      * @return \Illuminate\Http\Response
      */
-    public function destroy(c $c)
+    public function destroy(Scholarship $scholarship)
     {
         //
     }

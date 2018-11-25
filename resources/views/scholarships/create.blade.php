@@ -1,0 +1,38 @@
+@extends ('layout.header')
+
+@section ('content')
+
+    <form method="POST" action="/scholarships">
+
+        {{ csrf_field() }}
+
+        <div class="parent-div"> 
+        
+        <div class="login-form">
+
+        <h1 class="title2 grey-back">Register Scholarship</h1>
+        
+        <div class="grey-back buffer">
+
+            <div class="form-group">
+                <label for="scholarshipName">Scholarship Name:</label>
+                <input type="text" class="form-control" id="scholarshipName" name="scholarshipName" required>
+            </div>
+
+            <div class="form-group">
+                <label for="scholarshipAmount">Scholarship Amount:</label>
+                <input type="text" class="form-control" id="scholarshipAmount" name="scholarshipAmount" required>
+            </div>                        
+
+            <button type="submit" class="btn btn-default">Submit</button>
+
+        </div>
+
+        </div>
+
+        </div>
+
+    </form> 
+
+
+@endsection

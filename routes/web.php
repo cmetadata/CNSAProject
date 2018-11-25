@@ -259,6 +259,43 @@ Route::get('/stadiums/{stadiumId}/edit', 'StadiumsController@edit');
 //Deletes the stadium information
 Route::get('/stadiums/{stadiumId}/delete', 'StadiumsController@delete');
 
+
+//--------------------------------------------------------
+//--------------------------------------------------------
+//INCIDENTS
+//--------------------------------------------------------
+//--------------------------------------------------------
+//Shows a list of injuries sustained by the students
+Route::get('/incidents', 'IncidentsController@index');
+
+//Allows adding a injury 
+Route::get('/incidents/create', 'IncidentsController@create');
+
+//Allows editing of an injury
+Route::get('/incidents/{incidentId}/edit', 'IncidentsController@edit');
+
+//Displays a particular stadiums information
+Route::get('/incidents/{incidentId}', 'IncidentsController@show');
+
+//Admin
+//Deletes the injury information
+Route::get('/incidents/{incidentId}/delete', 'IncidentsController@delete');
+
+
+
+//--------------------------------------------------------
+//--------------------------------------------------------
+//INCIDENTS_LOG
+//--------------------------------------------------------
+//--------------------------------------------------------
+//Adds a new scholarship
+Route::get('/incidents_log/create', 'IncidentsLogController@create');
+
+//Deletes a scholarship item
+Route::post('/incidents_log', 'IncidentsLogController@store');
+
+
+
 //--------------------------------------------------------
 //--------------------------------------------------------
 //INJURIES
@@ -284,6 +321,20 @@ Route::get('/injuries/{injuryId}', 'InjuriesController@show');
 //Deletes the injury information
 Route::get('/injuries/{injuryId}/delete', 'InjuriesController@delete');
 
+
+
+//--------------------------------------------------------
+//--------------------------------------------------------
+//INJURIES_LOG
+//--------------------------------------------------------
+//--------------------------------------------------------
+//Adds a new scholarship
+Route::get('/injuries_log/create', 'InjuriesLogController@create');
+
+//Deletes a scholarship item
+Route::post('/injuries_log', 'InjuriesLogController@store');
+
+
 //--------------------------------------------------------
 //--------------------------------------------------------
 //SCHOLARSHIPS
@@ -302,9 +353,33 @@ Route::get('/schoalarships/create', 'ScholarshipsController@create');
 Route::get('/scholarships/delete', 'ScholarshipsController@delete');
 
 
+
+
+
+//////////////////////////////////////////////////////////////////
+
+
+//////////////////// AUTH ROUTES /////////////////////////////////
+
+
+
+//////////////////////////////////////////////////////////////////
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+
+//--------------------------------------------------------
+//--------------------------------------------------------
+//SCHOLARSHIPS_LOG
+//--------------------------------------------------------
+//--------------------------------------------------------
+//Adds a new scholarship
+Route::get('/scholarships_log/create', 'ScholarshipsLogController@create');
+
+//Deletes a scholarship item
+Route::post('/scholarships_log', 'ScholarshipsLogController@store');
+
 
 
 //--------------------------------------------------------
@@ -389,6 +464,9 @@ Route::get('/positions/{positionId}/edit', 'PositionsController@edit');
 //Admin
 //Deletes the Positions information
 Route::get('/positions/{positionId}/delete', 'PositionsController@delete');
+
+
+
 
 
 

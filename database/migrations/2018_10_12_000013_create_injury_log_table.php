@@ -16,17 +16,18 @@ class CreateInjuryLogTable extends Migration
         Schema::dropIfExists('injury_logs');
         Schema::enableForeignKeyConstraints();
         Schema::create('injury_logs', function (Blueprint $table) {
-            $table->increments('injuryId');
+            $table->increments('logId');
             $table->date('injuryDate');
-            $table->string('injury', 50);
             // fk
-            $table->integer('playerId')->unsigned();            
+            $table->integer('injuryId')->unsigned();
+            // fk
+            $table->integer('playerId')->unsigned();
             $table->timestamps();
-
         });
 
         Schema::table('injury_logs', function($table) {
             //Setting up the relationships
+            $table->foreign('injuryId')->references('injuryId')->on('injuries')->onDelete('cascade');
             $table->foreign('playerId')->references('playerId')->on('players')->onDelete('cascade');
         });
     }
