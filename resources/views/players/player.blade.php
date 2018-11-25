@@ -11,7 +11,7 @@
 	    	<tr>
 				<td width="25%"><a href="/players/{{$player->playerId}}">Player ID: {{$player->playerId}}</a></td>
 
-	    		<td width="25%"><a href="/players/{{$player->playerId}}">{{$person[$loop->index]->firstName}} {{$person[$loop->index]->lastName}}</a></td>
+	    		<td width="25%"><a href="/players/{{$player->playerId}}">{{$person[$loop->index]->personFirstName}} {{$person[$loop->index]->personLastName}}</a></td>
 	    		<td width="25%"><a href="/teams/@isset($team[$loop->index])
 						{{ $team[$loop->index]->teamId }}
 					@endisset

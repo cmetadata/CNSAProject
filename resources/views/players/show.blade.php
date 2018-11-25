@@ -2,7 +2,7 @@
 
 @section ('content')
 
-  <h1 class="content-header grey-back">{{$person->firstName}} {{$person->lastName}}</h1>
+  <h1 class="content-header grey-back">{{$person->personFirstName}} {{$person->personLastName}}</h1>
 
   <div class=info-page>
   	{{$player->position}}<br/>
