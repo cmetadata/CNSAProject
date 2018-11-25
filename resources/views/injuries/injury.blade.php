@@ -9,9 +9,8 @@
     <div class="object-div grey-back">
       <table width="100%">
         <tr>
-            <td width="33%"><a href="/incidents/{{$injury->injuryId}}">Injury ID: {{$injury->injuryId}}</a></td>
-          <td width="33%"><a href="/incidents/{{$injury->injuryId}}">{{$injury->injury}}</a></td>
-          <td width="33%"><a href="/incidents/{{$injury->injuryId}}">{{$injury->injuryDate}}</a></td>
+          <td width="50%"><a href="/incidents/{{$injury->injuryId}}">{{$injuryNames[$loop->index]->injury}}</a></td>
+          <td width="50%"><a href="/incidents/{{$injury->injuryId}}">{{$injuryNames[$loop->index]->injuryDate}}</a></td>
         </tr>
       </table>
     </div>

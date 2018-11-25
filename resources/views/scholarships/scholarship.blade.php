@@ -9,9 +9,8 @@
     <div class="object-div grey-back">
       <table width="100%">
         <tr>
-            <td width="33%"><a href="/incidents/{{$scholarship->scholarshipId}}">Scholarship ID: {{$scholarship->scholarshipId}}</a></td>
-          <td width="33%"><a href="/incidents/{{$scholarship->scholarshipId}}">{{$scholarship->scholarshipName}}</a></td>
-          <td width="33%"><a href="/incidents/{{$scholarship->scholarshipId}}">Scholarship Amount: ${{$scholarship->scholarshipAmount}}</a></td>
+          <td width="50%"><a href="/incidents/{{$scholarship->scholarshipId}}">{{$scholarshipNames[$loop->index]->scholarshipName}}</a></td>
+          <td width="50%"><a href="/incidents/{{$scholarship->scholarshipId}}">Scholarship Amount: ${{$scholarshipNames[$loop->index]->scholarshipAmount}}</a></td>
         </tr>
       </table>
     </div>
