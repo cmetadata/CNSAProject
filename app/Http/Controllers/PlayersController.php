@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Player;
+use App\Person;
 use App\Team;
 use App\School;
 use Illuminate\Http\Request;
@@ -23,12 +24,14 @@ class PlayersController extends Controller
         foreach ($players as $player)
         {
             $team[$i] = Team::find($player->teamId);
+            $person[$i] = Person::find('personId', $player->personId);
             $school[$i] = School::find($team[$i]->schoolId);
             $i += 1;
         }
 
+
         //Gives the view of all the players
-        return view('players.index', compact('players', 'team', 'school'));
+        return view('players.index', compact('players', 'team', 'school', 'person'));
     }
 
     /**
@@ -110,11 +113,12 @@ class PlayersController extends Controller
     {
         
         $player = Player::find($request->playerId);
+        $person = Person::find($player->personId);
         $team = Team::find($player->teamId);
         $school = School::find($team->schoolId);
         
         //dd($player, $team, $school);
-        return view('players.show', compact(['player', 'team', 'school']));
+        return view('players.show', compact(['player', 'team', 'school', 'person']));
     }
 
 
