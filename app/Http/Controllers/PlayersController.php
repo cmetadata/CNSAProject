@@ -24,7 +24,7 @@ class PlayersController extends Controller
         foreach ($players as $player)
         {
             $team[$i] = Team::find($player->teamId);
-            $person[$i] = Person::find('personId', $player->personId);
+            $person[$i] = Person::find($player->personId);
             $school[$i] = School::find($team[$i]->schoolId);
             $i += 1;
         }
