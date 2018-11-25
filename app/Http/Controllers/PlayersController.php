@@ -52,8 +52,9 @@ class PlayersController extends Controller
     {
         //Validating the data
         $this->validate(request(), [
-            'firstName'   => 'required|max:35',
-            'lastName'    => 'required|max:30',
+            'personId' => 'required',
+            'teamId' => 'required',
+            'playerRating' => 'required',
             'yearEntered' => 'required',
             'position'    => 'required'
         ]);
