@@ -62,9 +62,17 @@ class OrganizationsController extends Controller
      * @param  \App\c  $c
      * @return \Illuminate\Http\Response
      */
-    public function show(c $c)
+    public function show(Request $request)
     {
         //
+        $organization = Organization::find($request->organizationId);
+
+        // must find teams by schoolId        
+        // needs to return a collection or it wont work
+        $schools = School::all()->where('organizationId', $request->organizationId);
+        
+        //dd($school);
+        return view('organizations.show', compact(['organization', 'schools']));
     }
 
     /**
