@@ -8,7 +8,7 @@
             <a class="btn btn-default new-button grey-back" href="/positions/create">Add New Position</a>
         </div>
     </div>
-     <h1 class="content-header grey-back">Directory</h1>
+     <h1 class="content-header grey-back">Positions</h1>
 </div>
 <hr/>
 
