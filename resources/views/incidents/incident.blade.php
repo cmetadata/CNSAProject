@@ -10,8 +10,8 @@
       <table width="100%">
         <tr>
             <td width="33%"><a href="/incidents/{{$incident->incidentId}}">Incident ID: {{$incident->incidentId}}</a></td>
-          <td width="33%"><a href="/incidents/{{$incident->incidentId}}">{{$incident->incidentDescription}}</a></td>
-          <td width="33%"><a href="/incidents/{{$incident->incidentId}}">{{$incident->incidentDate}}</a></td>
+            <td width="33%"><a href="/incidents/{{$incident->incidentId}}">{{$incidentNames[$loop->index]->incidentDescription}}</a></td>
+            <td width="33%"><a href="/incidents/{{$incident->incidentId}}">{{$incident->incidentDate}}</a></td>
         </tr>
       </table>
     </div>

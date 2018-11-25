@@ -120,9 +120,17 @@ class PlayersController extends Controller
         $person = Person::find($player->personId);
         $team = Team::find($player->teamId);
         $school = School::find($team->schoolId);
+
+       
+        $i = 0;
+        foreach ($incidents as $incident)
+        {
+            $incidentNames[$i] = Incident::find($incident->incidentId);
+            $i += 1;
+        }
         
         //dd($player, $team, $school);
-        return view('players.show', compact(['player', 'team', 'school', 'person', 'incidents']));
+        return view('players.show', compact(['player', 'team', 'school', 'person', 'incidents', 'incidentNames']));
     }
 
 
