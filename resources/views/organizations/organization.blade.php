@@ -10,7 +10,7 @@
       <table width="100%">
         <tr>
           <td width="50%"><a href="/organizations/{{$organization->organizationId}}">{{$organization->organizationName}}</a></td>
-          <td width="50%"><a href="/organizations/{{$organization->organizationId}}">Organization Id: {{$organization->organizationId}}</a></td>
+          <td width="50%"><a href="/organizations/{{$organization->organizationId}}">Organization ID: {{$organization->organizationId}}</a></td>
         </tr>
       </table>
     </div>

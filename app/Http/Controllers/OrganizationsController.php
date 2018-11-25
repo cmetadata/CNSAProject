@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Organization;
+use App\School;
 use Illuminate\Http\Request;
 
 class OrganizationsController extends Controller
