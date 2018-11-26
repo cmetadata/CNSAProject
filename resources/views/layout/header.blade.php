@@ -16,50 +16,54 @@
     <h1 class="title">Canadian National Soccer Association</h1>
     <h1 class="title2">Canadian Interuniversity Sport</h1>
 
-    <div class="navbar">
+    <nav class="navbar navbar-inverse navbar-static-top">
+      <div class="container-fluid left">
+        <ul class="nav navbar-nav">
 
-      <a href="/">Home</a>
-      <a href="/organizations">Organizations</a>
-      <a href="/persons">Directory</a>
-      <a href="/schools"> Schools </a>
-      <a href="/stadiums"> Stadiums </a>
-      <a href="/teams"> Teams </a>
+      <li><a href="/">Home</a></li>
+      <li><a href="/organizations">Organizations</a></li>
+      <li><a href="/persons">Directory</a></li>
+      <li><a href="/schools"> Schools </a></li>
+      <li><a href="/stadiums"> Stadiums </a></li>
+      <li><a href="/teams"> Teams </a></li>
 
-      <div class="dropdown">
-        <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Players
-        <span class="caret"></span></button>
+      <li class="nav-item dropdown">
+         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+          Players
+          <span class="caret"></span></a>
         <ul class="dropdown-menu">
-          <li><a href="/players">Players List</a></li>
-          <li><a href="/injuries_log/create"> Report Injury </a></li>
-          <li><a href="/scholarships_log/create"> Report Scholarship</a></li>
-          <li><a href="/incidents_log/create"> Report Incident</a></li>
+          <li><a class="dropdown-item" href="/players">Players List</a></li>
+          <li><a class="dropdown-item" href="/injuries_log/create"> Report Injury </a></li>
+          <li><a class="dropdown-item" href="/scholarships_log/create"> Report Scholarship</a></li>
+          <li><a class="dropdown-item" href="/incidents_log/create"> Report Incident</a></li>
         </ul>
-      </div>       
+      </li>       
 
 
-      <div class="dropdown">
-        <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Admin Utilities
-        <span class="caret"></span></button>
+      <li class="nav-item dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+          Admin Utilities
+          <span class="caret"></span></a>
         <ul class="dropdown-menu">
-            <li><a href="/injuries/create">New Injury</a></li>
-            <li><a href="/scholarships/create">New Scholarship</a></li>
-            <li><a href="/incidents/create">New Incident</a></li>
+        <li><a class="dropdown-item" href="/injuries/create">New Injury</a></li>
+        <li><a class="dropdown-item" href="/scholarships/create">New Scholarship</a></li>
+        <li><a class="dropdown-item" href="/incidents/create">New Incident</a></li>
         </ul>
-      </div>       
+      </li>       
 
-      <a href="/positions">Positions</a>
-      <a href="/coaches">Coaches</a>
-      <a href="/games">Games</a>
-      <a href="/contact">Contact Us</a>
+      <li><a href="/positions">Positions</a></li>
+      <li><a href="/coaches">Coaches</a></li>
+      <li><a href="/games">Games</a></li>
+    </ul>
+  </div>
         
       <div class="container-fluid right">
         <ul class="nav navbar-nav">
           <li><a href="/login">Login</a></li>
         </ul>
       </div>
+  </nav>
 
-
-    </div> 
 
     <div class="content">
 
