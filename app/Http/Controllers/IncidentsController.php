@@ -18,9 +18,17 @@ class IncidentsController extends Controller
     {
         //Holds the value of all incidents to be displayed
         $incidents = Incident::all();
+        
+
+        $i = 0;
+        foreach ($incidents as $incident)
+        {
+            $incidentNames[$i] = Incident::find($incident->incidentId);
+            $i += 1;
+        }
 
 
-        return view('incidents.index', compact('incidents'));
+        return view('incidents.index', compact('incidents', 'incidentNames'));
     }
 
     /**
@@ -67,6 +75,7 @@ class IncidentsController extends Controller
     public function show(Incident $incident)
     {
         //
+
     }
 
     /**
