@@ -29,7 +29,6 @@
           <li><a href="/stadiums">Stadiums</a></li>
           <li><a href="/teams">Teams</a></li>
 
-          <div class="dropdown">
             <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Players
             <ul class="dropdown-menu">
               <li><a href="/players">Players List</a></li>
@@ -37,16 +36,13 @@
               <li><a href="/scholarships_log/create">Report Scholarship</a></li>
               <li><a href="/incidents_log/create">Report Player</a></li>
             </ul>   
-          </div>        
 
-          <div class="dropdown">
             <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Admin Utilities
             <ul class="dropdown-menu">
               <li><a href="/injuries/create">New Injury</a></li>
               <li><a href="/scholarships/create">New Scholarship</a></li>
               <li><a href="/incidents/create">New Incident</a></li>
             </ul>   
-          </div>                  
 
           <li><a href="/positions">Positions</a></li>
           <li><a href="/coaches">Coaches</a></li>

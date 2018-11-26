@@ -20,7 +20,15 @@ class ScholarshipsController extends Controller
         $scholarships = Scholarship::all();
 
 
-        return view('scholarships.index', compact('scholarships'));        
+        $i = 0;
+        foreach ($scholarships as $scholarship)
+        {
+            $scholarshipNames[$i] = Scholarship::find($scholarship->scholarshipId);
+            $i += 1;
+        }
+
+
+        return view('scholarships.index', compact('scholarships', 'scholarshipNames'));        
     }
 
     /**

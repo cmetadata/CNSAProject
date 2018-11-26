@@ -18,8 +18,16 @@ class InjuriesController extends Controller
     {
         //Holds the value of all injuries to be displayed
         $injuries = Injury::all();
+
+
+        $i = 0;
+        foreach ($injuries as $injury)
+        {
+            $injuryNames[$i] = Injury::find($injury->injuryId);
+            $i += 1;
+        }
         
-        return view('injuries.index', compact('injuries'));
+        return view('injuries.index', compact('injuries', 'injuryNames'));
     }
 
     /**
