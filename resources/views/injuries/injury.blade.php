@@ -10,7 +10,7 @@
       <table width="100%">
         <tr>
           <td width="50%"><a href="/injuries/{{$injury->injuryId}}">Injury Type: {{$injuryNames[$loop->index]->injury}}</a></td>
-          <td width="50%"><a href="/injuries/{{$injury->injuryId}}">Injury Date: {{$injuries[$loop->index]->injuryDate}}</a></td>
+          <td width="50%"><a href="/injuries/{{$injury->injuryId}}">{{$injuries[$loop->index]->injuryDate}}</a></td>
         </tr>
       </table>
     </div>

@@ -11,7 +11,7 @@
         <tr>
           <td width="33%"><a href="/scholarships/{{$scholarship->scholarshipId}}">{{$scholarshipNames[$loop->index]->scholarshipName}}</a></td>
           <td width="33%"><a href="/scholarships/{{$scholarship->scholarshipId}}">Scholarship Amount: ${{$scholarshipNames[$loop->index]->scholarshipAmount}}</a></td>
-          <td width="33%"><a href="/scholarships/{{$scholarship->scholarshipId}}">Scholarship Date: {{$scholarships[$loop->index]->scholarshipDate}}</a></td>
+          <td width="33%"><a href="/scholarships/{{$scholarship->scholarshipId}}">{{$scholarships[$loop->index]->scholarshipDate}}</a></td>
         </tr>
       </table>
     </div>
