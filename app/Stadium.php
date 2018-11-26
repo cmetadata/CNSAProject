@@ -6,12 +6,13 @@ use Illuminate\Database\Eloquent\Model;
 
 class Stadium extends Model
 {
+    protected $table = 'stadiums';
     protected $primaryKey = 'stadiumId';
-
-    public function team()
-    {
-    	return $this->belongsTo(Team::class);
-    }
+    
+    // public function team()
+    // {
+    // 	return $this->belongsTo(Team::class);
+    // }
 
     public function games()
     {

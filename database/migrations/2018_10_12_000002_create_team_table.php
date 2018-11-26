@@ -18,12 +18,17 @@ class CreateTeamTable extends Migration
         Schema::create('teams', function (Blueprint $table) {
             $table->increments('teamId');
             $table->string('teamName', 50);
-            //$table->integer('schoolId');
+            // fk
+            $table->integer('schoolId')->unsigned();
             $table->timestamps();
 
-            //Creating relationships for the database
-            $table->foreign('schoolId')->references('schoolId')->on('schools');
         });
+
+        Schema::table('teams', function($table) {
+            //Setting up the relationships
+            $table->foreign('schoolId')->references('schoolId')->on('schools')->onDelete('cascade');
+        });
+
     }
 
     /**

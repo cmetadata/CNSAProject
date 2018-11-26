@@ -124,6 +124,9 @@ Route::get('/coaches', 'CoachesController@index');
 //Creates a new coach
 Route::get('/coaches/create', 'CoachesController@create');
 
+Route::post('/coaches', 'CoachesController@store');
+
+
 //Public, Coaches and Admin
 //Displays a certains coaches information
 //Route::get('/coaches/{coachId}', 'CoachesController@show');
@@ -182,6 +185,12 @@ Route::get('/teams/{teamId}/delete', 'TeamsController@delete');
 //Displays the list of coaches
 Route::get('/games', 'GamesController@index');
 
+Route::post('games', 'GamesController@store');
+
+//Coaches and Admins
+//Adds a game
+Route::get('/games/create', 'GamesController@create');
+
 //Public, Coaches and Admin
 //Displays a particular coaches information
 Route::get('/games/{gameId}', 'GamesController@show');
@@ -189,10 +198,6 @@ Route::get('/games/{gameId}', 'GamesController@show');
 //Coaches and Admins
 //Allows to change information relating to the game
 Route::get('/games/{gameId}/edit', 'GamesController@edit');
-
-//Coaches and Admins
-//Adds a game
-Route::get('/games/create', 'GamesController@create');
 
 //Admin
 //Deletes the game information
@@ -208,13 +213,16 @@ Route::get('/games/{gameId}/delete', 'GamesController@delete');
 //Displays a list of schools
 Route::get('/schools', 'SchoolsController@index');
 
+//Admin
+//Allows adding schools
+Route::get('/schools/create', 'SchoolsController@create');
+
 //Public, Coaches and Admin
 //Displays a particular schools information
 Route::get('/schools/{schoolId}', 'SchoolsController@show');
 
-//Admin
-//Allows adding schools
-Route::get('/schools/create', 'SchoolsController@create');
+// POST (http mode post) route to /schools, calls store function
+Route::post('/schools', 'SchoolsController@store');
 
 //Admin
 //Allows editing schools information
@@ -236,6 +244,8 @@ Route::get('/stadiums', 'StadiumsController@index');
 //Coaches and Admin
 //Adds a new school
 Route::get('/stadiums/create', 'StadiumsController@create');
+
+Route::post('/stadiums', 'StadiumsController@store');
 
 //Public, Coaches and Admin
 //Displays a particular stadiums information
@@ -295,3 +305,90 @@ Route::get('/scholarships/delete', 'ScholarshipsController@delete');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+
+//--------------------------------------------------------
+//--------------------------------------------------------
+//ORGANIZATIONS
+//--------------------------------------------------------
+//--------------------------------------------------------
+//organizations
+//Displays a list of organizations
+Route::get('/organizations', 'OrganizationsController@index');
+
+//organizations
+//Adds a new organizations
+Route::get('/organizations/create', 'OrganizationsController@create');
+
+Route::post('/organizations', 'OrganizationsController@store');
+
+//Public, Coaches and Admin
+//Displays a particular organizations information
+Route::get('/organizations/{organizationId}', 'OrganizationsController@show');
+
+//Public, Coaches and Admin
+//Allows editing a organizations information 
+Route::get('/organizations/{organizationId}/edit', 'OrganizationsController@edit');
+
+//Admin
+//Deletes the organizations information
+Route::get('/organizations/{organizationId}/delete', 'OrganizationsController@delete');
+
+
+//--------------------------------------------------------
+//--------------------------------------------------------
+//Persons
+//--------------------------------------------------------
+//--------------------------------------------------------
+//Persons
+//Displays a list of Persons
+Route::get('/persons', 'PersonsController@index');
+
+//Persons
+//Adds a new Persons
+Route::get('/persons/create', 'PersonsController@create');
+
+Route::post('/persons', 'PersonsController@store');
+
+//Public, Coaches and Admin
+//Displays a particular Persons information
+Route::get('/persons/{personId}', 'PersonsController@show');
+
+//Public, Coaches and Admin
+//Allows editing a Persons information 
+Route::get('/persons/{personId}/edit', 'PersonsController@edit');
+
+//Admin
+//Deletes the Persons information
+Route::get('/persons/{personId}/delete', 'PersonsController@delete');
+
+
+//--------------------------------------------------------
+//--------------------------------------------------------
+//Positions
+//--------------------------------------------------------
+//--------------------------------------------------------
+//Positions
+//Displays a list of Positions
+Route::get('/positions', 'PositionsController@index');
+
+//Positions
+//Adds a new Positions
+Route::get('/positions/create', 'PositionsController@create');
+
+Route::post('/positions', 'PositionsController@store');
+
+//Public, Coaches and Admin
+//Displays a particular Positions information
+Route::get('/positions/{positionId}', 'PositionsController@show');
+
+//Public, Coaches and Admin
+//Allows editing a Positions information 
+Route::get('/positions/{positionId}/edit', 'PositionsController@edit');
+
+//Admin
+//Deletes the Positions information
+Route::get('/positions/{positionId}/delete', 'PositionsController@delete');
+
+
+

@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateSchoolTable extends Migration
+class CreatePersonTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,12 @@ class CreateSchoolTable extends Migration
      */
     public function up()
     {
-        Schema::dropIfExists('schools');
+        Schema::dropIfExists('persons');
         Schema::enableForeignKeyConstraints();
-        Schema::create('schools', function (Blueprint $table) {
-            $table->increments('schoolId');
-            $table->string('schoolName');
-            $table->integer('schoolRanking');
+        Schema::create('persons', function (Blueprint $table) {
+            $table->increments('personId');
+            $table->string('personFirstName', 40);
+            $table->string('personLastName', 40);
             $table->timestamps();           
         });
     }
@@ -30,6 +30,6 @@ class CreateSchoolTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('schools');
+        Schema::dropIfExists('persons');
     }
 }

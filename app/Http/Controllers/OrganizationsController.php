@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Organization;
 use App\School;
-use App\Team;
+use App\Stadium;
 use Illuminate\Http\Request;
 
-class SchoolsController extends Controller
+class OrganizationsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,10 +17,10 @@ class SchoolsController extends Controller
     public function index()
     {
         //Holds the value of all players to be displayed
-        $schools = School::all();
+        $organizations = Organization::all();
 
         //Gives the view of all the players
-        return view('schools.index', compact('schools'));
+        return view('organizations.index', compact('organizations'));
     }
 
     /**
@@ -29,7 +30,8 @@ class SchoolsController extends Controller
      */
     public function create()
     {
-        return view('schools.create');
+        //
+        return view('organizations.create');
     }
 
     /**
@@ -40,27 +42,20 @@ class SchoolsController extends Controller
      */
     public function store(Request $request)
     {
+        //
         //Validating the data
         $this->validate(request(), [
-            'schoolName' => 'required|max:50',
-            'schoolRanking' => 'required|max:50',
-            'schoolPopulation' => 'required|max:10'
+            'organizationName' => 'required|max:50',
         ]);
 
-        $schools = new School;
+        $organizations = new organization;
 
-        $schools->schoolName = $request->schoolName;
+        $organizations->organizationName = $request->organizationName;
 
-        $schools->organizationId = $request->organizationId;
-
-        $schools->schoolRanking = $request->schoolRanking;
-
-        $schools->schoolPopulation = $request->schoolPopulation;
-
-        $schools->save();
+        $organizations->save();
 
         //Flashing a message to confirm that a team has been entered into the database
-        session()->flash('message', 'School has been inserted');        
+        session()->flash('message', 'organization has been inserted');                
     }
 
     /**
@@ -71,14 +66,18 @@ class SchoolsController extends Controller
      */
     public function show(Request $request)
     {
-        $school = School::find($request->schoolId);
+        //
+        $organization = Organization::find($request->organizationId);
 
         // must find teams by schoolId        
         // needs to return a collection or it wont work
-        $teams = Team::all()->where('schoolId', $request->schoolId);
+        $schools = School::all()->where('organizationId', $request->organizationId);
+
+        $stadiums = Stadium::all()->where('organizationId', $request->organizationId);
+
         
         //dd($school);
-        return view('schools.show', compact(['school', 'teams']));
+        return view('organizations.show', compact(['organization', 'schools', 'stadiums']));
     }
 
     /**
@@ -89,13 +88,7 @@ class SchoolsController extends Controller
      */
     public function edit(c $c)
     {
-        //Validates that the information being input is valid
-        $this->validate(request(), [
-            'schoolName' => 'required|max:50',
-            'schoolRanking' => 'required'
-        ]);
-
-        $school = School::edit(request(['schoolName']));
+        //
     }
 
     /**

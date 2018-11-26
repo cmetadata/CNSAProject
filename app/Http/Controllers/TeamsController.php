@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Team;
 use App\Player;
+use App\School;
+use App\Person;
 use Illuminate\Http\Request;
 
 class TeamsController extends Controller
@@ -46,14 +48,11 @@ class TeamsController extends Controller
 
         //Validating the data
         $this->validate(request(), [
-            'teamId' => 'required',
             'teamName' => 'required|max:50',
             'schoolId' => 'required'
         ]);
 
         $teams = new Team;
-
-        $teams->teamId = $request->teamId;
 
         $teams->teamName = $request->teamName;
 
@@ -74,8 +73,20 @@ class TeamsController extends Controller
     public function show(Request $request)
     {
         //
-        $teams = Team::find($request->teamId);    
-        return view('teams.show', compact('teams'));
+        $team = Team::all()->where('teamId', $request->teamId);    
+        $players = Player::all()->where('teamId', $request->teamId);
+
+
+        $i = 0;
+        foreach ($players as $player)
+        {
+            $school[$i] = School::find($team->first()->schoolId);
+            $person[$i] = Person::find($player->personId);
+            $i += 1;
+        }
+
+
+        return view('teams.show', compact('team', 'players', 'school', 'person'));
     }
 
     /**

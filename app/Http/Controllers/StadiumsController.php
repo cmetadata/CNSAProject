@@ -29,6 +29,7 @@ class StadiumsController extends Controller
     public function create()
     {
         //
+        return view('stadiums.create');
     }
 
     /**
@@ -40,6 +41,24 @@ class StadiumsController extends Controller
     public function store(Request $request)
     {
         //
+        //Validating the data
+        $this->validate(request(), [
+            'stadiumName' => 'required|max:50',
+            'stadiumCapacity' => 'required'
+        ]);
+
+        $stadiums = new Stadium;
+
+        $stadiums->organizationId = $request->organizationId;
+
+        $stadiums->stadiumName = $request->stadiumName;
+
+        $stadiums->stadiumCapacity = $request->stadiumCapacity;
+
+        $stadiums->save();
+
+        //Flashing a message to confirm that a team has been entered into the database
+        session()->flash('message', 'Stadium has been inserted');                
     }
 
     /**

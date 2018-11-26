@@ -7,8 +7,9 @@
     <div class="object-div grey-back">
       <table width="100%">
         <tr>
-          <td width="80%"><a href=#>{{$stadium->stadiumName}}</a></td>
-    		<td width="20%">{{stadium->attendance}}</td>
+            <td width="33%"><a href=#>Stadium ID: {{$stadium->stadiumId}}</a></td>
+            <td width="33%"><a href=#>{{$stadium->stadiumName}}</a></td>
+            <td width="33%">{{$stadium->stadiumCapacity}}</td>
         </tr>
       </table>
     </div>

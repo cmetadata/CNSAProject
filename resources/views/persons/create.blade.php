@@ -2,7 +2,7 @@
 
 @section ('content')
 
-    <form method="POST" action="/teams">
+    <form method="POST" action="/persons">
 
         {{ csrf_field() }}
 
@@ -10,18 +10,18 @@
         
         <div class="login-form">
 
-        <h1 class="title2 grey-back">Register Team</h1>
+        <h1 class="title2 grey-back">Register Person</h1>
         
         <div class="grey-back buffer">
 
             <div class="form-group">
-                <label for="teamName">Team Name:</label>
-                <input type="text" class="form-control" id="teamName" name="teamName" required>
+                <label for="personFirstName">First Name:</label>
+                <input type="text" class="form-control" id="personFirstName" name="personFirstName" required>
             </div>
 
             <div class="form-group">
-                <label for="schoolId">School ID:</label>
-                <input type="text" class="form-control" id="schoolId" name="schoolId" required>
+                <label for="personLastName">Last Name:</label>
+                <input type="text" class="form-control" id="personLastName" name="personLastName" required>
             </div>            
 
             <button type="submit" class="btn btn-default">Submit</button>

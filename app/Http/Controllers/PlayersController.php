@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Player;
+use App\Person;
 use App\Team;
 use App\School;
 use Illuminate\Http\Request;
@@ -19,8 +20,18 @@ class PlayersController extends Controller
         //Holds the value of all players to be displayed
         $players = Player::all();
 
+        $i = 0;
+        foreach ($players as $player)
+        {
+            $team[$i] = Team::find($player->teamId);
+            $person[$i] = Person::find($player->personId);
+            $school[$i] = School::find($team[$i]->schoolId);
+            $i += 1;
+        }
+
+
         //Gives the view of all the players
-        return view('players.index', compact('players'));
+        return view('players.index', compact('players', 'team', 'person', 'school'));
     }
 
     /**
@@ -44,9 +55,9 @@ class PlayersController extends Controller
     {
         //Validating the data
         $this->validate(request(), [
-            'firstName'   => 'required|max:35',
-            'lastName'    => 'required|max:30',
-            'schoolId'    => 'required',
+            'personId' => 'required',
+            'teamId' => 'required',
+            'playerRating' => 'required',
             'yearEntered' => 'required',
             'position'    => 'required'
         ]);
@@ -61,9 +72,7 @@ class PlayersController extends Controller
         //Creating a new player object and populating it // THIS IS A TEMPORARY FIX UNTIL MODEL IS CREATED
         $player = new Player;
 
-        $player->firstName = $request->firstName;
-
-        $player->lastName = $request->lastName;
+        $player->personId = $request->personId;
         
         $player->yearEntered = $request->yearEntered;
 
@@ -104,11 +113,12 @@ class PlayersController extends Controller
     {
         
         $player = Player::find($request->playerId);
+        $person = Person::find($player->personId);
         $team = Team::find($player->teamId);
         $school = School::find($team->schoolId);
         
         //dd($player, $team, $school);
-        return view('players.show', compact(['player', 'team', 'school']));
+        return view('players.show', compact(['player', 'team', 'school', 'person']));
     }
 
 

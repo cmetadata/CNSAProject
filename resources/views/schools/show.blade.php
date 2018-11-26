@@ -11,9 +11,9 @@
     <!--Include a list of all teams belonging to the school-->
     Teams for this school:<br/>
     @foreach ($teams as $team)
-		@include ('teams.team')
-		<br/>
-	@endforeach
+      @include ('teams.team')
+      <br/>
+    @endforeach
 
   </div>
 

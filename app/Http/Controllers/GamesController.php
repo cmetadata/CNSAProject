@@ -14,7 +14,7 @@ class GamesController extends Controller
      */
     public function index()
     {
-        return view('games/index');
+        return view('games.index');
     }
 
     /**
@@ -25,6 +25,7 @@ class GamesController extends Controller
     public function create()
     {
         //
+        return view('games.create');
     }
 
     /**
@@ -34,8 +35,28 @@ class GamesController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
-        //
+    {    
+        // declare stat models
+        // $stat1 = new Stat:
+        // $stat2 = new Stat:
+        // $games = new Game;
+        
+
+        // needs to pull request parameters out and save twice to stats table
+       
+        // save once for game table
+        // creates game ID
+
+    
+        // save once for stat #1 -> stat table 
+        // use game ID^
+
+
+
+        // save once for stat #2 -> stat table 
+        // use game ID^
+
+
     }
 
     /**
@@ -46,7 +67,7 @@ class GamesController extends Controller
      */
     public function show(Request $request)
     {
-        return view('games/show');
+        return view('games.show');
     }
 
     /**
