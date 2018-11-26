@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Incident;
+use App\IncidentLog;
+use App\Player;
 use Illuminate\Http\Request;
 
 class IncidentsController extends Controller
@@ -14,7 +16,19 @@ class IncidentsController extends Controller
      */
     public function index()
     {
-        return view('incidents/index');
+        //Holds the value of all incidents to be displayed
+        $incidents = Incident::all();
+        
+
+        $i = 0;
+        foreach ($incidents as $incident)
+        {
+            $incidentNames[$i] = Incident::find($incident->incidentId);
+            $i += 1;
+        }
+
+
+        return view('incidents.index', compact('incidents', 'incidentNames'));
     }
 
     /**
@@ -25,6 +39,7 @@ class IncidentsController extends Controller
     public function create()
     {
         //
+        return view('incidents.create');
     }
 
     /**
@@ -36,6 +51,19 @@ class IncidentsController extends Controller
     public function store(Request $request)
     {
         //
+        //Validating the data
+        $this->validate(request(), [
+            'incidentDescription' => 'required',
+        ]);
+
+        $incidents = new Incident;
+
+        $incidents->incidentDescription = $request->incidentDescription;
+
+        $incidents->save();
+
+        //Flashing a message to confirm that a team has been entered into the database
+        session()->flash('message', 'incidents has been inserted');                        
     }
 
     /**
@@ -44,9 +72,10 @@ class IncidentsController extends Controller
      * @param  \App\c  $c
      * @return \Illuminate\Http\Response
      */
-    public function show(c $c)
+    public function show(Incident $incident)
     {
         //
+
     }
 
     /**
@@ -55,7 +84,7 @@ class IncidentsController extends Controller
      * @param  \App\c  $c
      * @return \Illuminate\Http\Response
      */
-    public function edit(c $c)
+    public function edit(Incident $incident)
     {
         //
     }
@@ -67,7 +96,7 @@ class IncidentsController extends Controller
      * @param  \App\c  $c
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, c $c)
+    public function update(Request $request, Incident $incident)
     {
         //
     }
@@ -78,7 +107,7 @@ class IncidentsController extends Controller
      * @param  \App\c  $c
      * @return \Illuminate\Http\Response
      */
-    public function destroy(c $c)
+    public function destroy(Incident $incident)
     {
         //
     }

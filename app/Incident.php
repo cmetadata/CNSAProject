@@ -6,7 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Incident extends Model
 {
-	protected $primaryKey = 'incidentCode';
+	protected $table = 'recruiting_incident';
+	protected $primaryKey = 'incidentId';
 
 	//an incident belongs to one schoolId
 	public function school()

@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateInjuryLogTable extends Migration
+class CreateScholarshipsLogTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,20 +13,22 @@ class CreateInjuryLogTable extends Migration
      */
     public function up()
     {
-        Schema::dropIfExists('injury_logs');
+        Schema::dropIfExists('scholarships_log');
         Schema::enableForeignKeyConstraints();
-        Schema::create('injury_logs', function (Blueprint $table) {
-            $table->increments('injuryId');
-            $table->date('injuryDate');
-            $table->string('injury', 50);
+        Schema::create('scholarships_log', function (Blueprint $table) {
+            $table->increments('logId');
+            $table->date('scholarshipDate');
+            // fk
+            $table->integer('scholarshipId')->unsigned();
             // fk
             $table->integer('playerId')->unsigned();            
             $table->timestamps();
 
         });
 
-        Schema::table('injury_logs', function($table) {
+        Schema::table('scholarships_log', function($table) {
             //Setting up the relationships
+            $table->foreign('scholarshipId')->references('scholarshipId')->on('scholarships')->onDelete('cascade');
             $table->foreign('playerId')->references('playerId')->on('players')->onDelete('cascade');
         });
     }
@@ -38,6 +40,6 @@ class CreateInjuryLogTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('injury_logs');
+        Schema::dropIfExists('scholarships_log');
     }
 }

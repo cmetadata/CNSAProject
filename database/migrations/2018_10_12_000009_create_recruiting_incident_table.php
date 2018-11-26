@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateScholarshipsTable extends Migration
+class CreateRecruitingIncidentTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,12 @@ class CreateScholarshipsTable extends Migration
      */
     public function up()
     {
-        Schema::dropIfExists('scholarships');
+        Schema::dropIfExists('recruiting_incident');
         Schema::enableForeignKeyConstraints();
-        Schema::create('scholarships', function (Blueprint $table) {
-            $table->increments('scholarshipId');
-            $table->string('scholarshipName', 200);
-            $table->decimal('scholarshipAmount');
+        Schema::create('recruiting_incident', function (Blueprint $table) {
+            $table->increments('incidentId');
+            $table->string('incidentDescription');
             $table->timestamps();
-
         });
     }
 
@@ -31,6 +29,6 @@ class CreateScholarshipsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('scholarships');
+        Schema::dropIfExists('recruiting_incident');
     }
 }

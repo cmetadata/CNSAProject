@@ -19,6 +19,7 @@ class CreatePlayerTable extends Migration
         Schema::create('players', function (Blueprint $table) {
             $table->increments('playerId');
             $table->integer('yearEntered');
+            $table->string('highSchool')->nullable();
             $table->string('position', 25);
             $table->integer('redCards')->default(0); 
             $table->integer('yellowCards')->default(0); 

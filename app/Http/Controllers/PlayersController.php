@@ -5,6 +5,12 @@ namespace App\Http\Controllers;
 use App\Player;
 use App\Person;
 use App\Team;
+use App\Incident;
+use App\IncidentLog;
+use App\Scholarship;
+use App\ScholarshipLog;
+use App\Injury;
+use App\InjuryLog;
 use App\School;
 use Illuminate\Http\Request;
 
@@ -76,6 +82,8 @@ class PlayersController extends Controller
         
         $player->yearEntered = $request->yearEntered;
 
+        $player->highSchool = $request->highSchool;
+
         $player->playerRating = $request->playerRating;
 
         $player->position = $request->position;
@@ -113,12 +121,44 @@ class PlayersController extends Controller
     {
         
         $player = Player::find($request->playerId);
+        
+        $incidents = IncidentLog::all()->where('playerId', $request->playerId);
+        $injuries = InjuryLog::all()->where('playerId', $request->playerId);
+        $scholarships = ScholarshipLog::all()->where('playerId', $request->playerId);
+
         $person = Person::find($player->personId);
         $team = Team::find($player->teamId);
         $school = School::find($team->schoolId);
+
+       
+        $i = 0;
+        foreach ($incidents as $incident)
+        {
+            $incidentNames[$i] = Incident::find($incident->incidentId);
+            $i += 1;
+        }
+
+
+        $i = 0;
+        foreach ($injuries as $injury)
+        {
+            $injuryNames[$i] = Injury::find($injury->injuryId);
+            $i += 1;
+        }
+
+        $i = 0;
+        foreach ($scholarships as $scholarship)
+        {
+            $scholarshipNames[$i] = Scholarship::find($scholarship->scholarshipId);
+            $i += 1;
+        }
+
+
         
         //dd($player, $team, $school);
-        return view('players.show', compact(['player', 'team', 'school', 'person']));
+        return view('players.show', compact(['player', 'team', 'school', 'person', 'incidents', 'incidentNames', 'injuries', 'injuryNames',
+        
+        'scholarships', 'scholarshipNames']));
     }
 
 

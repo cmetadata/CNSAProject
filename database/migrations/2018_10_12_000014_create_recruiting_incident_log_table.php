@@ -16,19 +16,18 @@ class CreateRecruitingIncidentLogTable extends Migration
         Schema::dropIfExists('recruiting_incident_logs');
         Schema::enableForeignKeyConstraints();
         Schema::create('recruiting_incident_logs', function (Blueprint $table) {
-            $table->increments('incidentCode');
+            $table->increments('logId');
             $table->date('incidentDate');
-            $table->string('incidentDescription');
             // fk
-            $table->integer('schoolId')->unsigned();
+            $table->integer('incidentId')->unsigned();
             // fk
-            $table->integer('playerId')->unsigned();            
+            $table->integer('playerId')->unsigned();
             $table->timestamps();
         });
 
         Schema::table('recruiting_incident_logs', function($table) {
             //Setting up the relationships
-            $table->foreign('schoolId')->references('schoolId')->on('schools')->onDelete('cascade');
+            $table->foreign('incidentId')->references('incidentId')->on('recruiting_incident')->onDelete('cascade');
             $table->foreign('playerId')->references('playerId')->on('players')->onDelete('cascade');
         });
 

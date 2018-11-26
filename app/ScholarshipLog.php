@@ -4,11 +4,11 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Scholarship extends Model
+class ScholarshipLog extends Model
 {
     //look Matt it's a comment
-	protected $table = 'scholarships';
-    protected $primaryKey = 'scholarshipId';
+    protected $table = 'scholarships_log';
+    protected $primaryKey = 'logId';
 
     public function player()
     {

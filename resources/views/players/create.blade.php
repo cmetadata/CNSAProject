@@ -18,6 +18,12 @@
                 <input type="text" class="form-control" id="personId" name="personId" required>
             </div>
 
+            
+            <div class="form-group">
+                <label for="highSchool">High School:</label>
+                <input type="text" class="form-control" id="highSchool" name="highSchool" required>
+            </div>            
+
             <div class="form-group">
                 <label for="yearEntered">Year Entered:</label>
                 <input type="text" class="form-control" id="yearEntered" name="yearEntered" required>
