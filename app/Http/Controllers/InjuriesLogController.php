@@ -32,7 +32,7 @@ class InjuriesLogController extends Controller
         $this->validate(request(), [
             'playerId' => 'required',
             'injuryId' => 'required',
-            'gameId' => 'required',
+            //'gameId' => 'required',
             'injuryDate' => 'required',
         ]);
 
@@ -42,7 +42,7 @@ class InjuriesLogController extends Controller
 
         $injuries->injuryId = $request->injuryId;
 
-        $injuries->gameId = $request->gameId;
+       // $injuries->gameId = $request->gameId;
 
         $injuries->injuryDate = $request->injuryDate;
  
