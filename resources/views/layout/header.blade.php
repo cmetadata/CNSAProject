@@ -21,15 +21,17 @@
         <ul class="nav navbar-nav">
 
       <li><a href="/">Home</a></li>
+      <li><a href="/players">Players</a></li>
+      <li><a href="/teams">Teams</a></li>
+      <li><a href="/games">Games</a></li>
+      <li><a href="/schools">Schools</a></li>
+      <li><a href="/stadiums">Stadiums</a></li>
+      <li><a href="/coaches">Coaches</a></li>
       <li><a href="/organizations">Organizations</a></li>
-      <li><a href="/persons">Directory</a></li>
-      <li><a href="/schools"> Schools </a></li>
-      <li><a href="/stadiums"> Stadiums </a></li>
-      <li><a href="/teams"> Teams </a></li>
 
       <li class="nav-item dropdown">
          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-          Players
+          temp
           <span class="caret"></span></a>
         <ul class="dropdown-menu">
           <li><a class="dropdown-item" href="/players">Players List</a></li>
@@ -45,15 +47,12 @@
           Admin Utilities
           <span class="caret"></span></a>
         <ul class="dropdown-menu">
-        <li><a class="dropdown-item" href="/injuries/create">New Injury</a></li>
-        <li><a class="dropdown-item" href="/scholarships/create">New Scholarship</a></li>
-        <li><a class="dropdown-item" href="/incidents/create">New Incident</a></li>
+          <li><a class="dropdown-item" href="/persons">See Full Directory</a></li>
+          <li><a class="dropdown-item" href="/injuries/create">New Injury</a></li>
+          <li><a class="dropdown-item" href="/scholarships/create">New Scholarship</a></li>
+          <li><a class="dropdown-item" href="/incidents/create">New Incident</a></li>
         </ul>
       </li>       
-
-      <li><a href="/positions">Positions</a></li>
-      <li><a href="/coaches">Coaches</a></li>
-      <li><a href="/games">Games</a></li>
     </ul>
   </div>
         
