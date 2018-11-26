@@ -9,6 +9,7 @@
     <div class="object-div grey-back">
       <table width="100%">
         <tr>
+          <td width="33%"><a href="/injuries/{{$injury->injuryId}}">Injury ID: {{$injuryNames[$loop->index]->injuryId}}</a></td>
           <td width="50%"><a href="/injuries/{{$injury->injuryId}}">Injury Type: {{$injuryNames[$loop->index]->injury}}</a></td>
           <td width="50%"><a href="/injuries/{{$injury->injuryId}}">{{$injuries[$loop->index]->injuryDate}}</a></td>
         </tr>
