@@ -61,6 +61,8 @@ class PlayersController extends Controller
     {
         //Validating the data
         $this->validate(request(), [
+            'personFirstName'   => 'required|max:35',
+            'personLastName'    => 'required|max:30',
             'personId' => 'required',
             'teamId' => 'required',
             'playerRating' => 'required',
@@ -75,10 +77,21 @@ class PlayersController extends Controller
 
         //dd(request(['firstName', 'lastName']));
 
+
+        //CREATE A NEW PERSON AND THEN A NEW PLAYER
+
+        $person = new Person;
+        
+        $person->personFirstName = $request->personFirstName;
+
+        $person->personLastName = $request->personLastName;
+
+        $person->save();
+
         //Creating a new player object and populating it // THIS IS A TEMPORARY FIX UNTIL MODEL IS CREATED
         $player = new Player;
 
-        $player->personId = $request->personId;
+        $player->personId = $person->personId;
         
         $player->yearEntered = $request->yearEntered;
 

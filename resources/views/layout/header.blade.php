@@ -29,7 +29,7 @@
       <li><a href="/coaches">Coaches</a></li>
       <li><a href="/organizations">Organizations</a></li>
 
-      <li class="nav-item dropdown">
+      <!--<li class="nav-item dropdown">
          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
           temp
           <span class="caret"></span></a>
@@ -39,7 +39,7 @@
           <li><a class="dropdown-item" href="/scholarships_log/create"> Report Scholarship</a></li>
           <li><a class="dropdown-item" href="/incidents_log/create"> Report Incident</a></li>
         </ul>
-      </li>       
+      </li>-->       
 
 
       <li class="nav-item dropdown">
