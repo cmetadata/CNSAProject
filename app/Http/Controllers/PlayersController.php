@@ -88,13 +88,12 @@ class PlayersController extends Controller
 
         $person->save();
 
-        //$teams = Team::all()->where('schoolId', $request->schoolId);
-        $temp = Person::last();
+        dd($person);
 
         //Creating a new player object and populating it // THIS IS A TEMPORARY FIX UNTIL MODEL IS CREATED
         $player = new Player;
 
-        $player->personId = $temp->personId;
+        $player->personId = $person->personId;
         
         $player->yearEntered = $request->yearEntered;
 
