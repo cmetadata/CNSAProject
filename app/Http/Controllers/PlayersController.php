@@ -87,7 +87,7 @@ class PlayersController extends Controller
 
         $person->save();
 
-        dd($person);
+        //dd($person);
 
         //Creating a new player object and populating it // THIS IS A TEMPORARY FIX UNTIL MODEL IS CREATED
         $player = new Player;
