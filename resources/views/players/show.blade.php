@@ -22,7 +22,7 @@
   </div>
 
     <!--Include a list of all teams belonging to the school-->
-    Incidents for this player:<br/>
+    <br/>Incidents for this player:<br/>
     @foreach ($incidents as $incident)
       @include ('incidents.incident')
       <br/>
@@ -30,7 +30,7 @@
 
 
     <!--Include a list of all teams belonging to the school-->
-    Injuries for this player:<br/>
+    <br/>Injuries for this player:<br/>
     @foreach ($injuries as $injury)
       @include ('injuries.injury')
       <br/>
@@ -38,7 +38,7 @@
 
 
     <!--Include a list of all teams belonging to the school-->
-    Scholarships for this player:<br/>
+    <br/>Scholarships for this player:<br/>
     @foreach ($scholarships as $scholarship)
       @include ('scholarships.scholarship')
       <br/>

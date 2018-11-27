@@ -14,10 +14,14 @@
                 {{ csrf_field() }}
 
             <div class="form-group">
-                <label for="personId">Person ID:</label>
-                <input type="text" class="form-control" id="personId" name="personId" required>
+                <label for="personFirstName">First Name:</label>
+                <input type="text" class="form-control" id="personFirstName" name="personFirstName" required>
             </div>
 
+            <div class="form-group">
+                <label for="personLastName">Last Name:</label>
+                <input type="text" class="form-control" id="personLastName" name="personLastName" required>
+            </div>   
             
             <div class="form-group">
                 <label for="highSchool">High School:</label>
