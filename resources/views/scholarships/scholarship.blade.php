@@ -12,7 +12,19 @@
           <td width="25%"><a href="/scholarships/{{$scholarship->scholarshipId}}">Scholarship ID: {{$scholarshipNames[$loop->index]->scholarshipId}}</a></td>
           <td width="25%"><a href="/scholarships/{{$scholarship->scholarshipId}}">{{$scholarshipNames[$loop->index]->scholarshipName}}</a></td>
           <td width="25%"><a href="/scholarships/{{$scholarship->scholarshipId}}">Scholarship Amount: ${{$scholarshipNames[$loop->index]->scholarshipAmount}}</a></td>
-          <td width="25%"><a href="/scholarships/{{$scholarship->scholarshipId}}">{{$scholarships[$loop->index]->scholarshipDate}}</a></td>
+          <td width="25%"><a href="/scholarships/{{$scholarship->scholarshipId}}">
+          
+          @isset($scholarships[$loop->index])
+            {{$scholarships[$loop->index]->scholarshipDate}}
+					@endisset
+
+					@empty($scholarships[$loop->index])
+						{{ $scholarships->first()->scholarshipDate }}
+					@endempty
+
+          
+
+          </a></td>
         </tr>
       </table>
     </div>

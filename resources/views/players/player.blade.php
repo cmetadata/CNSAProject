@@ -9,9 +9,9 @@
 	<div class="object-div grey-back">
 	    <table width="100%">
 	    	<tr>
-				<td width="25%"><a href="/players/{{$player->playerId}}">Player ID: {{$player->playerId}}</a></td>
+				<td width="15%"><a href="/players/{{$player->playerId}}">Player ID: {{$player->playerId}}</a></td>
 
-	    		<td width="25%"><a href="/players/{{$player->playerId}}">
+	    		<td width="20%"><a href="/players/{{$player->playerId}}">
 				
 				@isset($person[$loop->index])
 						{{ $person[$loop->index]->personFirstName }}
@@ -43,7 +43,7 @@
 					@endempty
 				</a></td>
 				<td width="25%"><a href="/schools/{{$school[$loop->index]->schoolId}}">{{$school[$loop->index]->schoolName}}</a></td>
-	    		<td width="25%">{{$player->position}}</td>
+	    		<td width="15%">{{$player->position}}</td>
 	    	</tr>
 	    </table>
 	</div>
