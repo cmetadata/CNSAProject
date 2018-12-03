@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateScholarshipsTable extends Migration
+class PlayerStats extends Migration
 {
     /**
      * Run the migrations.
@@ -13,16 +13,19 @@ class CreateScholarshipsTable extends Migration
      */
     public function up()
     {
-        Schema::dropIfExists('scholarships');
+        Schema::dropIfExists('player_stats');
         Schema::enableForeignKeyConstraints();
-        Schema::create('scholarships', function (Blueprint $table) {
-            $table->increments('scholarshipId');
-            $table->string('scholarshipName', 200);
-            $table->decimal('scholarshipAmount');
+        Schema::create('player_stats', function (Blueprint $table) {
+            $table->increments('playerStatsId');
+            $table->integer('redCard');
+            $table->integer('yellowCard');
+            $table->integer('goals');
+            $table->integer('saves');
+            $table->integer('assists');
             $table->timestamps();
-            //Shouldn't scholarships be associated with players ?
 
         });
+
     }
 
     /**
@@ -32,6 +35,6 @@ class CreateScholarshipsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('scholarships');
+        Schema::dropIfExists('player_stats');
     }
 }

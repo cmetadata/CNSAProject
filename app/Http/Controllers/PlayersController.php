@@ -156,8 +156,7 @@ class PlayersController extends Controller
 
         
         //dd($player, $team, $school);
-        return view('players.show', compact(['player', 'team', 'school', 'person', 'incidents', 'incidentNames', 'injuries', 'injuryNames',
-        
+        return view('players.show', compact(['player', 'team', 'school', 'person', 'incidents', 'incidentNames', 'injuries', 'injuryNames',       
         'scholarships', 'scholarshipNames']));
     }
 
@@ -176,25 +175,29 @@ class PlayersController extends Controller
             'playerId'    => $playerId,
             'firstName'   => 'required|max:35',
             'lastName'    => 'required|max:30',
-            'yearEntered' => 'required',
-            'position'    => 'required'
+            'yearEntered' => 'required|max:4',
+            'position'    => 'required',
+            'highSchool'  => 'required'
         ]);
 
         //Retrieves the player
         $player = Player::find($playerId);
 
         //Updates the player
-        $player->firstName = $request->firstName;
+        $player->personId = $request->personId;
 
-        $player->lastName = $request->lastName;
-
-        $player->schoolId = $request->schoolId;
-        
         $player->yearEntered = $request->yearEntered;
 
         $player->position = $request->position;
 
+        $player->teamId = $request->teamId;
+
         $player->playerRating = $request->playerRating;
+
+        // Don't know if we actually need this ??
+        // $player->playerStatsId = $request->playerStatsId;
+
+        $player->schoolId = $request->schoolId;       
 
         //Saves the player
         $player->save();
@@ -203,7 +206,7 @@ class PlayersController extends Controller
         session()->flash('message', 'Player has been updated');
 
         //Redirects the user back to the players page
-        return redirect()-back();
+        return redirect()->back();
     }
 
     /**
@@ -229,7 +232,7 @@ class PlayersController extends Controller
         seesion()->flash('message', 'Player has been deleted');
 
         //Redirects the user back to the previous page
-        return redirect()-back();
+        return redirect()->back();
 
     }
 }

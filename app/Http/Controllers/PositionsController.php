@@ -99,7 +99,7 @@ class PositionsController extends Controller
      */
     public function edit(Request $request)
     {       
-
+        //Should we be able to edit positions ??
     }
 
     /**
@@ -110,6 +110,6 @@ class PositionsController extends Controller
      */
     public function destroy(Position $positionId)
     {
-
+        //Should we be able to delete positions ??
     }
 }

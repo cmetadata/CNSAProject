@@ -16,7 +16,7 @@ class CreateScholarshipsLogTable extends Migration
         Schema::dropIfExists('scholarships_log');
         Schema::enableForeignKeyConstraints();
         Schema::create('scholarships_log', function (Blueprint $table) {
-            $table->increments('logId');
+            $table->increments('scholarshipsLogId');
             $table->date('scholarshipDate');
             // fk
             $table->integer('scholarshipId')->unsigned();

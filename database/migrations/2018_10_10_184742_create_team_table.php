@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateRecruitingIncidentTable extends Migration
+class CreateTeamTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,16 @@ class CreateRecruitingIncidentTable extends Migration
      */
     public function up()
     {
-        Schema::dropIfExists('recruiting_incident');
+        Schema::dropIfExists('teams');
         Schema::enableForeignKeyConstraints();
-        Schema::create('recruiting_incident', function (Blueprint $table) {
-            $table->increments('incidentId');
-            $table->string('incidentDescription');
+        Schema::create('teams', function (Blueprint $table) {
+            $table->increments('teamId');
+            $table->string('teamName', 50);
+            //$table->integer('schoolId');
             $table->timestamps();
+
+            //Creating relationships for the database
+            $table->foreign('schoolId')->references('schoolId')->on('schools');
         });
     }
 
@@ -29,6 +33,6 @@ class CreateRecruitingIncidentTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('recruiting_incident');
+        Schema::dropIfExists('teams');
     }
 }

@@ -18,10 +18,12 @@ class CreateScholarshipsTable extends Migration
         Schema::create('scholarships', function (Blueprint $table) {
             $table->increments('scholarshipId');
             $table->string('scholarshipName', 200);
+            //$table->integer('playerId');
             $table->decimal('scholarshipAmount');
             $table->timestamps();
-            //Shouldn't scholarships be associated with players ?
 
+            //Creating relationships for database
+            $table->foreign('playerId')->references('playerId')->on('players');
         });
     }
 

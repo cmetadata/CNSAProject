@@ -17,22 +17,14 @@ class CreateTeamManagerTable extends Migration
         Schema::enableForeignKeyConstraints();
         Schema::create('team_managers', function (Blueprint $table) {
             $table->increments('managerId');
-            // fk
-            $table->integer('teamId')->unsigned();
-            // fk
-            $table->integer('personId')->unsigned();
-            $table->string('position');            
+            //$table->integer('teamId');
+            $table->string('firstName', 40);
+            $table->string('lastName', 40);
             $table->timestamps();
 
-        });
-
-
-        Schema::table('team_managers', function($table) {
             //Setting up the relationships
-            $table->foreign('teamId')->references('teamId')->on('teams')->onDelete('cascade');            
-            $table->foreign('personId')->references('personId')->on('persons')->onDelete('cascade');
+            $table->foreign('teamId')->references('teamId')->on('teams');
         });
-
     }
 
     /**

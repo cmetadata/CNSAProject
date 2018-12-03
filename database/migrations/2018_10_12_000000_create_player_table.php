@@ -18,26 +18,22 @@ class CreatePlayerTable extends Migration
         Schema::enableForeignKeyConstraints();
         Schema::create('players', function (Blueprint $table) {
             $table->increments('playerId');
-            //fk
-            $table->integer('personId')->unsigned();
+            $table->string('firstName', 40);
+            $table->string('lastName', 40);
             $table->integer('yearEntered');
             $table->string('position', 25);
-            $table->string('highSchool')->nullable();
-            //fk
-            $table->integer('playerStatsId')->unsigned();
+            //$table->integer('teamId');
+            $table->integer('redCards')->default(0); 
+            $table->integer('yellowCards')->default(0); 
+            $table->integer('goals')->default(0);
             $table->integer('playerRating')->default(0);
-            // fk
-            $table->integer('teamId')->unsigned();            
+            $table->integer('assists')->default(0);
+            $table->integer('saves')->default(0); 
             $table->timestamps();
-        });
 
-        Schema::table('players', function($table) {
-            //Setting up the relationships
-            $table->foreign('personId')->references('personId')->on('persons')->onDelete('cascade');
-            $table->foreign('teamId')->references('teamId')->on('teams')->onDelete('cascade');
-            $table->foreign('playerStatsId')->references('playerStatsId')->on('playerStats')->onDelete('cascade');
+            //Setting up the relationships for the database
+            $table->foreign('teamId')->references('teamId')->on('teams');
         });
-
 
     }
 

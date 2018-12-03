@@ -4,7 +4,6 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-
 class CreateStadiumsTable extends Migration
 {
     /**
@@ -19,23 +18,12 @@ class CreateStadiumsTable extends Migration
         Schema::create('stadiums', function (Blueprint $table) {
             $table->increments('stadiumId');
             $table->string('stadiumName', 50);
-            $table->integer('stadiumCapacity');
-            // fk
-            $table->integer('organizationId')->unsigned();
-            // fk
-            $table->integer('schoolId')->unsigned();
+            $table->integer('attendance');
+            $table->integer('schoolId');
             $table->timestamps();
 
-            
+            $table->foreign('schoolId')->references('schoolId')->on('schools');
         });
-
-        Schema::table('stadiums', function($table) {
-            //Setting up the relationships
-            $table->foreign('organizationId')->references('organizationId')->on('organizations')->onDelete('cascade');   
-            $table->foreign('schoolId')->references('schoolId')->on('schools')->onDelete('cascade');                     
-            //$table->foreign('teamId')->references('teamId')->on('teams');            
-        });
-
     }
 
     /**
