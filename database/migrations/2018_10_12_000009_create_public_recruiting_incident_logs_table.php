@@ -22,7 +22,8 @@ class CreateRecruitingIncidentTable extends Migration
             $table->string('incidentDescription')->unsigned();
             $table->timestamps();
         });
-        Schema::table('games', function($table) {
+
+        Schema::table('public_recruiting_incident_logs', function($table) {
             //Setting up the relationships
             $table->foreign('incidentCode')->references('incidentCode')->on('recruiting_incident_logs')->onDelete('cascade');
         });
