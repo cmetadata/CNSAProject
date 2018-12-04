@@ -17,11 +17,11 @@ class CreatePlayerStatsTable extends Migration
         Schema::enableForeignKeyConstraints();
         Schema::create('player_stats', function (Blueprint $table) {
             $table->increments('playerStatId');
-            $table->integer('redCard');
-            $table->integer('yellowCard');
             $table->integer('goals');
             $table->integer('saves');
             $table->integer('assists');
+            $table->integer('redCard');
+            $table->integer('yellowCard');
             // fk
             $table->increments('gameId')->unsigned();
             // fk
