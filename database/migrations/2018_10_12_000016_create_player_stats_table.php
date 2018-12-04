@@ -23,20 +23,13 @@ class CreatePlayerStatsTable extends Migration
             $table->integer('redCard');
             $table->integer('yellowCard');
             // fk
-            $table->increments('gameId')->unsigned();
+            $table->foreign('gameId')->references('gameId')->on('games')->onDelete('cascade');
             // fk
-            $table->increments('playerId')->unsigned();
+            $table->foreign('playerId')->references('playerId')->on('players')->onDelete('cascade');
             // fk
-            $table->increments('teamId')->unsigned();
+            $table->foreign('teamId')->references('teamId')->on('teams')->onDelete('cascade');
             $table->timestamps();
 
-        });
-
-        Schema::table('player_stats', function($table) {
-            //Setting up the relationships
-            $table->foreign('gameId')->references('gameId')->on('games')->onDelete('cascade');
-            $table->foreign('playerId')->references('playerId')->on('players')->onDelete('cascade');
-            $table->foreign('teamId')->references('teamId')->on('teams')->onDelete('cascade');
         });
 
     }
