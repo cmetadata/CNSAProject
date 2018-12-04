@@ -23,7 +23,7 @@ class CreateStadiumsTable extends Migration
             // fk
             $table->integer('organizationId')->unsigned();
             // fk
-            $table->integer('schoolId')->unsigned();
+            //$table->integer('schoolId')->unsigned();
             $table->timestamps();
 
             
