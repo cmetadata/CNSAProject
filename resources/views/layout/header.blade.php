@@ -51,8 +51,22 @@
           <li><a class="dropdown-item" href="/injuries/create">New Injury</a></li>
           <li><a class="dropdown-item" href="/scholarships/create">New Scholarship</a></li>
           <li><a class="dropdown-item" href="/incidents/create">New Incident</a></li>
+          <li><a class="dropdown-item" href="/positions/create">New Job</a></li>
         </ul>
-      </li>       
+      </li> 
+
+      <li class="nav-item dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+          Coach Utilities
+          <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="/injuries_log/create"> Report Injury </a></li>
+          <li><a class="dropdown-item" href="/scholarships_log/create"> Report Scholarship</a></li>
+          <li><a class="dropdown-item" href="/incidents_log/create"> Report Incident</a></li>
+        </ul>
+      </li> 
+
+
     </ul>
   </div>
         

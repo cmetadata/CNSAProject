@@ -6,7 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class PlayerStat extends Model
 {
-	//Setting the primary key to be named something other than id
+    //Setting the primary key to be named something other than id
+    protected $table = 'player_stats';
     protected $primaryKey = 'playerStatId';
 
     public function player()
