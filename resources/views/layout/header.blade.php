@@ -50,6 +50,7 @@
           <li><a class="dropdown-item" href="/injuries/create">New Injury</a></li>
           <li><a class="dropdown-item" href="/scholarships/create">New Scholarship</a></li>
           <li><a class="dropdown-item" href="/incidents/create">New Incident</a></li>
+          <li><a class="dropdown-item" href="/persons/create">New Person</a></li>
           <li><a class="dropdown-item" href="/positions/create">New Job</a></li>
         </ul>
       </li> 
