@@ -16,9 +16,6 @@ class CreatePlayerStatsTable extends Migration
         Schema::dropIfExists('player_stats');
         Schema::enableForeignKeyConstraints();
         Schema::create('player_stats', function (Blueprint $table) {
-            $table->increments('playerStatId');
-            $table->primary('playerStatId');
-
             $table->integer('goals');
             $table->integer('saves');
             $table->integer('assists');
