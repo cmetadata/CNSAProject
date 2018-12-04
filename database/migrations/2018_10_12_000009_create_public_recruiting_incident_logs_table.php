@@ -18,7 +18,7 @@ class CreatePublicRecruitingIncidentLogsTable extends Migration
         Schema::create('public_recruiting_incident_logs', function (Blueprint $table) {
             $table->increments('publicIncidentId');
             $table->date('incidentDate');
-            $table->string('incidentDescription')->unsigned();
+            $table->string('incidentDescription');
             $table->timestamps();
         });
 
