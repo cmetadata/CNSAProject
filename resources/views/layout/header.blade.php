@@ -26,7 +26,6 @@
       <li><a href="/games">Games</a></li>
       <li><a href="/schools">Schools</a></li>
       <li><a href="/stadiums">Stadiums</a></li>
-      <li><a href="/coaches">Coaches</a></li>
       <li><a href="/organizations">Organizations</a></li>
 
       <!--<li class="nav-item dropdown">
