@@ -17,19 +17,28 @@ class CreatePlayerStatsTable extends Migration
         Schema::enableForeignKeyConstraints();
         Schema::create('player_stats', function (Blueprint $table) {
             $table->increments('playerStatId');
+            $table->primary('playerStatId');
+
             $table->integer('goals');
             $table->integer('saves');
             $table->integer('assists');
             $table->integer('redCard');
             $table->integer('yellowCard');
             // fk
-            $table->foreign('gameId')->references('gameId')->on('games')->onDelete('cascade');
+            $table->increments('gameId')->unsigned();
             // fk
-            $table->foreign('playerId')->references('playerId')->on('players')->onDelete('cascade');
+            $table->increments('playerId')->unsigned();
             // fk
-            $table->foreign('teamId')->references('teamId')->on('teams')->onDelete('cascade');
+            $table->increments('teamId')->unsigned();
             $table->timestamps();
 
+        });
+
+        Schema::table('player_stats', function($table) {
+            //Setting up the relationships
+            $table->foreign('gameId')->references('gameId')->on('games')->onDelete('cascade');
+            $table->foreign('playerId')->references('playerId')->on('players')->onDelete('cascade');
+            $table->foreign('teamId')->references('teamId')->on('teams')->onDelete('cascade');
         });
 
     }
