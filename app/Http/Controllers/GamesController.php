@@ -37,9 +37,10 @@ class GamesController extends Controller
     public function store(Request $request)
     {    
         // declare stat models
-        // $stat1 = new Stat:
-        // $stat2 = new Stat:
-        // $games = new Game;
+        //$game = new Game;
+
+        //$stat1 = new Stat:
+        //$stat2 = new Stat:
         
 
         // needs to pull request parameters out and save twice to stats table
