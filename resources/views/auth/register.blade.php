@@ -9,18 +9,18 @@
         <form method="POST" action="{{ route('register') }}">
             @csrf
 
-            <!-- Getting the required coach ID to be entered -->
+            <!-- Login ID -->
             <div class="form-group row">
-                <label for="name" class="col-md-4 col-form-label text-md-right">Manager ID:</label>
+                <label for="name" class="col-md-4 col-form-label text-md-right">Login ID:</label>
 
                 <div class="col-md-6">
                     <input id="name" class="form-control" type="text" name="name">
                 </div>
             </div>
 
-            <!-- Getting the first name of the coach -->
+            <!-- First name-->
             <div class="form-group">
-                <label for="name">First Name:</label>
+                <label for="name" class="col-md-4 col-form-label text-md-right">First Name:</label>
 
                 <div class="col-md-6">
                     <input type="text" class="form-control" id="name" name="name">
@@ -28,34 +28,43 @@
 
             </div>
 
-            <!-- Getting the coaches last name -->
+            <!-- Last name -->
             <div class="form-group">
-                <label for="name">Last Name:</label>
+                <label for="name" class="col-md-4 col-form-label text-md-right">Last Name:</label>
 
                 <div class="col-md-6">
                     <input type="text" class="form-control" id="name" name="name">
                 </div>
             </div>
 
-            <!-- Getting the coaches team ID -->
+            <!-- Email-->
             <div class="form-group row">
-                <label for="email">Team ID:</label>
+                <label for="email">Email:</label>
 
                 <div class="col-md-6">
-                    <input type="text" class="form-control" id="name" name="name">
+                    <input type="email" class="form-control" id="name" name="name">
                 </div>
             </div>
 
-            <!-- Position -->
+            <!-- Phone number -->
             <div class="form-group row">
-                <label for="name">Position:</label>
+                <label for="name">Phone Number:</label>
+
+                <div class="col-md-6">
+                    <input type="tel" class="form-control" id="name" name="name">
+                </div>
+            </div>
+
+            <!-- Getting the user type -->
+            <div class="form-group row">
+                <label for="name">User Type:</label>
 
                 <div class="col-md-6">
                     <input type="text" class="form-control" id="name" name="name">
                 </div>
             </div>
 
-            <!-- The coaches password -->
+            <!-- Password -->
             <div class="form-group row">
                 <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
 
@@ -70,7 +79,7 @@
                 </div>
             </div>
 
-            <!-- Confirm password -->
+            <!-- Confirm Password -->
             <div class="form-group row">
                 <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirm Password') }}</label>
 

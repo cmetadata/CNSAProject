@@ -75,6 +75,12 @@
           <li><a href="/login">Login</a></li>
         </ul>
       </div>
+
+      <div class="container-fluid right">
+        <ul class="nav navbar-nav">
+          <li><a href="/register">Register</a></li>
+        </ul>
+      </div>
   </nav>
 
 

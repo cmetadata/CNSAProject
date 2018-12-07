@@ -49,24 +49,55 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'managerId' => ['required', 'integer', 'max:'],
-            'email'     => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password'  => ['required', 'string', 'min:6', 'confirmed'],
+            'loginId'     => ['required', 'integer'],
+            'password'    => ['required', 'string', 'max:255', 'confirmed'],
+            'userType'    => ['required', 'string', 'max:1'],
+            'email'       => ['required', 'string', 'max:100'],
+            'phoneNumber' => ['required', 'string', 'max:14'],
+            'firstName'   => ['required', 'string', 'max:35'],
+            'lastName'    => ['required', 'string', 'max:35'],
+
         ]);
     }
 
     /**
-     * Create a new user instance after a valid registration.
+     * Create a new login instance
      *
      * @param  array  $data
      * @return \App\User
      */
     protected function create(array $data)
     {
-        return User::create([
-            'name'      => $data['name'],
-            'email'     => $data['email'],
-            'password'  => Hash::make($data['password']),
-        ]);
+        if ($data['userType'] == 'a' or $data['userType'] == 'A') {
+        //Create the user
+            $login = Login::create([
+                'loginId'     => $data['loginId'],
+                'password'    => $data['password'],
+                'userType'    => $data['userType'],
+                'email'       => $data['email'],
+                'phoneNumber' => $data['phoneNumber'],
+                'firstName'   => $data['firstName'],
+                'lastName'    => $data['lastName'],
+                'password'    => Hash::make($data['password']),
+            ]);
+        }
+        else if ($data['userType'] == 'c' or $data['userType'] == 'C') { 
+            $login = Login::create([
+                'loginId'     => $data['loginId'],
+                'password'    => $data['password'],
+                'userType'    => $data['userType'],
+                'email'       => $data['email'],
+                'phoneNumber' => $data['phoneNumber'],
+                'firstName'   => $data['firstName'],
+                'lastName'    => $data['lastName'],
+                'password'    => Hash::make($data['password']),
+            ]);
+        }
+
+        //Sign in the newly create login
+        auth()->login($login);
+
+        //Redirect to the home page
+        return $redirectTo;
     }
 }
