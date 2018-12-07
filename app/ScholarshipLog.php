@@ -8,7 +8,7 @@ class ScholarshipLog extends Model
 {
     //look Matt it's a comment
     protected $table = 'scholarships_log';
-    protected $primaryKey = 'logId';
+    protected $primaryKey = 'scholarshipLogId';
 
     public function player()
     {

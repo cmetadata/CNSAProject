@@ -16,7 +16,7 @@ class CreateInjuryLogTable extends Migration
         Schema::dropIfExists('injury_logs');
         Schema::enableForeignKeyConstraints();
         Schema::create('injury_logs', function (Blueprint $table) {
-            $table->increments('logId');
+            $table->increments('injuryLogId');
             $table->date('injuryDate');
             // fk -- games not fully implemented yet
             //$table->integer('gameId')->unsigned();            

@@ -23,7 +23,7 @@ class CreateStadiumsTable extends Migration
             // fk
             $table->integer('organizationId')->unsigned();
             // fk
-            $table->integer('schoolId')->unsigned();
+            //$table->integer('schoolId')->unsigned();
             $table->timestamps();
 
             
@@ -32,7 +32,7 @@ class CreateStadiumsTable extends Migration
         Schema::table('stadiums', function($table) {
             //Setting up the relationships
             $table->foreign('organizationId')->references('organizationId')->on('organizations')->onDelete('cascade');   
-            $table->foreign('schoolId')->references('schoolId')->on('schools')->onDelete('cascade');                     
+            //$table->foreign('schoolId')->references('schoolId')->on('schools')->onDelete('cascade');                     
             //$table->foreign('teamId')->references('teamId')->on('teams');            
         });
 

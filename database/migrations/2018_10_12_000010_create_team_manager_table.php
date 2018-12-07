@@ -17,11 +17,11 @@ class CreateTeamManagerTable extends Migration
         Schema::enableForeignKeyConstraints();
         Schema::create('team_managers', function (Blueprint $table) {
             $table->increments('managerId');
+            $table->string('position');            
             // fk
             $table->integer('teamId')->unsigned();
             // fk
             $table->integer('personId')->unsigned();
-            $table->string('position');            
             $table->timestamps();
 
         });

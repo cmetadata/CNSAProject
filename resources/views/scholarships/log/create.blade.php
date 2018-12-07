@@ -15,11 +15,6 @@
         <div class="grey-back buffer">
 
             <div class="form-group">
-                <label for="scholarshipDate">Scholarship Date:</label>
-                <input type="date" class="form-control" id="scholarshipDate" name="scholarshipDate" required>
-            </div>
-
-            <div class="form-group">
                 <label for="scholarshipId">Scholarship Id:</label>
                 <input type="text" class="form-control" id="scholarshipId" name="scholarshipId" required>
             </div>                        
@@ -28,6 +23,11 @@
                 <label for="playerId">Player Id:</label>
                 <input type="text" class="form-control" id="playerId" name="playerId" required>
             </div>                        
+
+            <div class="form-group">
+                <label for="scholarshipDate">Scholarship Date:</label>
+                <input type="date" class="form-control" id="scholarshipDate" name="scholarshipDate" required>
+            </div>
 
             <button type="submit" class="btn btn-default">Submit</button>
 

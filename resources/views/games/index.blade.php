@@ -5,7 +5,7 @@
 <div>
     <div class='btn-toolbar pull-right'>
         <div class='btn-group'>
-            <a class="btn btn-default new-button grey-back" href="/games/create">Add New Games</a>
+            <a class="btn btn-default new-button grey-back" href="/games/create">Add New Game</a>
         </div>
     </div>
      <h1 class="content-header grey-back">All Games</h1>
