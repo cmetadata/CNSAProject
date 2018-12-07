@@ -9,48 +9,53 @@
         <form method="POST" action="{{ route('register') }}">
             @csrf
 
+            <!-- Getting the required coach ID to be entered -->
             <div class="form-group row">
-                <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('User ID') }}</label>
+                <label for="name" class="col-md-4 col-form-label text-md-right">Manager ID:</label>
 
                 <div class="col-md-6">
-                    <input id="name" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ old('name') }}" required autofocus>
-
-                    @if ($errors->has('name'))
-                        <span class="invalid-feedback" role="alert">
-                            <strong>{{ $errors->first('name') }}</strong>
-                        </span>
-                    @endif
+                    <input id="name" class="form-control" type="text" name="name">
                 </div>
             </div>
 
-            <div class="form-group row">
-                <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
+            <!-- Getting the first name of the coach -->
+            <div class="form-group">
+                <label for="name">First Name:</label>
 
                 <div class="col-md-6">
-                    <input id="name" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ old('name') }}" required autofocus>
+                    <input type="text" class="form-control" id="name" name="name">
+                </div>
 
-                    @if ($errors->has('name'))
-                        <span class="invalid-feedback" role="alert">
-                            <strong>{{ $errors->first('name') }}</strong>
-                        </span>
-                    @endif
+            </div>
+
+            <!-- Getting the coaches last name -->
+            <div class="form-group">
+                <label for="name">Last Name:</label>
+
+                <div class="col-md-6">
+                    <input type="text" class="form-control" id="name" name="name">
                 </div>
             </div>
 
+            <!-- Getting the coaches team ID -->
             <div class="form-group row">
-                <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
+                <label for="email">Team ID:</label>
 
                 <div class="col-md-6">
-                    <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required>
-
-                    @if ($errors->has('email'))
-                        <span class="invalid-feedback" role="alert">
-                            <strong>{{ $errors->first('email') }}</strong>
-                        </span>
-                    @endif
+                    <input type="text" class="form-control" id="name" name="name">
                 </div>
             </div>
 
+            <!-- Position -->
+            <div class="form-group row">
+                <label for="name">Position:</label>
+
+                <div class="col-md-6">
+                    <input type="text" class="form-control" id="name" name="name">
+                </div>
+            </div>
+
+            <!-- The coaches password -->
             <div class="form-group row">
                 <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
 
@@ -65,6 +70,7 @@
                 </div>
             </div>
 
+            <!-- Confirm password -->
             <div class="form-group row">
                 <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirm Password') }}</label>
 
@@ -73,6 +79,7 @@
                 </div>
             </div>
 
+            <!-- Submit button -->
             <div class="form-group row mb-0">
                 <div class="col-md-6 offset-md-4">
                     <button type="submit" class="btn btn-default">

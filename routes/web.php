@@ -396,8 +396,6 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-
-
 //--------------------------------------------------------
 //--------------------------------------------------------
 //ORGANIZATIONS
@@ -480,9 +478,3 @@ Route::get('/positions/{positionId}/edit', 'PositionsController@edit');
 //Admin
 //Deletes the Positions information
 Route::get('/positions/{positionId}/delete', 'PositionsController@delete');
-
-
-
-
-
-

@@ -34,6 +34,7 @@ class ResetPasswordController extends Controller
      */
     public function __construct()
     {
+        // Why only for guests
         $this->middleware('guest');
     }
 }

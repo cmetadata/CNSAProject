@@ -63,10 +63,10 @@ class PlayersController extends Controller
         $this->validate(request(), [
             'personFirstName'   => 'required|max:35',
             'personLastName'    => 'required|max:30',
-            'teamId' => 'required',
-            'playerRating' => 'required',
-            'yearEntered' => 'required',
-            'position'    => 'required'
+            'teamId'            => 'required',
+            'playerRating'      => 'required',
+            'yearEntered'       => 'required',
+            'position'          => 'required'
         ]);
 
         //USED FOR TESTING

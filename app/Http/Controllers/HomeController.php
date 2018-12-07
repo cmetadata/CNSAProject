@@ -13,7 +13,8 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+        //Makes it so that only someone who is logged in can see the home page
+        $this->middleware('auth', ['only' => 'index']);
     }
 
     /**
