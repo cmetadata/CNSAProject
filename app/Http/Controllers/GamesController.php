@@ -27,7 +27,7 @@ class GamesController extends Controller
             
             
             // this returns a collection into the gameStats array
-            $gameStats[$i] = GameStat::all()->where('gameId', $game->gameId);
+            $gameStats = GameStat::all()->where('gameId', $game->gameId);
 
             // find the team based on teamId on gameStats array element
             $teams1[$i] = Team::find($gameStats->first()->get($i)->teamId);
