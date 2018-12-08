@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Game;
 use App\GameStat;
+use App\Stadium;
+Use App\Team;
 use Illuminate\Http\Request;
 
 class GamesController extends Controller
@@ -24,14 +26,6 @@ class GamesController extends Controller
             $stadium[$i] = Stadium::find($game->stadiumId);            
             $i += 1;
         }
-
-
-        // $gameStats[$i] = GameStat::all()->where('gameId', $game->gameId);
-
-        // // find the game stat based on teamId on gameStat
-        // $teams[$i] = Team::all()->where('teamId', $gameStats[$i]->teamId);
-
-
 
         return view('games.index', compact('games', 'stadium'));
     }
