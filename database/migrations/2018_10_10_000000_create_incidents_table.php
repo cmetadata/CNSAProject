@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Schema;
         {
             Schema::dropIfExists('recruiting_incident');
             Schema::enableForeignKeyConstraints();
-            Schema::create('incidents', function (Blueprint $table) {
+            Schema::create('recruiting_incident', function (Blueprint $table) {
                 $table->increments('incidentId');
                 $table->string('incidentDescription');
                 $table->timestamps();
