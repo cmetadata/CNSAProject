@@ -17,7 +17,6 @@
                  pull gameId from last() method from games table, 
                  push gameId, teamId1, teamId2, teamScore1,  to coaches table -->
 
-
             <div class="form-group">
                 <label for="gameDate">Game Date:</label>
                 <input type="date" class="form-control" id="gameDate" name="gameDate" required>
