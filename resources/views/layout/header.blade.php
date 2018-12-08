@@ -47,6 +47,7 @@
           <span class="caret"></span></a>
         <ul class="dropdown-menu">
           <li><a class="dropdown-item" href="/persons">See Full Directory</a></li>
+          <li><a class="dropdown-item" href="/player_stat/create">New Player Stat</a></li>
           <li><a class="dropdown-item" href="/injuries/create">New Injury</a></li>
           <li><a class="dropdown-item" href="/scholarships/create">New Scholarship</a></li>
           <li><a class="dropdown-item" href="/incidents/create">New Incident</a></li>

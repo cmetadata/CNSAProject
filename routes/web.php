@@ -99,8 +99,11 @@ Route::get('/players/{playerId}', 'PlayersController@show');
 //Displaying a list of players
 Route::get('/players', 'PlayersController@index');
 
+Route::get('/player_stat/create', 'PlayerStatController@create');
 
 Route::post('/players', 'PlayersController@store');
+
+Route::post('/player_stat', 'PlayerStatController@store');
 
 //Public, Coaches and Admin
 //Editing a players information

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Game;
+use App\GameStat;
 use Illuminate\Http\Request;
 
 class GamesController extends Controller
