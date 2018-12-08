@@ -172,6 +172,12 @@ class PlayersController extends Controller
 
 
         $i = 0;
+        $goals = 0;
+        $assists = 0;
+        $saves = 0;
+        $redCard = 0;
+        $yellowCard = 0;
+        
         foreach ($stats as $stat)
         {
             $goals += $stat->goals;
