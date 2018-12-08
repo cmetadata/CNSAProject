@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Game;
 use App\GameStat;
+use App\Game;
 use App\Stadium;
 Use App\Team;
 use Illuminate\Http\Request;
@@ -99,6 +99,7 @@ class GamesController extends Controller
 
         $gameStat1->save();
 
+        
         
         $gameStat2 = new GameStat;
 
