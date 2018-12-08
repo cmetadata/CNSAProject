@@ -31,13 +31,8 @@ class GamesController extends Controller
             // this returns a collection into the gameStats array
             $gameStats[$i] = GameStat::all()->where('gameId', $game->gameId);
 
-            // if($i == 2)
-            // {
-            //     dd($gameStats);
-            
-            //     dd(gameStats()->all());
-            // }
 
+            // remainder
             if ($i % 2 === 1)
             {
                 $index = $i + 1;
@@ -77,7 +72,7 @@ class GamesController extends Controller
     public function store(Request $request)
     {    
         // declare stat models
-        $game = new Game;
+        $game = new GameStat;
 
         $game->gameDate = $request->gameDate;
 
@@ -89,7 +84,7 @@ class GamesController extends Controller
 
 
         
-        $gameStat1 = new GameStat;
+        $gameStat1 = new Game;
 
         $gameStat1->teamScore = $request->teamScore1;
 
@@ -99,9 +94,9 @@ class GamesController extends Controller
 
         $gameStat1->save();
 
+
         
-        
-        $gameStat2 = new GameStat;
+        $gameStat2 = new Game;
 
         $gameStat2->teamScore = $request->teamScore2;
 
