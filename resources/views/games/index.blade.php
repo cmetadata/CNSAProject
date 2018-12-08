@@ -14,21 +14,21 @@
 
 @foreach ($games as $game)
 
-    $index = 0
+    {{ $index = 0 }}
 
     @if ($loop->index === 1)
-        $index = 2 
+        {{ $index = 2 }}
     @endif
 
     @if ($loop->index % 2 === 1)
-        $index = $loop->index + 1 
+        {{ $index = $loop->index + 1 }} 
     @endif
     
 
 	@include ('games.game', compact('index'))
 	<br/>
 
-    $index += 1 
+    {{ $index += 1 }}
 @endforeach
 
 @endsection
