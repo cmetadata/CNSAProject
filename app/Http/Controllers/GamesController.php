@@ -88,7 +88,7 @@ class GamesController extends Controller
         $game->save();
 
 
-
+        
         $gameStat1 = new GameStat;
 
         $gameStat1->teamScore = $request->teamScore1;
