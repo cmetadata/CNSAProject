@@ -31,7 +31,7 @@ class GamesController extends Controller
             // this returns a collection into the gameStats array
             $gameStats[$i] = GameStat::all()->where('gameId', $game->gameId);
 
-            // if($i == 1)
+            // if($i == 2)
             // {
             //     dd($gameStats);
             

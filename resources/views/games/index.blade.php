@@ -13,8 +13,17 @@
 <hr/>
 
 @foreach ($games as $game)
-	@include ('games.game')
+
+    {{ $index = 0 }}
+
+    @if ($loop->index === 1)
+        {{ $index = 2 }}
+    @endif
+
+	@include ('games.game', compact('index'))
 	<br/>
+
+    {{ $index += 1 }}    
 @endforeach
 
 @endsection
