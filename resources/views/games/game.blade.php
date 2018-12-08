@@ -16,7 +16,9 @@
         </tr>
         <tr>
             <td width="25%">Team 1: {{$teams1[$loop->index]->teamName}}</td>
+            <td width="25%">Score: {{$gameStats[$loop->index]->get($loop->index)->teamScore}}</td>
             <td width="25%">Team 2: {{$teams2[$loop->index]->teamName}}</td>
+            <td width="25%">Score: {{$gameStats[$loop->index]->get($loop->index+1)->teamScore}}</td>
         </tr>
         </table>
       </div>

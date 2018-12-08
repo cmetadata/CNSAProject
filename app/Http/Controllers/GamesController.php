@@ -38,7 +38,7 @@ class GamesController extends Controller
             $i += 1;
         }
 
-        return view('games.index', compact('games', 'stadium', 'teams1', 'teams2'));
+        return view('games.index', compact('games', 'stadium', 'gameStats', 'teams1', 'teams2'));
     }
 
     /**
