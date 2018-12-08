@@ -8,7 +8,7 @@
   <a class="btn btn-default edit-button grey-back" href="#">Delete Team</a>
   <br/>
   <p>
-						{{ $school->first()->schoolName }}
+						{{ $school[0]->schoolName }}
   </p>
 
     <div class=info-page>
