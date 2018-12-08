@@ -15,7 +15,25 @@ class GamesController extends Controller
      */
     public function index()
     {
-        return view('games.index');
+        $games = Game::all();
+
+        $i = 0;
+        foreach ($games as $game)
+        {
+            // find the stadium for each game
+            $stadium[$i] = Stadium::find($game->stadiumId);            
+            $i += 1;
+        }
+
+
+        // $gameStats[$i] = GameStat::all()->where('gameId', $game->gameId);
+
+        // // find the game stat based on teamId on gameStat
+        // $teams[$i] = Team::all()->where('teamId', $gameStats[$i]->teamId);
+
+
+
+        return view('games.index', compact('games', 'stadium'));
     }
 
     /**

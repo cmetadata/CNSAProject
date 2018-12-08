@@ -12,6 +12,8 @@
 </div>
 <hr/>
 
-@include('games.game')
+@foreach ($games as $game)
+	@include ('games.game')
+	<br/>
+@endforeach
 
-@endsection

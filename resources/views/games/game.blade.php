@@ -9,9 +9,10 @@
       <div class="object-div grey-back">
         <table width="100%">
         <tr>
-            <td width="15%">Date</td>
-            <td width="25%"><a href=#>Stadium</a></td>
-            <td width="45%" align="right"><a href=#>Team Here:</a></td>
+            <td width="15%">Date {{$game[$loop->index]->gameDate}}</td>
+            <td width="15%">Attendance {{$game[$loop->index]->gameAttendance}}</td>
+            <td width="25%"><a href=#>Stadium {{$stadium[$loop->index]->stadiumName}}</a></td>
+            <td width="45%" align="right"><a href=#>Team Name: </a></td>
             <td width="5%"></td>
             <td width="10%">Score</td>
         </tr>
