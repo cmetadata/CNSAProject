@@ -20,7 +20,7 @@
         $index = 2 
     @endif
 
-    @if ($i % 2 === 1)
+    @if ($loop->index % 2 === 1)
         $index = $loop->index + 1 
     @endif
     
