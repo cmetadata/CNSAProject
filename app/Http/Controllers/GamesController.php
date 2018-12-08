@@ -23,7 +23,14 @@ class GamesController extends Controller
         foreach ($games as $game)
         {
             // find the stadium for each game
-            $stadium[$i] = Stadium::find($game->stadiumId);            
+            $stadium[$i] = Stadium::find($game->stadiumId);       
+            
+            
+            $gameStats[$i] = GameStat::all()->where('gameId', $game->gameId);
+
+            // // find the game stat based on teamId on gameStat
+            // $teams[$i] = Team::all()->where('teamId', $gameStats[$i]->teamId);
+
             $i += 1;
         }
 
