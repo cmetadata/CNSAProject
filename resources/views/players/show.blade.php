@@ -17,8 +17,8 @@
     Saves: {{$saves}}<br/>
     Assists: {{$assists}}<br/>
     <br/>
-    Red Cards: {{$redCards}}<br/>
-    Yellow Cards: {{$yellowCards}}<br/>
+    Red Cards: {{$redCard}}<br/>
+    Yellow Cards: {{$yellowCard}}<br/>
   </div>
 
     <!--Include a list of all teams belonging to the school-->
