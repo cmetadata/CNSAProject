@@ -31,12 +31,12 @@ class GamesController extends Controller
             // this returns a collection into the gameStats array
             $gameStats[$i] = GameStat::all()->where('gameId', $game->gameId);
 
-        if($i == 1)
-        {
-            dd($gameStats);
-        
-            dd(gameStats()->all());
-        }
+            // if($i == 1)
+            // {
+            //     dd($gameStats);
+            
+            //     dd(gameStats()->all());
+            // }
 
             // find the team based on teamId on gameStats array element
             $teams1[$i] = Team::find($gameStats[$i]->get($i)->teamId);
@@ -44,7 +44,8 @@ class GamesController extends Controller
             // find the second team by adding +1 in the get area of the collection
             $teams2[$i] = Team::find($gameStats[$i]->get($i+1)->teamId);
 
-            $i += 1;
+            // is it adding twice?
+           // $i += 1;
         }
 
         return view('games.index', compact('games', 'stadium', 'gameStats', 'teams1', 'teams2'));
