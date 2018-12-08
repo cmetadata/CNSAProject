@@ -7,15 +7,12 @@
   <a class="btn btn-default edit-button grey-back" href="#">Edit Team</a>
   <a class="btn btn-default edit-button grey-back" href="#">Delete Team</a>
   <br/>
-  <p>{{$school->schoolName}}
-
+  <p>
   @isset($school[$loop->index])
-						{{ $school[$loop->index]->schoolName }}
 						{{ $school[$loop->index]->schoolName }}
 				@endisset
 
 				@empty($school[$loop->index])
-						{{ $school->first()->schoolName }}
 						{{ $school->first()->schoolName }}
 				@endempty  
   </p>
