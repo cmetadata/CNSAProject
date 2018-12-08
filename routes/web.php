@@ -185,7 +185,7 @@ Route::get('/teams/{teamId}/delete', 'TeamsController@delete');
 //Displays the list of coaches
 Route::get('/games', 'GamesController@index');
 
-Route::post('games', 'GamesController@store');
+Route::post('/games', 'GamesController@store');
 
 //Coaches and Admins
 //Adds a game
