@@ -170,14 +170,15 @@ class PlayersController extends Controller
             $i += 1;
         }
 
+
         $i = 0;
         foreach ($stats as $stat)
         {
-            $goals += PlayerStat::find($stat->goals);
-            $assists += PlayerStat::find($stat->assists);
-            $saves += PlayerStat::find($stat->saves);
-            $redCard += PlayerStat::find($stat->redCard);
-            $yellowCard += PlayerStat::find($stat->yellowCard);
+            $goals += $stat->goals;
+            $assists += $stat->assists;
+            $saves += $stat->saves;
+            $redCard += $stat->redCard;
+            $yellowCard +=  $stat->yellowCard;
             $i += 1;
         }
 
