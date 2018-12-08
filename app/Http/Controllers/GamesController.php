@@ -19,7 +19,7 @@ class GamesController extends Controller
     {
         $games = Game::all();
 
-        $zeroth = 0;
+        $index = 0;
 
         $i = 0;
         foreach ($games as $game)
@@ -38,14 +38,20 @@ class GamesController extends Controller
             //     dd(gameStats()->all());
             // }
 
+            if ($i == 1)
+            {
+                $index = 2;
+            }
+
+
             // find the team based on teamId on gameStats array element
-            $teams1[$i] = Team::find($gameStats[$i]->get($i)->teamId);
+            $teams1[$i] = Team::find($gameStats[$i]->get($index)->teamId);
             
             // find the second team by adding +1 in the get area of the collection
-            $teams2[$i] = Team::find($gameStats[$i]->get($i+1)->teamId);
+            $teams2[$i] = Team::find($gameStats[$i]->get($index+1)->teamId);
 
-            // is it adding twice?
-           // $i += 1;
+            $i += 1;
+            $index += 1;
         }
 
         return view('games.index', compact('games', 'stadium', 'gameStats', 'teams1', 'teams2'));
