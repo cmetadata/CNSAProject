@@ -4,12 +4,12 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Game extends Model
+class GameStat extends Model
 {
     //Setting the primary key to be named something other than id
-    protected $table = 'games';
+    protected $table = 'game_stats';
 
-    protected $primaryKey = 'gameId';
+    protected $primaryKey = 'statId';
 
     public function stadium()
     {
