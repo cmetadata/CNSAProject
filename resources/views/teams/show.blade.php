@@ -8,13 +8,7 @@
   <a class="btn btn-default edit-button grey-back" href="#">Delete Team</a>
   <br/>
   <p>
-  @isset($school[$loop->index])
-						{{ $school[$loop->index]->schoolName }}
-				@endisset
-
-				@empty($school[$loop->index])
 						{{ $school->first()->schoolName }}
-				@endempty  
   </p>
 
     <div class=info-page>
