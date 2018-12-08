@@ -30,10 +30,10 @@ class GamesController extends Controller
             $gameStats[$i] = GameStat::all()->where('gameId', $game->gameId);
 
             // find the team based on teamId on gameStats array element
-            $teams1[$i] = Team::find($gameStats[$i]->get($i)->teamId);
+            $teams1[$i] = Team::find($gameStats->first()->get($i)->teamId);
             
             // find the second team by adding +1 in the get area of the collection
-            $teams2[$i] = Team::find($gameStats[$i]->get($i+1)->teamId);
+            $teams2[$i] = Team::find($gameStats->first()->get($i+1)->teamId);
 
             $i += 1;
         }
