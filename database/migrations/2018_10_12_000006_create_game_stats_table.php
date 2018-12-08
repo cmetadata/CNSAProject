@@ -29,7 +29,7 @@ class CreateGameStatsTable extends Migration
             //Setting up the relationships
             $table->foreign('teamId')->references('teamId')->on('teams')->onDelete('cascade');
 
-            $table->foreign('gameId')->references('id')->on('games')->onDelete('cascade');
+            $table->foreign('gameId')->references('gameId')->on('games')->onDelete('cascade');
         });
 
 

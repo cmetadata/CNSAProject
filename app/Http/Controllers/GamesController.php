@@ -72,40 +72,24 @@ class GamesController extends Controller
     public function store(Request $request)
     {    
         // declare stat models
+
         $game = new Game;
-
         $game->gameDate = $request->gameDate;
-
         $game->gameAttendance = $request->gameAttendance;
-
         $game->stadiumId = $request->stadiumId;
-
         $game->save();
-
-
         
-        $gameStat1 = new GameStat;
-
+        $gameStat1 = new GameStat; 
         $gameStat1->teamScore = $request->teamScore1;
-
         $gameStat1->teamId = $request->teamId1;
-
         $gameStat1->gameId = $game->gameId;
-
         $gameStat1->save();
-
-
         
-        $gameStat2 = new GameStat;
-
+        $gameStat2 = new GameStat; 
         $gameStat2->teamScore = $request->teamScore2;
-
         $gameStat2->teamId = $request->teamId2;
-
         $gameStat2->gameId = $game->gameId;
-
-        $gameStat2->save();
-
+        $gameStat2->save(); 
     }
 
     /**
