@@ -33,7 +33,7 @@ class GamesController extends Controller
             $teams1[$i] = Team::find($gameStats->first()->teamId);
             
             // find the second team by adding +1 in the get area of the collection
-            $teams2[$i] = Team::find($gameStats->first()->teamId);
+            $teams2[$i] = Team::find($gameStats->skip(1)->first()->teamId);
 
             $i += 1;
         }
