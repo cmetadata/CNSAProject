@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Player;
+use App\PlayerStat;
 use App\Person;
 use App\Team;
 use App\Incident;
@@ -140,6 +141,7 @@ class PlayersController extends Controller
         $incidents = IncidentLog::all()->where('playerId', $request->playerId);
         $injuries = InjuryLog::all()->where('playerId', $request->playerId);
         $scholarships = ScholarshipLog::all()->where('playerId', $request->playerId);
+        $stats = PlayerStat::all()->where('playerId', $request->playerId);
 
         $person = Person::find($player->personId);
         $team = Team::find($player->teamId);
@@ -168,11 +170,21 @@ class PlayersController extends Controller
             $i += 1;
         }
 
+        $i = 0;
+        foreach ($stats as $stat)
+        {
+            $goals += PlayerStat::find($stat->goals);
+            $assists += PlayerStat::find($stat->assists);
+            $saves += PlayerStat::find($stat->saves);
+            $redCard += PlayerStat::find($stat->redCard);
+            $yellowCard += PlayerStat::find($stat->yellowCard);
+            $i += 1;
+        }
 
         
         //dd($player, $team, $school);
         return view('players.show', compact(['player', 'team', 'school', 'person', 'incidents', 'incidentNames', 'injuries', 'injuryNames',       
-        'scholarships', 'scholarshipNames']));
+        'scholarships', 'scholarshipNames', 'stats', 'goals', 'assists', 'saves', 'redCard', 'yellowCard']));
     }
 
 

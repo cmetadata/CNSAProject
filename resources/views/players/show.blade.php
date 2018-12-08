@@ -13,12 +13,12 @@
     Joined in: {{$player->yearEntered}}<br/>
     High School: {{$player->highSchool}}<br/>
     <br/>
-    Goals: {{$player->goals}}<br/>
-    Saves: {{$player->saves}}<br/>
-    Assists: {{$player->assists}}<br/>
+    Goals: {{$goals}}<br/>
+    Saves: {{$saves}}<br/>
+    Assists: {{$assists}}<br/>
     <br/>
-    Red Cards: {{$player->redCards}}<br/>
-    Yellow Cards: {{$player->yellowCards}}<br/>
+    Red Cards: {{$redCards}}<br/>
+    Yellow Cards: {{$yellowCards}}<br/>
   </div>
 
     <!--Include a list of all teams belonging to the school-->
