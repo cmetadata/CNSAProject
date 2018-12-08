@@ -25,7 +25,7 @@
             </div>            
 
             <div class="form-group">
-                <label for="assists">Saves:</label>
+                <label for="assists">Assists:</label>
                 <input type="text" class="form-control" id="assists" name="assists" required>
             </div>            
 
