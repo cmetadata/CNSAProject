@@ -14,6 +14,10 @@
             <td width="25%">Attendance: {{$game->gameAttendance}}</td>
             <td width="25%"><a href=#>Stadium: {{$stadium[$loop->index]->stadiumName}}</a></td>
         </tr>
+        <tr>
+            <td width="25%">Team 1: {{$teams1[$loop->index]->teamName}}</td>
+            <td width="25%">Team 2: {{$teams2[$loop->index]->teamName}}</td>
+        </tr>
         </table>
       </div>
 </div>
