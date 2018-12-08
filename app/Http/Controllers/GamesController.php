@@ -72,7 +72,7 @@ class GamesController extends Controller
     public function store(Request $request)
     {    
         // declare stat models
-        $game = new GameStat;
+        $game = new Game;
 
         $game->gameDate = $request->gameDate;
 
@@ -84,7 +84,7 @@ class GamesController extends Controller
 
 
         
-        $gameStat1 = new Game;
+        $gameStat1 = new GameStat;
 
         $gameStat1->teamScore = $request->teamScore1;
 
@@ -96,7 +96,7 @@ class GamesController extends Controller
 
 
         
-        $gameStat2 = new Game;
+        $gameStat2 = new GameStat;
 
         $gameStat2->teamScore = $request->teamScore2;
 
