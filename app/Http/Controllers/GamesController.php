@@ -38,9 +38,9 @@ class GamesController extends Controller
             //     dd(gameStats()->all());
             // }
 
-            if ($i == 1)
+            if ($i % 2 === 1)
             {
-                $index = 2;
+                $index = $i + 1;
             }
 
 
