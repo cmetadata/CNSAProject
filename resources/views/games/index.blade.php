@@ -16,7 +16,7 @@
 
     {{ $index = 0 }}
 
-    @if (index !== 1)
+    @if ($index !== 1)
         @if (($index % 2) == 1)
             {{ $index += 1 }} 
         @endif
