@@ -113,15 +113,15 @@ class RegisterController extends Controller
             'password'    => ['required', 'string', 'max:255', 'confirmed'],
             'userType'    => ['required', 'string', 'max:1'],
             'email'       => ['required', 'string', 'max:100'],
-            'phoneNumber',
+            'phoneNumber' => ['required', 'string', 'max:14'],
             'firstName'   => ['required', 'string', 'max:35'],
             'lastName'    => ['required', 'string', 'max:35'],
         ]);
 
-    $user = User::create(request(['loginId', 'password', 'userType', 'email', 'phoneNumber', 'firstName', 'lastName']));
+    $login = Login::create(request(['loginId', 'password', 'userType', 'email', 'phoneNumber', 'firstName', 'lastName']));
 
-    auth()->login($user);
+    auth()->login($login);
 
-    return $redirectTo;
+    return $redirectTo();
     }
 }
