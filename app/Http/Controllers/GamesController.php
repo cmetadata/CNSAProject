@@ -82,13 +82,13 @@ class GamesController extends Controller
         $gameStat1 = new GameStat; 
         $gameStat1->teamScore = $request->teamScore1;
         $gameStat1->teamId = $request->teamId1;
-        $gameStat1->gameId = $game->gameId;
+        $gameStat1->gameId = $game->statId;
         $gameStat1->save();
         
         $gameStat2 = new GameStat; 
         $gameStat2->teamScore = $request->teamScore2;
         $gameStat2->teamId = $request->teamId2;
-        $gameStat2->gameId = $game->gameId;
+        $gameStat2->gameId = $game->statId;
         $gameStat2->save(); 
     }
 
