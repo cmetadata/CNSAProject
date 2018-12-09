@@ -5,7 +5,7 @@ class Game extends Model
 {
     //Setting the primary key to be named something other than id
     protected $table = 'games';
-    protected $primaryKey = 'gameId';
+    protected $primaryKey = 'statId';
     
     public function stadium()
     {
