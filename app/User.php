@@ -10,7 +10,7 @@ class User extends Authenticatable
 {
     use Notifiable;
 
-    protected $table = 'team_managers';
+    //protected $table = 'team_managers';
 
     protected $primaryKey = 'loginId';
 
