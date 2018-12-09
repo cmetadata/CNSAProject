@@ -44,12 +44,11 @@ class GamesController extends Controller
             //     $index = $i + 1;
             // }
 
+            
 
             if ($i == 1)
             {
-                dd($gameStats);
-        
-                dd(gameStats()->all());
+                $index = 2;
             }
 
 
