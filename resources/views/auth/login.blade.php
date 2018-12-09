@@ -6,7 +6,7 @@
     <div class="login-form">
         <h1 class="title2 grey-back">Login</h1>
         <br/>
-        <form method="POST" action="{{ route('login') }}">
+        <form method="POST" action="/login">
             @csrf
 
             <div class="form-group row">

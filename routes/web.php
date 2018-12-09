@@ -481,3 +481,11 @@ Route::get('/positions/{positionId}/edit', 'PositionsController@edit');
 //Admin
 //Deletes the Positions information
 Route::get('/positions/{positionId}/delete', 'PositionsController@delete');
+
+
+//Register/Login
+Route::get('/register', 'Auth\RegisterController@create');
+Route::post('/register', 'Auth\RegisterController@store');
+
+Route::get('/login', 'Auth\LoginController@create');
+Route::post('/login', 'Auth\LoginController@store');
