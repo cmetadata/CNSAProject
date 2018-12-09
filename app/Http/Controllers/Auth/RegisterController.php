@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\User;
+use Illuminate\Foundation\Auth;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -57,8 +58,8 @@ class RegisterController extends Controller
             'firstName'   => ['required', 'string', 'max:35'],
             'lastName'    => ['required', 'string', 'max:35'],
 
-        ]);
-    }*/
+        ]);*/
+    }
 
     /**
      * Create a new login instance
@@ -66,9 +67,9 @@ class RegisterController extends Controller
      * @param  array  $data
      * @return \App\User
      */
-    protected function create(array $data)
+    public function create()
     {
-        return view('auth.login');
+        return view('auth.register');
     }
 
     public function store()
