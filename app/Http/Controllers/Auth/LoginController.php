@@ -36,4 +36,20 @@ class LoginController extends Controller
     {
         $this->middleware('guest')->except('logout');
     }
+
+    public function create()
+    {
+        return view('auth.login');
+    }
+
+    public function store()
+    {
+        if (! auth()->attempt(request(['email', 'password']))) {
+            return back()->withErrors([
+                'message' => 'Please try again'
+            ]);
+        }
+
+        return $redirectTo;
+    }
 }

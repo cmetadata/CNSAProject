@@ -6,7 +6,7 @@
     <div class="login-form">
         <h1 class="title2 grey-back">Register</h1>
         <br/>
-        <form method="POST" action="{{ route('register') }}">
+        <form method="POST" action="/register">
             @csrf
 
             <!-- Login ID -->
@@ -14,7 +14,7 @@
                 <label for="name" class="col-md-4 col-form-label text-md-right">Login ID:</label>
 
                 <div class="col-md-6">
-                    <input id="name" class="form-control" type="text" name="name" required>
+                    <input id="name" class="form-control" type="text" name="loginId" required>
                 </div>
             </div>
 
@@ -23,7 +23,7 @@
                 <label for="name" class="col-md-4 col-form-label text-md-right">First Name:</label>
 
                 <div class="col-md-6">
-                    <input type="text" class="form-control" id="name" name="name" required>
+                    <input type="text" class="form-control" id="name" name="firstName" required>
                 </div>
 
             </div>
@@ -33,7 +33,7 @@
                 <label for="name" class="col-md-4 col-form-label text-md-right">Last Name:</label>
 
                 <div class="col-md-6">
-                    <input type="text" class="form-control" id="name" name="name" required>
+                    <input type="text" class="form-control" id="name" name="lastName" required>
                 </div>
             </div>
 
@@ -42,7 +42,7 @@
                 <label for="email">Email:</label>
 
                 <div class="col-md-6">
-                    <input type="email" class="form-control" id="name" name="name" required>
+                    <input type="email" class="form-control" id="name" name="email" required>
                 </div>
             </div>
 
@@ -51,7 +51,7 @@
                 <label for="name">Phone Number:</label>
 
                 <div class="col-md-6">
-                    <input type="tel" class="form-control" id="name" name="name" required>
+                    <input type="tel" class="form-control" id="name" name="phoneNumber" required>
                 </div>
             </div>
 
@@ -60,7 +60,7 @@
                 <label for="name">User Type:</label>
 
                 <div class="col-md-6">
-                    <input type="text" class="form-control" id="name" name="name" required>
+                    <input type="text" class="form-control" id="name" name="userType" required>
                 </div>
             </div>
 
