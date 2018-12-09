@@ -39,13 +39,10 @@ class GamesController extends Controller
 
 
             // remainder
-            if ($i != 1)
+            if (($i % 2) == 1)
             {
-                if (($i % 2) == 1)
-                {
-                    $index = $i + 1;
-                }    
-            }
+                $index = $i + 1;
+            }    
 
 
             // find the team based on teamId on gameStats array element
