@@ -44,10 +44,10 @@ class GamesController extends Controller
                 $index += 1;
             }    
 
-            if ($i == 2)
-            {
-                dd($gameStats, $index, $i);
-            }
+            // if ($i == 2)
+            // {
+            //     dd($gameStats, $index, $i);
+            // }
 
 
             // find the team based on teamId on gameStats array element
