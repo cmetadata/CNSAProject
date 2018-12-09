@@ -46,7 +46,7 @@ class GamesController extends Controller
 
             if ($i == 2)
             {
-                dd($gameStats);
+                dd($gameStats, $index);
             }
 
 
