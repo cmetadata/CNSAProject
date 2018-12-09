@@ -34,7 +34,7 @@ class CreatePlayerStatsTable extends Migration
 
         Schema::table('player_stats', function($table) {
             //Setting up the relationships
-            $table->foreign('gameId')->references('id')->on('games')->onDelete('cascade');
+            $table->foreign('gameId')->references('statId')->on('games')->onDelete('cascade');
             $table->foreign('playerId')->references('playerId')->on('players')->onDelete('cascade');
             $table->foreign('teamId')->references('teamId')->on('teams')->onDelete('cascade');
         });
