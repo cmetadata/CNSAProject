@@ -39,7 +39,13 @@ class GamesController extends Controller
 
 
             // remainder
-            if ($i == 3)
+            // if (($i % 2) == 1)
+            // {
+            //     $index = $i + 1;
+            // }
+
+
+            if ($i == 2)
             {
                 dd($gameStats);
         
