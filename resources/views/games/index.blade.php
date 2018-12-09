@@ -16,8 +16,8 @@
 
     {{ $index = 0 }}
 
-    @if (($loop->index % 2) == 1)
-        {{ $index = $loop->index + 1 }} 
+    @if (($index % 2) == 1)
+        {{ $index += 1 }} 
     @endif
 
 
