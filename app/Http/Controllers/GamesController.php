@@ -44,6 +44,11 @@ class GamesController extends Controller
                 $index = $i + 1;
             }    
 
+            if ($i == 2)
+            {
+                dd($gameStats);
+            }
+
 
             // find the team based on teamId on gameStats array element
             $teams1[$i] = Team::find($gameStats[$i]->get($index)->teamId);
