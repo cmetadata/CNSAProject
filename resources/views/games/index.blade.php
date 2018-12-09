@@ -12,14 +12,12 @@
 </div>
 <hr/>
 
+{{ $index = 0 }}
+
 @foreach ($games as $game)
 
-    {{ $index = 0 }}
-
-    @if ($index !== 1)
-        @if (($index % 2) == 1)
-            {{ $index += 1 }} 
-        @endif
+    @if (($index % 2) == 1)
+        {{ $index += 1 }} 
     @endif
 
 
