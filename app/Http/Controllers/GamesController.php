@@ -39,7 +39,7 @@ class GamesController extends Controller
 
 
             // remainder
-            if ($i % 2 === 1)
+            if (($i % 2) == 1)
             {
                 $index = $i + 1;
             }
