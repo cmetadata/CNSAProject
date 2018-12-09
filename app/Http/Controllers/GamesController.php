@@ -29,7 +29,7 @@ class GamesController extends Controller
             
             
             // this returns a collection into the gameStats array
-            $gameStats[$i] = GameStat::all()->where('statId', $game->statId);
+            $gameStats[$i] = GameStat::all()->where('gameId', $game->statId);
 
 
             // remainder
