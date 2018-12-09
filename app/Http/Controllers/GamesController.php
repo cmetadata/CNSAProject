@@ -41,7 +41,7 @@ class GamesController extends Controller
             // remainder
             if (($index % 2) == 1)
             {
-                $index = $i + 1;
+                $index += 1;
             }    
 
             if ($i == 2)
