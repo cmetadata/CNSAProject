@@ -108,7 +108,6 @@ class OrganizationsController extends Controller
      */
     public function update(Request $request, $organizationId)
     {
-        dd($organizationId);
         $this->validate(request(), [
             'organizationName' => 'required|max:50',
         ]);
