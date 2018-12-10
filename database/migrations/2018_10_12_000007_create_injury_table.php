@@ -19,6 +19,7 @@ class CreateInjuryTable extends Migration
             $table->increments('injuryId');
             $table->string('injury', 50);
             $table->timestamps();
+            $table->softDeletes();  
         });
     }
 

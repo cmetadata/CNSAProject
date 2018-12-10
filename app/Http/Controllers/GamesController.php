@@ -166,8 +166,11 @@ class GamesController extends Controller
      * @param  \App\c  $c
      * @return \Illuminate\Http\Response
      */
-    public function destroy(c $c)
+    public function destroy(Request $request)
     {
         //
+        $game = Game::find($request->gameId);
+        $game->delete();
+        return redirect('/games')->with('success', 'Game Deleted');
     }
 }

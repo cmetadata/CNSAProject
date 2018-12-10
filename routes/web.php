@@ -109,9 +109,11 @@ Route::post('/player_stat', 'PlayerStatController@store');
 //Editing a players information
 Route::get('/players/{playerId}/edit', 'PlayersController@edit');
 
+Route::post('/players/{playerId}', 'PlayersController@update');
+
 //Admin
 //Deletes the school information
-Route::get('/players/{playerId}/delete', 'PlayersController@delete');
+Route::post('/players/{playerId}/delete', 'PlayersController@destroy');
 
 
 //--------------------------------------------------------
@@ -176,7 +178,7 @@ Route::get('/teams/{teamId}/edit', 'TeamsController@edit');
 
 //Admin
 //Deletes the school information
-Route::get('/teams/{teamId}/delete', 'TeamsController@delete');
+Route::post('/teams/{teamId}/delete', 'TeamsController@destroy');
 
 
 //--------------------------------------------------------
@@ -233,7 +235,7 @@ Route::get('/schools/{schoolId}/edit', 'SchoolsController@edit');
 
 //Admin
 //Deletes the school information
-Route::get('/schools/{schoolId}/delete', 'SchoolsController@delete');
+Route::post('/schools/{schoolId}/delete', 'SchoolsController@destroy');
 
 //--------------------------------------------------------
 //--------------------------------------------------------
@@ -260,7 +262,7 @@ Route::get('/stadiums/{stadiumId}/edit', 'StadiumsController@edit');
 
 //Admin
 //Deletes the stadium information
-Route::get('/stadiums/{stadiumId}/delete', 'StadiumsController@delete');
+Route::post('/stadiums/{stadiumId}/delete', 'StadiumsController@destroy');
 
 
 //--------------------------------------------------------
@@ -326,7 +328,7 @@ Route::get('/injuries/{injuryId}', 'InjuriesController@show');
 
 //Admin
 //Deletes the injury information
-Route::get('/injuries/{injuryId}/delete', 'InjuriesController@delete');
+Route::post('/injuries/{injuryId}/delete', 'InjuriesController@destroy');
 
 
 
@@ -399,6 +401,27 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+//Route::get('/login', 'HomeController@');
+
+
+//--------------------------------------------------------
+//--------------------------------------------------------
+//MIDDLEWARE
+//--------------------------------------------------------
+//--------------------------------------------------------
+
+//Groups all admin related routes hopefully doesnt blow up our site fingers crossed !! 
+Route::group(['middleware' =>'App\Http\Middleware\AdminMiddleware'], function()
+{
+	Route::match(['get', 'post'], '/adminOnlyPages/', 'HomeController@admin');
+});
+
+//Groups all coaches related routes hopefully doesnt blow up our site fingers crossed !!
+Route::group(['middleware' => 'App\Http\Middleware\CoachMiddleware'], function()
+{
+	Route::match(['get', 'post'], '/coachOnlyPages/', ' HomeController@coach');
+});
+
 //--------------------------------------------------------
 //--------------------------------------------------------
 //ORGANIZATIONS
@@ -422,9 +445,11 @@ Route::get('/organizations/{organizationId}', 'OrganizationsController@show');
 //Allows editing a organizations information 
 Route::get('/organizations/{organizationId}/edit', 'OrganizationsController@edit');
 
+Route::post('/organizations/{organizationId}', 'OrganizationsController@update');
+
 //Admin
 //Deletes the organizations information
-Route::get('/organizations/{organizationId}/delete', 'OrganizationsController@delete');
+Route::post('/organizations/{organizationId}/delete', 'OrganizationsController@destroy');
 
 
 //--------------------------------------------------------

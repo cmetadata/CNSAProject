@@ -22,7 +22,7 @@ class Logins extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'loginId', 'firstName', 'lastName', 'phoneNumber', 'email', 'password', 'userType'
+        'name', 'email', 'password',
     ];
  
     /**

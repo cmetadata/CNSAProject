@@ -24,6 +24,7 @@ class CreateLoginTable extends Migration
             $table->string('firstName', 35);
             $table->string('lastName', 35);
             $table->timestamps();
+            $table->softDeletes();  
         });
     }
 

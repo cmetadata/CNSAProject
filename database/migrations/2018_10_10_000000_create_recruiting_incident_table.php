@@ -19,6 +19,7 @@ use Illuminate\Database\Migrations\Migration;
                 $table->increments('incidentId');
                 $table->string('incidentDescription');
                 $table->timestamps();
+                $table->softDeletes();
             });
         }
     

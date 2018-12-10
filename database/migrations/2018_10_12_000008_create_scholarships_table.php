@@ -20,6 +20,7 @@ class CreateScholarshipsTable extends Migration
             $table->string('scholarshipName', 200);
             $table->decimal('scholarshipAmount');
             $table->timestamps();
+            $table->softDeletes();  
             //Shouldn't scholarships be associated with players ?
 
         });
