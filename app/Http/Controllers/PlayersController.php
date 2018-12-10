@@ -235,11 +235,11 @@ class PlayersController extends Controller
         $player->position = $request->position;
         $player->teamId = $request->teamId;
         $player->playerRating = $request->playerRating;
-        $player->schoolId = $request->schoolId;  
+        $player->highSchool = $request->highSchool;  
 
         //Updates the person
-        $person->firstName = $request->firstName;
-        $person->lastName = $request->lastName;
+        $person->personFirstName = $request->firstName;
+        $person->personLastName = $request->lastName;
 
         //Saves both
         $player->save();
