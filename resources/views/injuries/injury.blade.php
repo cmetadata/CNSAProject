@@ -1,7 +1,7 @@
 <!--Displays an object from the database and display it on the index-->
 
 <div>
-    <div class='btn-toolbar pull-right'>
+    <div class='btn-toolbar'>
         <div class='btn-group'>
             <button name="edit-button" type='button' class='btn btn-default edit-button grey-back'>Edit Injury</button>
         </div>
