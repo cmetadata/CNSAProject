@@ -3,7 +3,8 @@
 <div>
     <div class='btn-toolbar pull-right'>
         <div class='btn-group'>
-            <a class="btn btn-default edit-button grey-back" href="/organizations/{{$organization->organizationId}}/edit">Edit Organization</a>
+            <a class="btn btn-default edit-button grey-back" href="/organizations/{{$organization->organizationId}}/edit">Edit</a>
+            <a class="btn btn-default edit-button grey-back" href="#">Delete</a>
         </div>
     </div>
     <div class="object-div grey-back">
