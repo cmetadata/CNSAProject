@@ -129,8 +129,11 @@ class OrganizationsController extends Controller
      * @param  \App\c  $c
      * @return \Illuminate\Http\Response
      */
-    public function destroy(c $c)
+    public function destroy(Request $request)
     {
         //
+        $organization = Organization::find($request->oganizationId);
+        $organization->delete();
+        return redirect('/injuries')->with('success', 'Organization Deleted');
     }
 }
