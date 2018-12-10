@@ -106,9 +106,21 @@ class OrganizationsController extends Controller
      * @param  \App\c  $c
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, c $c)
+    public function update(Request $request, $organizationId)
     {
-        //
+        $this->validate(request(), [
+            'organizationName' => 'required|max:50',
+        ]);
+
+        $organization = Organization::find($organizationId)
+
+        $organization->organizationName = $request->organizationName;
+
+        $organization->save();
+
+        //Flashing a message to confirm that a team has been entered into the database
+        session()->flash('message', 'organization has been inserted'); 
+        return Redirect::to('organizations.{organizationId}');
     }
 
     /**

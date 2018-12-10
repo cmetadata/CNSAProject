@@ -423,6 +423,7 @@ Route::get('/organizations/{organizationId}', 'OrganizationsController@show');
 //Public, Coaches and Admin
 //Allows editing a organizations information 
 Route::get('/organizations/{organizationId}/edit', 'OrganizationsController@edit');
+Route::post('/organizations/{organizationId}/edit', 'OrganizationsController@store');
 
 //Admin
 //Deletes the organizations information
