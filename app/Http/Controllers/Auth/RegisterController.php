@@ -80,7 +80,7 @@ class RegisterController extends Controller
 
 
 
-    public function store(Request $request)
+    public function store()
     {        
         //Create the user
         return Logins::create([
