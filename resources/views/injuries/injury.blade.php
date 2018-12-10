@@ -2,12 +2,12 @@
 
 <div>
     <div class='btn-toolbar pull-right'>
-        <div class='btn-group' style="width:50px;">
-            <button name="edit-button" type='button' class='btn btn-default edit-button grey-back'>Edit Injury</button>
+        <div class='btn-group'>
+            <button name="edit-button" type='button' class='btn btn-default edit-button grey-back'>Edit</button>
         </div>
     </div>
     <div class='btn-toolbar pull-right'>
-        <div class='btn-group' style="width:50px;">
+        <div class='btn-group'>
 
 <!--                 {!!Form::open(['action' => ['InjuriesController@destroy', $injuryNames[$loop->index]->injuryId], 'method' => 'POST', 'class' => 'pull-right'])!!}
                    {{Form::hidden('_method', 'DELETE')}}
