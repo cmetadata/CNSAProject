@@ -178,7 +178,7 @@ Route::get('/teams/{teamId}/edit', 'TeamsController@edit');
 
 //Admin
 //Deletes the school information
-Route::get('/teams/{teamId}/delete', 'TeamsController@delete');
+Route::post('/teams/{teamId}/delete', 'TeamsController@destroy');
 
 
 //--------------------------------------------------------
@@ -235,7 +235,7 @@ Route::get('/schools/{schoolId}/edit', 'SchoolsController@edit');
 
 //Admin
 //Deletes the school information
-Route::get('/schools/{schoolId}/delete', 'SchoolsController@delete');
+Route::post('/schools/{schoolId}/delete', 'SchoolsController@destroy');
 
 //--------------------------------------------------------
 //--------------------------------------------------------
@@ -262,7 +262,7 @@ Route::get('/stadiums/{stadiumId}/edit', 'StadiumsController@edit');
 
 //Admin
 //Deletes the stadium information
-Route::get('/stadiums/{stadiumId}/delete', 'StadiumsController@delete');
+Route::post('/stadiums/{stadiumId}/delete', 'StadiumsController@destroy');
 
 
 //--------------------------------------------------------
@@ -449,7 +449,7 @@ Route::post('/organizations/{organizationId}', 'OrganizationsController@update')
 
 //Admin
 //Deletes the organizations information
-Route::get('/organizations/{organizationId}/delete', 'OrganizationsController@delete');
+Route::post('/organizations/{organizationId}/delete', 'OrganizationsController@destroy');
 
 
 //--------------------------------------------------------

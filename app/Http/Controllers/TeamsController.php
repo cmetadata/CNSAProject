@@ -147,8 +147,11 @@ class TeamsController extends Controller
      * @param  \App\c  $c
      * @return \Illuminate\Http\Response
      */
-    public function destroy(c $c)
+    public function destroy(Request $request)
     {
         //
+        $team = Team::find($request->teamId);
+        $team->delete();
+        return redirect('/teams')->with('success', 'Team Deleted');
     }
 }

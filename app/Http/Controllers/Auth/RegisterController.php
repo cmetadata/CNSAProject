@@ -21,7 +21,6 @@ class RegisterController extends Controller
     | provide this functionality without requiring any additional code.
     |
     */
-
     use RegistersUsers;
 
     /**
@@ -81,31 +80,38 @@ class RegisterController extends Controller
 
 
 
-    public function store()
-    {
-        
-        $this->validate(request(), [
-
-            'loginId'     => ['required', 'integer'],
-            'password'    => ['required', 'string', 'max:255', 'confirmed'],
-            'userType'    => ['required', 'string', 'max:1'],
-            'email'       => ['required', 'string', 'max:100'],
-            'phoneNumber' => ['required', 'string', 'max:14'],
-            'firstName'   => ['required', 'string', 'max:35'],
-            'lastName'    => ['required', 'string', 'max:35'],
-        ]);
-        
-        //Create the user
-        $login = Login::create([
-            'loginId'     => $data['loginId'],
+    public function store(Request $request)
+    {        
+        /*Create the user
+        $login = logins::create([
+            'loginId'     => $data['loginId|max:9999|min:999'],
             'password'    => $data['password'],
             'userType'    => $data['userType'],
             'email'       => $data['email'],
             'phoneNumber' => $data['phoneNumber'],
             'firstName'   => $data['firstName'],
             'lastName'    => $data['lastName'],
-            'password'    => bcrypt($data['password']),
-        ]);
+            'password'    => bcrypt($data['password'])
+        ]); */
+
+        $login = new LoginController;
+
+        $login->loginId = $request->loginId;
+        
+        $login->password = $request->password;
+
+        $login->userType = $request->userType;
+
+        $login->email = $request->email;
+
+        $login->phoneNumber = $request->phoneNumber;
+
+        $login->firstName = $request->firstName;
+
+        $login->lastName = $request->lastName;
+
+        $login->save();
+
         //Sign in the newly create login
         auth()->login($login);
 
