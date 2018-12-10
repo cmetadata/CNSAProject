@@ -128,6 +128,6 @@ class InjuriesController extends Controller
         //
         $injuries = Injury::find($injury);
         $injuries->delete();
-        return redirect('/players')->with('success', 'Injury Deleted');
+        return redirect('/injuries')->with('success', 'Injury Deleted');
     }
 }

@@ -6,6 +6,14 @@
             <button name="edit-button" type='button' class='btn btn-default edit-button grey-back'>Edit Injury</button>
         </div>
     </div>
+    <div class='btn-toolbar pull-right'>
+        <div class='btn-group'>
+                {!!Form:open(['action' => ['InjuriesController@destroy', $post->id], 'method' => 'POST', 'class' => 'pull-right'])!!}
+                   {{Form::hidden('_method', 'DELETE')}}
+                   {{Form::submit('Delete', ['class' => 'btn btn-danger'])}}
+                {!!Form::close()!!}
+        </div>
+    </div>
     <div class="object-div grey-back">
       <table width="100%">
         <tr>
