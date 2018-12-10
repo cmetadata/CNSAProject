@@ -250,7 +250,9 @@ class PlayersController extends Controller
         session()->flash('message', 'Player has been updated');
 
         //Redirects the user back to the players page
-        return redirect('/players/{playerId}');
+        //return redirect('/players/{playerId}');
+        return view('players.show', compact(['player', 'team', 'school', 'person', 'incidents', 'incidentNames', 'injuries', 'injuryNames',       
+        'scholarships', 'scholarshipNames', 'stats', 'goals', 'assists', 'saves', 'redCard', 'yellowCard']));
     }
 
     /**
