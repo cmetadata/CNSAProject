@@ -23,6 +23,7 @@ class CreateGameStatsTable extends Migration
             // fk
             $table->integer('gameId')->unsigned();
             $table->timestamps();
+            $table->softDeletes();  
         });
 
         Schema::table('game_stats', function($table) {

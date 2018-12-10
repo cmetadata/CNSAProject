@@ -25,6 +25,7 @@ class CreateRecruitingIncidentLogTable extends Migration
             // fk
             $table->integer('incidentId')->unsigned();
             $table->timestamps();
+            $table->softDeletes();  
         });
 
         Schema::table('recruiting_incident_logs', function($table) {

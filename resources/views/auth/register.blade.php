@@ -39,7 +39,7 @@
 
             <!-- Email-->
             <div class="form-group row">
-                <label for="email" class="col-md-4 col-form-label text-md-right">Email:</label>
+                <label for="email">Email:</label>
 
                 <div class="col-md-6">
                     <input type="email" class="form-control" id="name" name="email" required>
@@ -60,11 +60,18 @@
                 <label for="name">User Type:</label>
 
                 <div class="col-md-6">
+<<<<<<< HEAD
                     <input type="radio" name="userType" required value="Admin">
                 </div>
                 <div class="col-md-6">
                     <input type="radio" name="userType" required value="Coach">
                     <input type="text" class="form-control" id="name" name="userType" required>
+=======
+                    <select class="form-control" name="type" id="type">
+                        <option value="admin">Admin</option>
+                        <option value="coach">Coach</option>
+                    </select>
+>>>>>>> e6a1aed54e0df4065818dbff07313aad927899de
                 </div>
             </div>
 
