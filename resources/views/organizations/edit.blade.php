@@ -2,7 +2,7 @@
 
 @section ('content')
 
-    <form method="PUT" action="/organizations/{{$organization->organizationId}}">
+    <form method="POST" action="/organizations/{{$organization->organizationId}}">
 
         {{ csrf_field() }}
 
