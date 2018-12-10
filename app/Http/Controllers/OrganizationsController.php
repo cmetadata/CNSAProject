@@ -112,7 +112,7 @@ class OrganizationsController extends Controller
             'organizationName' => 'required|max:50',
         ]);
 
-        $organization = Organization::find($organizationId)
+        $organization = Organization::find($organizationId);
 
         $organization->organizationName = $request->organizationName;
 
