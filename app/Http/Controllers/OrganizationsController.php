@@ -92,9 +92,11 @@ class OrganizationsController extends Controller
      * @param  \App\c  $c
      * @return \Illuminate\Http\Response
      */
-    public function edit(c $c)
+    public function edit($organizationId)
     {
-        //
+        $organization = Organization::find($organizationId);
+
+        return view('organizations.edit', compact('organization'));
     }
 
     /**
