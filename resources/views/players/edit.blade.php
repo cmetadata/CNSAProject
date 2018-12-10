@@ -13,17 +13,17 @@
 
             <div class="form-group">
                 <label for="firstName">First Name:</label>
-                <input type="text" class="form-control" id="firstName" name="firstName" value="{{$person->firstName}}" required>
+                <input type="text" class="form-control" id="firstName" name="firstName" value="{{$person->personFirstName}}" required>
             </div>
 
             <div class="form-group">
                 <label for="lastName">Last Name:</label>
-                <input type="text" class="form-control" id="lastName" name="lastName" value="{{$person->lastName}}" required>
+                <input type="text" class="form-control" id="lastName" name="lastName" value="{{$person->personLastName}}" required>
             </div>   
             
             <div class="form-group">
                 <label for="highSchool">High School:</label>
-                <input type="text" class="form-control" id="highSchool" name="highSchool" value="{{$player->schoolId}}" required>
+                <input type="text" class="form-control" id="highSchool" name="highSchool" value="{{$player->highSchool}}" required>
             </div>            
 
             <div class="form-group">
