@@ -105,8 +105,6 @@ class PersonsController extends Controller
      */
     public function destroy(Person $personId)
     {
-/*        $persons = Person::find($playerId);
-        $persons->delete();
-        return redirect('/players')->with('success', 'Player Deleted');*/
+        
     }
 }
