@@ -14,7 +14,7 @@
                    {{Form::submit('Delete', ['class' => 'btn btn-danger'])}}
                 {!!Form::close()!!} -->
 
-                <form method="POST" action="/players">
+                <form method="POST" action="/injuries/{{$injuryNames[$loop->index]->injuryId}}/delete">
                   {{ csrf_field() }}
                   <button type="submit" class="btn btn-default">Delete</button>
                 </form>
