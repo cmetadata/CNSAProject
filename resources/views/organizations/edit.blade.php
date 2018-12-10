@@ -2,7 +2,7 @@
 
 @section ('content')
 
-    <form method="POST" action="/organizations/{{$organization->organizationId}}/edit">
+    <form method="PUT" action="/organizations/{{$organization->organizationId}}>
 
         {{ csrf_field() }}
 
