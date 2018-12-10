@@ -132,8 +132,8 @@ class OrganizationsController extends Controller
     public function destroy(Request $request)
     {
         //
-        $organization = Organization::find($request->oganizationId);
+        $organization = Organization::find($request->organizationId);
         $organization->delete();
-        return redirect('/injuries')->with('success', 'Organization Deleted');
+        return redirect('/organizations')->with('success', 'Organization Deleted');
     }
 }

@@ -83,7 +83,7 @@ class RegisterController extends Controller
     public function store()
     {        
         //Create the user
-        return Logins::create([
+        return Login::create([
             'loginId'     => $data['loginId|max:9999|min:999'],
             'password'    => $data['password'],
             'userType'    => $data['userType'],
