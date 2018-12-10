@@ -38,10 +38,10 @@ class RegisterController extends Controller
      */
     public function __construct()
     {
-        if ($data == 'Admin') {
+        if ($data['userType'] == 'Admin') {
             $this->middleware('admin');
         } 
-        else if ($data == 'Coach') {
+        else if ($data['userType'] == 'Coach') {
             $this->middleware('coach');
         }
         else {
