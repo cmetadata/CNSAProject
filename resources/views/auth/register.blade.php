@@ -39,7 +39,7 @@
 
             <!-- Email-->
             <div class="form-group row">
-                <label for="email">Email:</label>
+                <label for="email" class="col-md-4 col-form-label text-md-right">Email:</label>
 
                 <div class="col-md-6">
                     <input type="email" class="form-control" id="name" name="email" required>
