@@ -206,9 +206,16 @@ class PlayersController extends Controller
      * @param  \App\Player  $playerId
      * @return \Illuminate\Http\Response
      */
-    public function edit($playerId, Request $request)
+    public function edit($playerId)
     {       
+        $player = Player::find($playerId);
+        $person = Person::find($player->personId);
 
+        return view('players.edit', compact(['player','person']));
+    }
+
+    public function update(Request $request, $playerId)
+    {
         // Validating the information that is being entered into the database
         $this->validate(request(), [
             'playerId'    => $playerId,
@@ -221,31 +228,28 @@ class PlayersController extends Controller
 
         //Retrieves the player
         $player = Player::find($playerId);
+        $person = Person::find($player->personId);
 
         //Updates the player
-        $player->personId = $request->personId;
-
         $player->yearEntered = $request->yearEntered;
-
         $player->position = $request->position;
-
         $player->teamId = $request->teamId;
-
         $player->playerRating = $request->playerRating;
+        $player->schoolId = $request->schoolId;  
 
-        // Don't know if we actually need this ??
-        // $player->playerStatsId = $request->playerStatsId;
+        //Updates the person
+        $person->firstName = $request->firstName;
+        $person->lastName = $request->lastName;
 
-        $player->schoolId = $request->schoolId;       
-
-        //Saves the player
+        //Saves both
         $player->save();
+        $person->save();
 
         //Flashes a message to let the user know that they have updated a player
         session()->flash('message', 'Player has been updated');
 
         //Redirects the user back to the players page
-        return redirect()->back();
+        return view('players.show', compact(['player', 'team', 'school', 'person', 'incidents', 'incidentNames', 'injuries', 'injuryNames', 'scholarships', 'scholarshipNames', 'stats', 'goals', 'assists', 'saves', 'redCard', 'yellowCard']));
     }
 
     /**
