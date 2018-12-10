@@ -326,7 +326,7 @@ Route::get('/injuries/{injuryId}', 'InjuriesController@show');
 
 //Admin
 //Deletes the injury information
-Route::delete('/injuries/{injuryId}', 'InjuriesController@destroy');
+Route::get('/injuries', 'InjuriesController@destroy');
 
 
 
