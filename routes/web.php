@@ -446,7 +446,7 @@ Route::post('/organizations/{organizationId}', 'OrganizationsController@update')
 
 //Admin
 //Deletes the organizations information
-Route::get('/organizations/{organizationId}/delete', 'OrganizationsController@delete');
+Route::post('/organizations/{organizationId}/delete', 'OrganizationsController@destroy');
 
 
 //--------------------------------------------------------

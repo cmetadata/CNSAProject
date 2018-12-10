@@ -4,7 +4,15 @@
     <div class='btn-toolbar pull-right'>
         <div class='btn-group'>
             <a class="btn btn-default edit-button grey-back" href="/organizations/{{$organization->organizationId}}/edit">Edit</a>
-            <a class="btn btn-default edit-button grey-back" href="#">Delete</a>
+        </div>
+        <div class='btn-group'>
+
+                <form method="POST" action="/organizations/{{$organization->organizationId}}/delete">
+                  {{ csrf_field() }}
+                  <input id="organizationId" name="organizationId" type="hidden" value="{{$organization->organizationId}}">
+                  <button type="submit" class='btn btn-default edit-button grey-back'>Delete</button>
+                </form>
+            
         </div>
     </div>
     <div class="object-div grey-back">
