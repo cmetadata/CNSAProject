@@ -18,32 +18,32 @@
 
             <div class="form-group">
                 <label for="lastName">Last Name:</label>
-                <input type="text" class="form-control" id="lastName" name="lastName" value="{{$person->lastName}} required>
+                <input type="text" class="form-control" id="lastName" name="lastName" value="{{$person->lastName}}" required>
             </div>   
             
             <div class="form-group">
                 <label for="highSchool">High School:</label>
-                <input type="text" class="form-control" id="highSchool" name="highSchool" value="{{$player->schoolId}} required>
+                <input type="text" class="form-control" id="highSchool" name="highSchool" value="{{$player->schoolId}}" required>
             </div>            
 
             <div class="form-group">
                 <label for="yearEntered">Year Entered:</label>
-                <input type="text" class="form-control" id="yearEntered" name="yearEntered" value="{{$player->yearEntered}} required>
+                <input type="text" class="form-control" id="yearEntered" name="yearEntered" value="{{$player->yearEntered}}" required>
             </div>            
 
             <div class="form-group">
                 <label for="playerRating">Player Rating:</label>
-                <input type="text" class="form-control" id="playerRating" name="playerRating" value="{{$player->playerRating}} required>
+                <input type="text" class="form-control" id="playerRating" name="playerRating" value="{{$player->playerRating}}" required>
             </div>            
 
             <div class="form-group">
                 <label for="position">Position:</label>
-                <input type="text" class="form-control" id="position" name="position" value="{{$player->position}} required>
+                <input type="text" class="form-control" id="position" name="position" value="{{$player->position}}" required>
             </div>
 
             <div class="form-group">
                 <label for="teamId">Team ID:</label>
-                <input type="text" class="form-control" id="teamId" name="teamId" value="{{$player->teamId}} required>
+                <input type="text" class="form-control" id="teamId" name="teamId" value="{{$player->teamId}}" required>
             </div>
             
 
