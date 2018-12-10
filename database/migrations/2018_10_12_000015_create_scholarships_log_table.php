@@ -23,6 +23,7 @@ class CreateScholarshipsLogTable extends Migration
             // fk
             $table->integer('playerId')->unsigned();            
             $table->timestamps();
+            $table->softDeletes();  
 
         });
 

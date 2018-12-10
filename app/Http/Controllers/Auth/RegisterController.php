@@ -57,12 +57,7 @@ class RegisterController extends Controller
      */
     protected function validator(array $data)
     {
-<<<<<<< HEAD
-        $
         return Validator::make($data, [
-=======
-/*        return Validator::make($data, [
->>>>>>> b54de0119fdeb73c5791d5c7ec32fc2babd500f6
             'loginId'     => ['required', 'integer'],
             'password'    => ['required', 'string', 'max:255', 'confirmed'],
             'userType'    => ['required', 'string', 'max:1'],
@@ -71,7 +66,7 @@ class RegisterController extends Controller
             'firstName'   => ['required', 'string', 'max:35'],
             'lastName'    => ['required', 'string', 'max:35'],
 
-        ]);*/
+        ]);
     }
 
     /**
@@ -82,15 +77,25 @@ class RegisterController extends Controller
      */
     public function create()
     {
-<<<<<<< HEAD
-=======
         return view('auth.register');
     }
 
+
+
     public function store()
     {
-/*        if ($data['userType'] == 'a' or $data['userType'] == 'A') {
->>>>>>> b54de0119fdeb73c5791d5c7ec32fc2babd500f6
+        
+        $this->validate(request(), [
+
+            'loginId'     => ['required', 'integer'],
+            'password'    => ['required', 'string', 'max:255', 'confirmed'],
+            'userType'    => ['required', 'string', 'max:1'],
+            'email'       => ['required', 'string', 'max:100'],
+            'phoneNumber' => ['required', 'string', 'max:14'],
+            'firstName'   => ['required', 'string', 'max:35'],
+            'lastName'    => ['required', 'string', 'max:35'],
+        ]);
+        
         //Create the user
         $login = Login::create([
             'loginId'     => $data['loginId'],
@@ -106,23 +111,6 @@ class RegisterController extends Controller
         auth()->login($login);
 
         //Redirect to the home page
-        return $redirectTo;*/
-
-        $this->validate(request(), [
-
-            'loginId'     => ['required', 'integer'],
-            'password'    => ['required', 'string', 'max:255', 'confirmed'],
-            'userType'    => ['required', 'string', 'max:1'],
-            'email'       => ['required', 'string', 'max:100'],
-            'phoneNumber' => ['required', 'string', 'max:14'],
-            'firstName'   => ['required', 'string', 'max:35'],
-            'lastName'    => ['required', 'string', 'max:35'],
-        ]);
-
-    $login = Login::create(request(['loginId', 'password', 'userType', 'email', 'phoneNumber', 'firstName', 'lastName']));
-
-    auth()->login($login);
-
-    return $redirectTo();
+        return $redirectTo;
     }
 }

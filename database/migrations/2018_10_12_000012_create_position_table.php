@@ -25,6 +25,7 @@ class CreatePositionTable extends Migration
             // fk
             $table->integer('personId')->unsigned();
             $table->timestamps();
+            $table->softDeletes();  
 
         });
 

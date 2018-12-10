@@ -22,7 +22,8 @@ class CreateSchoolTable extends Migration
             $table->integer('schoolPopulation');
             // fk
             $table->integer('organizationId')->unsigned();
-            $table->timestamps();           
+            $table->timestamps();  
+            $table->softDeletes();         
         });
 
         Schema::table('schools', function($table) {

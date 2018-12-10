@@ -25,6 +25,7 @@ class CreateInjuryLogTable extends Migration
             // fk
             $table->integer('playerId')->unsigned();
             $table->timestamps();
+            $table->softDeletes();  
         });
 
         Schema::table('injury_logs', function($table) {

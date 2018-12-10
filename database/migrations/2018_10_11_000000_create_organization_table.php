@@ -20,6 +20,7 @@ class CreateOrganizationTable extends Migration
             // fk
             $table->string('organizationName');
             $table->timestamps();
+            $table->softDeletes();
 
         });
 

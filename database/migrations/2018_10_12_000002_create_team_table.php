@@ -21,7 +21,7 @@ class CreateTeamTable extends Migration
             // fk
             $table->integer('schoolId')->unsigned();
             $table->timestamps();
-
+            $table->softDeletes();  
         });
 
         Schema::table('teams', function($table) {
