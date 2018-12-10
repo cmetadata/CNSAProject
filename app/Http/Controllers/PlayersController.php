@@ -245,11 +245,12 @@ class PlayersController extends Controller
         $player->save();
         $person->save();
 
+
         //Flashes a message to let the user know that they have updated a player
         session()->flash('message', 'Player has been updated');
 
         //Redirects the user back to the players page
-        return view('players.show', compact(['player', 'team', 'school', 'person', 'incidents', 'incidentNames', 'injuries', 'injuryNames', 'scholarships', 'scholarshipNames', 'stats', 'goals', 'assists', 'saves', 'redCard', 'yellowCard']));
+        return redirect('/players/{playerId}');
     }
 
     /**
