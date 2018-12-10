@@ -401,6 +401,25 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 //Route::get('/login', 'HomeController@');
 
+
+//--------------------------------------------------------
+//--------------------------------------------------------
+//MIDDLEWARE
+//--------------------------------------------------------
+//--------------------------------------------------------
+
+//Groups all admin related routes hopefully doesnt blow up our site fingers crossed !! 
+Route::group(['middleware' =>'App\Http\Middleware\AdminMiddleware'], function())
+{
+	Route::match(['get', 'post'], '/adminOnlyPages/', 'HomeController@admin');
+}
+
+//Groups all coaches related routes hopefully doesnt blow up our site fingers crossed !!
+Route::group(['middleware' => 'App\Http\Middleware\CoachMiddleware'], function())
+{
+	Route::match(['get', 'post'], '/coachOnlyPages/', ' HomeController@coach');
+}
+
 //--------------------------------------------------------
 //--------------------------------------------------------
 //ORGANIZATIONS

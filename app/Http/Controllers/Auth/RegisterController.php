@@ -104,7 +104,7 @@ class RegisterController extends Controller
             'phoneNumber' => $data['phoneNumber'],
             'firstName'   => $data['firstName'],
             'lastName'    => $data['lastName'],
-            'password'    => Hash::make($data['password']),
+            'password'    => bcrypt($data['password']),
         ]);
         //Sign in the newly create login
         auth()->login($login);
