@@ -5,6 +5,8 @@
         <div class='btn-group'>
             <a class="btn btn-default edit-button grey-back" href="/organizations/{{$organization->organizationId}}/edit">Edit</a>
         </div>
+    </div>
+    <div class='btn-toolbar pull-right'>
         <div class='btn-group'>
 
                 <form method="POST" action="/organizations/{{$organization->organizationId}}/delete">
