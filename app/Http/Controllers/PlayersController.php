@@ -211,7 +211,7 @@ class PlayersController extends Controller
         $player = Player::find($playerId);
         $person = Person::find($player->personId);
 
-        return view('players.edit', compact('player'));
+        return view('players.edit', compact(['player','person']));
     }
 
     public function update(Request $request, $playerId)
