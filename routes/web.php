@@ -111,7 +111,7 @@ Route::get('/players/{playerId}/edit', 'PlayersController@edit');
 
 //Admin
 //Deletes the school information
-Route::get('/players/{playerId}/delete', 'PlayersController@delete');
+Route::post('/players/{playerId}/delete', 'PlayersController@destroy');
 
 
 //--------------------------------------------------------
@@ -327,8 +327,6 @@ Route::get('/injuries/{injuryId}', 'InjuriesController@show');
 //Admin
 //Deletes the injury information
 Route::post('/injuries/{injuryId}/delete', 'InjuriesController@destroy');
-
-Route::post('/injuries/delete', 'InjuriesController@destroy');
 
 
 
