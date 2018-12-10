@@ -370,7 +370,7 @@ Route::get('/scholarships/{scholarshipId}', 'ScholarshipsController@show');
 
 //Admin
 //Deletes the injury information
-Route::get('/scholarships/{scholarshipId}/delete', 'ScholarshipsController@delete');
+Route::post('/scholarships/{scholarshipId}/delete', 'ScholarshipsController@destroy');
 
 
 

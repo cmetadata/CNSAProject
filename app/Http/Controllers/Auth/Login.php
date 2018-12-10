@@ -6,7 +6,6 @@ use Illuminate\Notifications\Notifiable;
 //use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-use Auth;
 
 class Logins extends Authenticatable
 {
