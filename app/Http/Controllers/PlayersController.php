@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Player;
+use App\PlayerStat;
 use App\Person;
 use App\Team;
 use App\Incident;
@@ -16,6 +17,11 @@ use Illuminate\Http\Request;
 
 class PlayersController extends Controller
 {
+
+    public function __construct()
+    {
+        //$this->middleware('auth')->except(['index', 'show']);
+    }
 /**
      * Display a listing of the resource.
      *
@@ -140,6 +146,7 @@ class PlayersController extends Controller
         $incidents = IncidentLog::all()->where('playerId', $request->playerId);
         $injuries = InjuryLog::all()->where('playerId', $request->playerId);
         $scholarships = ScholarshipLog::all()->where('playerId', $request->playerId);
+        $stats = PlayerStat::all()->where('playerId', $request->playerId);
 
         $person = Person::find($player->personId);
         $team = Team::find($player->teamId);
@@ -169,10 +176,27 @@ class PlayersController extends Controller
         }
 
 
+        $i = 0;
+        $goals = 0;
+        $assists = 0;
+        $saves = 0;
+        $redCard = 0;
+        $yellowCard = 0;
+        
+        foreach ($stats as $stat)
+        {
+            $goals += $stat->goals;
+            $assists += $stat->assists;
+            $saves += $stat->saves;
+            $redCard += $stat->redCard;
+            $yellowCard +=  $stat->yellowCard;
+            $i += 1;
+        }
+
         
         //dd($player, $team, $school);
         return view('players.show', compact(['player', 'team', 'school', 'person', 'incidents', 'incidentNames', 'injuries', 'injuryNames',       
-        'scholarships', 'scholarshipNames']));
+        'scholarships', 'scholarshipNames', 'stats', 'goals', 'assists', 'saves', 'redCard', 'yellowCard']));
     }
 
 

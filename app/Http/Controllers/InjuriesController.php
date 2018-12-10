@@ -126,5 +126,8 @@ class InjuriesController extends Controller
     public function destroy(Injury $injury)
     {
         //
+        $injuries = Injury::find($injury);
+        $injuries->delete();
+        return redirect('/injuries')->with('success', 'Injury Deleted');
     }
 }

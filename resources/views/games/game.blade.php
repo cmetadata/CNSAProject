@@ -9,17 +9,18 @@
       <div class="object-div grey-back">
         <table width="100%">
         <tr>
-            <td width="15%">Date</td>
-            <td width="25%"><a href=#>Stadium</a></td>
-            <td width="45%" align="right"><a href=#>Team Here:</a></td>
-            <td width="5%"></td>
-            <td width="10%">Score</td>
+            <td width="25%">Game ID: {{$game->statId}}</td>
+            <td width="25%">Date: {{$game->gameDate}}</td>
+            <td width="25%">Attendance: {{$game->gameAttendance}}</td>
+            <td width="25%"><a href=#>Stadium: {{$stadium[$loop->index]->stadiumName}}</a></td>
         </tr>
         <tr>
-            <td width="40%" colspan="2"></td>
-            <td width="45%" align="right"><a href=#>Team Here:</a></td>
-            <td width="5%"></td>
-            <td width="10%">Score</td>
+            <td width="25%">Team 1: {{$teams1[$loop->index]->teamName}}</td>
+            <td width="25%">Score: {{$gameStats[$loop->index]->get($index)->teamScore}}</td>
+
+
+            <td width="25%">Team 2: {{$teams2[$loop->index]->teamName}}</td>
+            <td width="25%">Score: {{$gameStats[$loop->index]->get($index+1)->teamScore}}</td>
         </tr>
         </table>
       </div>

@@ -2,11 +2,20 @@
 
 namespace App\Http\Controllers;
 
+use App\GameStat;
 use App\Game;
+use App\Stadium;
+Use App\Team;
 use Illuminate\Http\Request;
 
 class GamesController extends Controller
 {
+
+    public function __construct()
+    {
+        //$this->middleware('auth')->except(['index', 'show']);
+    }
+    
     /**
      * Display a listing of the resource.
      *
@@ -14,7 +23,44 @@ class GamesController extends Controller
      */
     public function index()
     {
-        return view('games.index');
+        $games = Game::all();
+
+        $index = 0;
+
+        $i = 0;
+        foreach ($games as $game)
+        {
+            // find the stadium for each game
+            $stadium[$i] = Stadium::find($game->stadiumId);       
+            
+            
+            // this returns a collection into the gameStats array
+            $gameStats[$i] = GameStat::all()->where('gameId', $game->statId);
+
+
+            // remainder
+            if (($index % 2) == 1)
+            {
+                $index += 1;
+            }    
+
+            // if ($i == 2)
+            // {
+            //     dd($gameStats, $index, $i);
+            // }
+
+
+            // find the team based on teamId on gameStats array element
+            $teams1[$i] = Team::find($gameStats[$i]->get($index)->teamId);
+            
+            // find the second team by adding +1 in the get area of the collection
+            $teams2[$i] = Team::find($gameStats[$i]->get($index+1)->teamId);
+
+            $i += 1;
+            $index += 1;
+        }
+
+        return view('games.index', compact('games', 'stadium', 'gameStats', 'teams1', 'teams2'));
     }
 
     /**
@@ -37,27 +83,24 @@ class GamesController extends Controller
     public function store(Request $request)
     {    
         // declare stat models
-        //$game = new Game;
 
-        //$stat1 = new Stat:
-        //$stat2 = new Stat:
+        $game = new Game;
+        $game->gameDate = $request->gameDate;
+        $game->gameAttendance = $request->gameAttendance;
+        $game->stadiumId = $request->stadiumId;
+        $game->save();
         
-
-        // needs to pull request parameters out and save twice to stats table
-       
-        // save once for game table
-        // creates game ID
-
-    
-        // save once for stat #1 -> stat table 
-        // use game ID^
-
-
-
-        // save once for stat #2 -> stat table 
-        // use game ID^
-
-
+        $gameStat1 = new GameStat; 
+        $gameStat1->teamScore = $request->teamScore1;
+        $gameStat1->teamId = $request->teamId1;
+        $gameStat1->gameId = $game->statId;
+        $gameStat1->save();
+        
+        $gameStat2 = new GameStat; 
+        $gameStat2->teamScore = $request->teamScore2;
+        $gameStat2->teamId = $request->teamId2;
+        $gameStat2->gameId = $game->statId;
+        $gameStat2->save(); 
     }
 
     /**

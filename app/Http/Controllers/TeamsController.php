@@ -10,6 +10,13 @@ use Illuminate\Http\Request;
 
 class TeamsController extends Controller
 {
+
+
+    public function __construct()
+    {
+        //$this->middleware('auth')->except(['index', 'show']);
+    }
+    
     /**
      * Display a listing of the resource.
      *
@@ -75,11 +82,12 @@ class TeamsController extends Controller
         //
         $team = Team::all()->where('teamId', $request->teamId);    
         $players = Player::all()->where('teamId', $request->teamId);
-        $school = School::find($team->schoolId);
+        //$school = School::find($team->schoolId);
 
         $i = 0;
         foreach ($players as $player)
         {
+            $school[$i] = School::find($team->first()->schoolId);
             $person[$i] = Person::find($player->personId);
             $i += 1;
         }

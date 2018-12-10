@@ -4,11 +4,16 @@ namespace App;
 
 use Illuminate\Notifications\Notifiable;
 //use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class User extends Authenticatable
 {
     use Notifiable;
+
+    protected $table = 'logins';
+
+    protected $primaryKey = 'loginId';
 
     /**
      * The attributes that are mass assignable.

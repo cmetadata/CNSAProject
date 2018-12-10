@@ -24,13 +24,11 @@
                 <input type="text" class="form-control" id="injuryId" name="injuryId" required>
             </div>
 
-            <!--
-                div class="form-group">
+            <div class="form-group">
                 <label for="gameId">Game Id:</label>
                 <input type="text" class="form-control" id="gameId" name="gameId" required>
-            </div 
+            </div>
             
-            -->            
 
             <div class="form-group">
                 <label for="injuryDate">Injury Date:</label>

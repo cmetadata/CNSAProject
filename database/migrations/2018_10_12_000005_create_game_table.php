@@ -16,8 +16,8 @@ class CreateGameTable extends Migration
         Schema::dropIfExists('games');
         Schema::enableForeignKeyConstraints();
         Schema::create('games', function (Blueprint $table) {
-            $table->increments('gameId');
-            $table->integer('gameDate');
+            $table->increments('statId');
+            $table->date('gameDate');
             $table->integer('gameAttendance');
             // fk
             $table->integer('stadiumId')->unsigned();

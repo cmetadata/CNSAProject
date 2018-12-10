@@ -12,6 +12,19 @@
 </div>
 <hr/>
 
-@include('games.game')
+{{ $index = 0 }}
+
+@foreach ($games as $game)
+
+    @if (($index % 2) == 1)
+        {{ $index += 1 }} 
+    @endif
+
+
+	@include ('games.game', compact('index'))
+	<br/>
+
+    {{ $index += 1 }}
+@endforeach
 
 @endsection

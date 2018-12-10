@@ -99,8 +99,11 @@ Route::get('/players/{playerId}', 'PlayersController@show');
 //Displaying a list of players
 Route::get('/players', 'PlayersController@index');
 
+Route::get('/player_stat/create', 'PlayerStatController@create');
 
 Route::post('/players', 'PlayersController@store');
+
+Route::post('/player_stat', 'PlayerStatController@store');
 
 //Public, Coaches and Admin
 //Editing a players information
@@ -185,7 +188,7 @@ Route::get('/teams/{teamId}/delete', 'TeamsController@delete');
 //Displays the list of coaches
 Route::get('/games', 'GamesController@index');
 
-Route::post('games', 'GamesController@store');
+Route::post('/games', 'GamesController@store');
 
 //Coaches and Admins
 //Adds a game
@@ -323,7 +326,7 @@ Route::get('/injuries/{injuryId}', 'InjuriesController@show');
 
 //Admin
 //Deletes the injury information
-Route::get('/injuries/{injuryId}/delete', 'InjuriesController@delete');
+Route::get('/injuries/{injuryId}', 'InjuriesController@destroy');
 
 
 
@@ -480,3 +483,11 @@ Route::get('/positions/{positionId}/edit', 'PositionsController@edit');
 //Admin
 //Deletes the Positions information
 Route::get('/positions/{positionId}/delete', 'PositionsController@delete');
+
+
+//Register/Login
+Route::get('/register', 'Auth\RegisterController@create');
+Route::post('/register', 'Auth\RegisterController@store');
+
+Route::get('/login', 'Auth\LoginController@create');
+Route::post('/login', 'Auth\LoginController@store');
