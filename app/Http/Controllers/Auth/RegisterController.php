@@ -94,7 +94,7 @@ class RegisterController extends Controller
             'password'    => bcrypt($data['password'])
         ]); */
 
-        $login = new Login;
+        $login = new LoginController;
 
         $login->loginId = $request->loginId;
         
@@ -111,7 +111,7 @@ class RegisterController extends Controller
         $login->lastName = $request->lastName;
 
         $login->save();
-        
+
         //Sign in the newly create login
         auth()->login($login);
 
