@@ -10,12 +10,12 @@
 
   <table width="100%">
   	<tr>
-  		<td width="50%"><a href=#>[Team1Name]</a></td>
-  		<td width="50%"><a href=#>[Team2Name]</a></td>
+  		<td width="50%"><a href=#>{{$teamName1->teamName}}</a></td>
+  		<td width="50%"><a href=#>{{$teamName2->teamName}}</a></td>
   	</tr>
   	<tr>
-  		<td width="50%"><a href=#>[Team1Score]</a></td>
-  		<td width="50%"><a href=#>[Team2Score]</a></td>
+  		<td width="50%"><a href=#>[Player 1]</a></td>
+  		<td width="50%"><a href=#>[Player 2]</a></td>
   	</tr>
   </table>
 

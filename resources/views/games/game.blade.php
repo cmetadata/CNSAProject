@@ -9,7 +9,9 @@
       <div class="object-div grey-back">
         <table width="100%">
         <tr>
+            <a href="/games/{{$game->statId}}">
             <td width="25%">Game ID: {{$game->statId}}</td>
+            </a>
             <td width="25%">Date: {{$game->gameDate}}</td>
             <td width="25%">Attendance: {{$game->gameAttendance}}</td>
             <td width="25%"><a href=#>Stadium: {{$stadium[$loop->index]->stadiumName}}</a></td>
