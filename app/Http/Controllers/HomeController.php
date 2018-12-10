@@ -17,6 +17,14 @@ class HomeController extends Controller
         $this->middleware('auth', ['only' => 'index']);
     }
 
+    public function admin(request $req) {
+        return view('middleware')->withMessage("Admin");
+    }
+
+    public function coach(request $req) {
+        return view('middleware')->withMessage("Coach");
+    }
+
     /**
      * Show the application dashboard.
      *
