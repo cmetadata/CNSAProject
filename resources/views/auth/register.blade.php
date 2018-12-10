@@ -60,7 +60,10 @@
                 <label for="name">User Type:</label>
 
                 <div class="col-md-6">
-                    <input type="text" class="form-control" id="name" name="name" required>
+                    <input type="radio" name="userType" required value="Admin">
+                </div>
+                <div class="col-md-6">
+                    <input type="radio" name="userType" required value="Coach">
                 </div>
             </div>
 

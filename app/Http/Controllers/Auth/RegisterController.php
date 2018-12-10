@@ -37,7 +37,15 @@ class RegisterController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('guest');
+        if ($data == 'Admin') {
+            $this->middleware('admin');
+        } 
+        else if ($data == 'Coach') {
+            $this->middleware('coach');
+        }
+        else {
+            $this->middleware('guest');
+        }
     }
 
     /**
@@ -48,6 +56,7 @@ class RegisterController extends Controller
      */
     protected function validator(array $data)
     {
+        $
         return Validator::make($data, [
             'loginId'     => ['required', 'integer'],
             'password'    => ['required', 'string', 'max:255', 'confirmed'],
@@ -68,32 +77,17 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        if ($data['userType'] == 'a' or $data['userType'] == 'A') {
         //Create the user
-            $login = Login::create([
-                'loginId'     => $data['loginId'],
-                'password'    => $data['password'],
-                'userType'    => $data['userType'],
-                'email'       => $data['email'],
-                'phoneNumber' => $data['phoneNumber'],
-                'firstName'   => $data['firstName'],
-                'lastName'    => $data['lastName'],
-                'password'    => Hash::make($data['password']),
-            ]);
-        }
-        else if ($data['userType'] == 'c' or $data['userType'] == 'C') { 
-            $login = Login::create([
-                'loginId'     => $data['loginId'],
-                'password'    => $data['password'],
-                'userType'    => $data['userType'],
-                'email'       => $data['email'],
-                'phoneNumber' => $data['phoneNumber'],
-                'firstName'   => $data['firstName'],
-                'lastName'    => $data['lastName'],
-                'password'    => Hash::make($data['password']),
-            ]);
-        }
-
+        $login = Login::create([
+            'loginId'     => $data['loginId'],
+            'password'    => $data['password'],
+            'userType'    => $data['userType'],
+            'email'       => $data['email'],
+            'phoneNumber' => $data['phoneNumber'],
+            'firstName'   => $data['firstName'],
+            'lastName'    => $data['lastName'],
+            'password'    => Hash::make($data['password']),
+        ]);
         //Sign in the newly create login
         auth()->login($login);
 
