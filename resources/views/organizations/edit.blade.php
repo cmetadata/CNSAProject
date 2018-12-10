@@ -3,11 +3,8 @@
 @section ('content')
 
     <form method="POST" action="/organizations/{{$organization->organizationId}}">
-
         {{ csrf_field() }}
-
         <div class="parent-div"> 
-        
         <div class="login-form">
 
         <h1 class="title2 grey-back">Edit {{$organization->organizationName}}</h1>
@@ -22,11 +19,8 @@
             <button type="submit" class="btn btn-default">Submit</button>
 
         </div>
-
         </div>
-
         </div>
-
     </form> 
 
 

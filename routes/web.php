@@ -109,6 +109,8 @@ Route::post('/player_stat', 'PlayerStatController@store');
 //Editing a players information
 Route::get('/players/{playerId}/edit', 'PlayersController@edit');
 
+Route::post('/players/{playerId}', 'PlayersController@update');
+
 //Admin
 //Deletes the school information
 Route::post('/players/{playerId}/delete', 'PlayersController@destroy');
@@ -442,6 +444,7 @@ Route::get('/organizations/{organizationId}', 'OrganizationsController@show');
 //Public, Coaches and Admin
 //Allows editing a organizations information 
 Route::get('/organizations/{organizationId}/edit', 'OrganizationsController@edit');
+
 Route::post('/organizations/{organizationId}', 'OrganizationsController@update');
 
 //Admin
