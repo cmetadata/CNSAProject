@@ -2,7 +2,7 @@
 
 @section ('content')
 
-    <form method="POST" action="/organizations">
+    <form method="PUT" action="/organizations/{{$organization->organizationId}}">
 
         {{ csrf_field() }}
 
@@ -16,7 +16,7 @@
 
             <div class="form-group">
                 <label for="organizationName">Organization Name:</label>
-                <input type="text" class="form-control" id="organizationName" name="organizationName" value ="{{$organization->organizationName" required>
+                <input type="text" class="form-control" id="organizationName" name="organizationName" value ="{{$organization->organizationName}}" required>
             </div>
 
             <button type="submit" class="btn btn-default">Submit</button>

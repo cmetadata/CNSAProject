@@ -9,12 +9,16 @@
     <div class='btn-toolbar pull-right'>
         <div class='btn-group'>
 
-            @foreach($injuries as $key => $injury)
-                {!!Form::open(['action' => ['InjuriesController@destroy', $injury->id], 'method' => 'POST', 'class' => 'pull-right'])!!}
+<!--                 {!!Form::open(['action' => ['InjuriesController@destroy', $injuryNames[$loop->index]->injuryId], 'method' => 'POST', 'class' => 'pull-right'])!!}
                    {{Form::hidden('_method', 'DELETE')}}
                    {{Form::submit('Delete', ['class' => 'btn btn-danger'])}}
-                {!!Form::close()!!}
-            @endforeach
+                {!!Form::close()!!} -->
+
+                <form method="POST" action="/injuries/{{$injuryNames[$loop->index]->injuryId}}/delete">
+                  {{ csrf_field() }}
+                  <button type="submit" class="btn btn-default">Delete</button>
+                </form>
+            
         </div>
     </div>
     <div class="object-div grey-back">

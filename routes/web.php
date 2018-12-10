@@ -326,7 +326,9 @@ Route::get('/injuries/{injuryId}', 'InjuriesController@show');
 
 //Admin
 //Deletes the injury information
-Route::get('/injuries/{injuryId}/delete', 'InjuriesController@destroy');
+Route::post('/injuries/{injuryId}/delete', 'InjuriesController@destroy');
+
+Route::post('/injuries/delete', 'InjuriesController@destroy');
 
 
 
@@ -442,6 +444,7 @@ Route::get('/organizations/{organizationId}', 'OrganizationsController@show');
 //Public, Coaches and Admin
 //Allows editing a organizations information 
 Route::get('/organizations/{organizationId}/edit', 'OrganizationsController@edit');
+Route::put('/organizations/{organizationId}', 'OrganizationsController@store');
 
 //Admin
 //Deletes the organizations information
