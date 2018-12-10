@@ -23,7 +23,7 @@
         </div>
     </div>
     <div class="object-div grey-back">
-      <table width="80%">
+      <table width="60%">
         <tr>
           <td width="33%"><a href="/injuries/{{$injury->injuryId}}">Injury ID: {{$injuryNames[$loop->index]->injuryId}}</a></td>
           <td width="33%"><a href="/injuries/{{$injury->injuryId}}">Injury Type: {{$injuryNames[$loop->index]->injury}}</a></td>
