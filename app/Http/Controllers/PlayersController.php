@@ -254,24 +254,11 @@ class PlayersController extends Controller
      * @param  \App\Player  $playerId
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Player $playerId)
+    public function destroy(Request $request)
     {
-        //Validates that the id entered is an actual Player object
-        $this->validate(request(), [
-            'playerId' => $playerId
-        ]); 
-
-        //Retrieves player information
-        $player = Player::find($playerId);
-
-        //Deletes the player record
+        //
+        $player = Player::find($request->playerId);
         $player->delete();
-
-        //Flashes a message to let the user know that they have deleted a player
-        seesion()->flash('message', 'Player has been deleted');
-
-        //Redirects the user back to the previous page
-        return redirect()->back();
-
+        return redirect('/players')->with('success', 'Player Deleted');
     }
 }

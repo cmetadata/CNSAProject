@@ -111,7 +111,7 @@ Route::get('/players/{playerId}/edit', 'PlayersController@edit');
 
 //Admin
 //Deletes the school information
-Route::get('/players/{playerId}/delete', 'PlayersController@delete');
+Route::post('/players/{playerId}/delete', 'PlayersController@destroy');
 
 
 //--------------------------------------------------------
@@ -176,7 +176,7 @@ Route::get('/teams/{teamId}/edit', 'TeamsController@edit');
 
 //Admin
 //Deletes the school information
-Route::get('/teams/{teamId}/delete', 'TeamsController@delete');
+Route::post('/teams/{teamId}/delete', 'TeamsController@destroy');
 
 
 //--------------------------------------------------------
@@ -233,7 +233,7 @@ Route::get('/schools/{schoolId}/edit', 'SchoolsController@edit');
 
 //Admin
 //Deletes the school information
-Route::get('/schools/{schoolId}/delete', 'SchoolsController@delete');
+Route::post('/schools/{schoolId}/delete', 'SchoolsController@destroy');
 
 //--------------------------------------------------------
 //--------------------------------------------------------
@@ -260,7 +260,7 @@ Route::get('/stadiums/{stadiumId}/edit', 'StadiumsController@edit');
 
 //Admin
 //Deletes the stadium information
-Route::get('/stadiums/{stadiumId}/delete', 'StadiumsController@delete');
+Route::post('/stadiums/{stadiumId}/delete', 'StadiumsController@destroy');
 
 
 //--------------------------------------------------------
@@ -327,8 +327,6 @@ Route::get('/injuries/{injuryId}', 'InjuriesController@show');
 //Admin
 //Deletes the injury information
 Route::post('/injuries/{injuryId}/delete', 'InjuriesController@destroy');
-
-Route::post('/injuries/delete', 'InjuriesController@destroy');
 
 
 
@@ -444,7 +442,7 @@ Route::get('/organizations/{organizationId}', 'OrganizationsController@show');
 //Public, Coaches and Admin
 //Allows editing a organizations information 
 Route::get('/organizations/{organizationId}/edit', 'OrganizationsController@edit');
-Route::post('/organizations/{organizationId}', 'OrganizationsController@store');
+Route::post('/organizations/{organizationId}', 'OrganizationsController@update');
 
 //Admin
 //Deletes the organizations information

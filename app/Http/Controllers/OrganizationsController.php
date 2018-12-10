@@ -108,7 +108,6 @@ class OrganizationsController extends Controller
      */
     public function update(Request $request, $organizationId)
     {
-        dd($organizationId);
         $this->validate(request(), [
             'organizationName' => 'required|max:50',
         ]);
@@ -121,7 +120,7 @@ class OrganizationsController extends Controller
 
         //Flashing a message to confirm that a team has been entered into the database
         session()->flash('message', 'organization has been inserted'); 
-        return view('organizations.{organizationId}');
+        return view('organizations.show', compact('organization'));
     }
 
     /**
