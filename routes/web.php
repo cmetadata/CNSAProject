@@ -328,6 +328,8 @@ Route::get('/injuries/{injuryId}', 'InjuriesController@show');
 //Deletes the injury information
 Route::post('/injuries/{injuryId}/delete', 'InjuriesController@destroy');
 
+Route::post('/injuries/delete', 'InjuriesController@destroy');
+
 
 
 //--------------------------------------------------------
