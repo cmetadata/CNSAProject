@@ -176,7 +176,7 @@ Route::get('/teams/{teamId}/edit', 'TeamsController@edit');
 
 //Admin
 //Deletes the school information
-Route::get('/teams/{teamId}/delete', 'TeamsController@delete');
+Route::post('/teams/{teamId}/delete', 'TeamsController@destroy');
 
 
 //--------------------------------------------------------

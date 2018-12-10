@@ -3,7 +3,8 @@
 <div>
     <div class='btn-toolbar pull-right'>
         <div class='btn-group'>
-            <button name="edit-button" type='button' class='btn btn-default edit-button grey-back'>Edit Game</button>
+            <a class="btn btn-default edit-button grey-back" href="/games/{{$games->statId}}/edit">Edit</a>
+            <a class="btn btn-default edit-button grey-back" href="#">Delete</a>
         </div>
     </div>
       <div class="object-div grey-back">
