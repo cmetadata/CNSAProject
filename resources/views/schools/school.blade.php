@@ -3,7 +3,18 @@
 <div>
     <div class='btn-toolbar pull-right'>
         <div class='btn-group'>
-            <button name="edit-button" type='button' class='btn btn-default edit-button grey-back'>Edit School</button>
+            <button name="edit-button" type='button' class='btn btn-default edit-button grey-back'>Edit</button>
+        </div>
+    </div>
+    <div class='btn-toolbar pull-right'>
+        <div class='btn-group'>
+
+                <form method="POST" action="/schools/{{$school->schoolId }}/delete">
+                  {{ csrf_field() }}
+                  <input id="schoolId" name="schoolId" type="hidden" value="{{$school->schoolId }}">
+                  <button type="submit" class='btn btn-default edit-button grey-back'>Delete</button>
+                </form>
+            
         </div>
     </div>
     <div class="object-div grey-back">

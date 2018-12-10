@@ -122,8 +122,11 @@ class SchoolsController extends Controller
      * @param  \App\c  $c
      * @return \Illuminate\Http\Response
      */
-    public function destroy(c $c)
+    public function destroy(Request $request)
     {
         //
+        $school = School::find($request->schoolId);
+        $school->delete();
+        return redirect('/school')->with('success', 'School Deleted');
     }
 }
