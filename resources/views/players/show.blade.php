@@ -3,6 +3,10 @@
 @section ('content')
 
   <h1 class="content-header grey-back">{{$person->personFirstName}} {{$person->personLastName}}</h1>
+  {!!Form:open(['action' => ['PersonsController@destroy', $post->id], 'method' => 'POST', 'class' => 'float-right'])!!}
+    {{Form::hidden('_method', 'DELETE')}}
+    {{Form::submit('Delete', ['class' => 'btn btn-danger'])}}
+  {!!Form::close()!!}
 
   <div class=info-page>
   	{{$player->position}}<br/>
