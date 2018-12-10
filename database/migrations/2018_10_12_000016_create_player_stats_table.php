@@ -29,6 +29,7 @@ class CreatePlayerStatsTable extends Migration
             // fk
             $table->integer('teamId')->unsigned();
             $table->timestamps();
+            $table->softDeletes();  
 
         });
 

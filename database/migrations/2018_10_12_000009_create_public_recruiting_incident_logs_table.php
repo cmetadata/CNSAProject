@@ -20,6 +20,7 @@ class CreatePublicRecruitingIncidentLogsTable extends Migration
             $table->date('incidentDate');
             $table->string('incidentDescription');
             $table->timestamps();
+            $table->softDeletes();  
         });
 
     }

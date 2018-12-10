@@ -19,7 +19,8 @@ class CreatePersonTable extends Migration
             $table->increments('personId');
             $table->string('personFirstName', 40);
             $table->string('personLastName', 40);
-            $table->timestamps();           
+            $table->timestamps();  
+            $table->softDeletes();         
         });
     }
 

@@ -27,6 +27,7 @@ class CreatePlayerTable extends Migration
             // fk
             $table->integer('teamId')->unsigned();            
             $table->timestamps();
+            $table->softDeletes();  
         });
 
         Schema::table('players', function($table) {
