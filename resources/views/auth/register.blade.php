@@ -60,7 +60,6 @@
                 <label for="name">User Type:</label>
 
                 <div class="col-md-6">
-                    <input type="text" class="form-control" id="name" name="userType" required>
                     <select class="form-control" name="type" id="type">
                         <option value="admin">Admin</option>
                         <option value="coach">Coach</option>
