@@ -48,7 +48,7 @@
 
             <!-- Phone number -->
             <div class="form-group row">
-                <label for="name">Phone Number:</label>
+                <label for="name" class="col-md-4 col-form-label text-md-right">Phone Number:</label>
 
                 <div class="col-md-6">
                     <input type="tel" class="form-control" id="name" name="phoneNumber" required>
@@ -57,12 +57,12 @@
 
             <!-- Getting the user type -->
             <div class="form-group row">
-                <label for="name">User Type:</label>
+                <label for="name" class="col-md-4 col-form-label text-md-right">User Type:</label>
 
                 <div class="col-md-6">
                     <select class="form-control" name="type" id="type">
-                        <option value="admin">Admin</option>
-                        <option value="coach">Coach</option>
+                        <option value="a">Admin</option>
+                        <option value="c">Coach</option>
                     </select>
                 </div>
             </div>
