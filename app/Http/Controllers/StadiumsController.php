@@ -89,7 +89,7 @@ class StadiumsController extends Controller
      * @param  \App\c  $c
      * @return \Illuminate\Http\Response
      */
-    public function edit(c $c)
+    public function edit($stadiumId)
     {
         $stadiums = Stadium::find($stadium->stadiumId);
 
@@ -103,7 +103,7 @@ class StadiumsController extends Controller
      * @param  \App\c  $c
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, c $c)
+    public function update(Request $request, $stadiumId)
     {
         // Validating the information that is being entered into the database
         $this->validate(request(), [
