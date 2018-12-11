@@ -3,7 +3,7 @@
 <div>
     <div class='btn-toolbar pull-right'>
         <div class='btn-group'>
-            <a class="btn btn-default edit-button grey-back" href="/players/{{$player->playerId}}/edit">Edit</a>
+            <a class="btn btn-default edit-button grey-back" href="/players/{{$team->teamId}}/edit">Edit</a>
         </div>
     </div>
     <div class='btn-toolbar pull-right'>
