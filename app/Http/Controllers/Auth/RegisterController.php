@@ -108,7 +108,7 @@ class RegisterController extends Controller
         ]); 
         */
         
-        $login = new Login;
+        $login = new User;
 
         $login->loginId = $request->loginId;
         
