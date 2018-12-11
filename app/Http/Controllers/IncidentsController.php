@@ -72,7 +72,9 @@ class IncidentsController extends Controller
         $incidents->save();
 
         //Flashing a message to confirm that a team has been entered into the database
-        session()->flash('message', 'incidents has been inserted');                        
+        session()->flash('message', 'incidents has been inserted');    
+
+        return redirect("/incidents");                    
     }
 
     /**

@@ -69,7 +69,9 @@ class StadiumsController extends Controller
         $stadiums->save();
 
         //Flashing a message to confirm that a team has been entered into the database
-        session()->flash('message', 'Stadium has been inserted');                
+        session()->flash('message', 'Stadium has been inserted'); 
+
+        return redirect("/stadiums");               
     }
 
     /**

@@ -485,7 +485,7 @@ Route::get('/persons/{personId}/edit', 'PersonsController@edit');
 
 //Admin
 //Deletes the Persons information
-Route::get('/persons/{personId}/delete', 'PersonsController@delete');
+Route::post('/persons/{personId}/delete', 'PersonsController@destroy');
 
 
 //--------------------------------------------------------

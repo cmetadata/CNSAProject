@@ -69,6 +69,7 @@ class TeamsController extends Controller
 
          //Flashing a message to confirm that a team has been entered into the database
         session()->flash('message', 'Team has been inserted');
+        return redirect("/teams");
     }
 
     /**
@@ -87,6 +88,7 @@ class TeamsController extends Controller
         $i = 0;
         foreach ($players as $player)
         {
+            $school[$i] = School::find($team->first()->schoolId);
             $person[$i] = Person::find($player->personId);
             $i += 1;
         }

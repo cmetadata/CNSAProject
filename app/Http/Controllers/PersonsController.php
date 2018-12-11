@@ -75,7 +75,9 @@ class PersonsController extends Controller
         // $player->save();
 
         //Flashing a message to confirm that the player has been entered into the database
-        session()->flash('message', 'Person has been inserted');  
+        session()->flash('message', 'Person has been inserted'); 
+
+        return redirect("/persons"); 
 
     }
     
@@ -113,8 +115,11 @@ class PersonsController extends Controller
      * @param  \App\Player  $playerId
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Person $personId)
+    public function destroy(Request $request)
     {
-        
+        //
+        $person = Person::find($request->personId);
+        $person->delete();
+        return redirect('/persons')->with('success', 'Person Deleted');
     }
 }

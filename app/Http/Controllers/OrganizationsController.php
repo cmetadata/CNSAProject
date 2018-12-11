@@ -66,7 +66,9 @@ class OrganizationsController extends Controller
         $organizations->save();
 
         //Flashing a message to confirm that a team has been entered into the database
-        session()->flash('message', 'organization has been inserted');                
+        session()->flash('message', 'organization has been inserted');  
+
+        return redirect("/organizations");              
     }
 
     /**

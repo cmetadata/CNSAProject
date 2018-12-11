@@ -85,6 +85,8 @@ class PositionsController extends Controller
         //Flashing a message to confirm that the player has been entered into the database
         session()->flash('message', 'Position has been inserted');  
 
+        return redirect("/positions");
+
     }
     
 
