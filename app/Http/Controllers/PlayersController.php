@@ -142,7 +142,7 @@ class PlayersController extends Controller
     {
         $player = Player::find($request->playerId);
 
-        dd($player, $request);
+        // dd($player, $request);
 
         $incidents = IncidentLog::all()->where('playerId', $request->playerId);
         $injuries = InjuryLog::all()->where('playerId', $request->playerId);
