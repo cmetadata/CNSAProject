@@ -140,7 +140,7 @@ class PlayersController extends Controller
     // }
     public function show(Request $request) 
     {
-        dd($request);
+        //dd($request);
         $player = Player::find($request->playerId);
         
         $incidents = IncidentLog::all()->where('playerId', $request->playerId);
