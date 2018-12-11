@@ -3,7 +3,18 @@
 <div>
     <div class='btn-toolbar pull-right'>
         <div class='btn-group'>
-            <button name="edit-button" type='button' class='btn btn-default edit-button grey-back'>Edit Incident</button>
+            <button name="edit-button" type='button' class='btn btn-default edit-button grey-back'>Edit</button>
+        </div>
+    </div>
+    <div class='btn-toolbar pull-right'>
+        <div class='btn-group'>
+
+                <form method="POST" action="/incidents/{{$incident->incidentId}}/delete">
+                  {{ csrf_field() }}
+                  <input id="incidentId" name="incidentId" type="hidden" value="{{$incident->incidentId}}">
+                  <button type="submit" class='btn btn-default edit-button grey-back' onclick="return confirm('Delete Incident?')">Delete</button>
+                </form>
+            
         </div>
     </div>
     <div class="object-div grey-back">

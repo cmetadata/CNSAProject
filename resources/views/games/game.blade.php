@@ -12,7 +12,7 @@
                <form method="POST" action="/games/{{$game->statId}}/delete">
                   {{ csrf_field() }}
                   <input id="statId" name="statId" type="hidden" value="{{$game->statId}}">
-                  <button type="submit" class='btn btn-default edit-button grey-back'>Delete</button>
+                  <button type="submit" class='btn btn-default edit-button grey-back' onclick="return confirm('Delete Game?')">Delete</button>
                 </form>
             
         </div>

@@ -130,7 +130,7 @@ class SchoolsController extends Controller
         $school->organizationId = $request->organizationId;
 
         //Saves
-        $player->save();
+        $school->save();
 
         //Flashes a message to let the user know that they have updated a player
         session()->flash('message', 'School has been updated');
