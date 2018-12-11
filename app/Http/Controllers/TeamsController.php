@@ -87,7 +87,7 @@ class TeamsController extends Controller
         //
         $team = Team::all()->where('teamId', $request->teamId);    
         $players = Player::all()->where('teamId', $request->teamId);
-        //$school = School::find($team->schoolId);
+        $school = School::find($team->schoolId);
 
         $i = 0;
         foreach ($players as $player)
