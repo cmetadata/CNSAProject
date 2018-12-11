@@ -112,13 +112,13 @@ class GamesController extends Controller
 
         //$game = Game::find($request->statId);
 
-        $game = Game::find('statId', $request->gameId);
+        $game = Game::find($request->gameId);
 
         $players = PlayerStat::all()->where('gameId', $request->gameId);
 
         $teams = GameStat::all()->where('gameId', $request->gameId);
 
-        $stadium = Stadium::find('stadiumId', $game->stadiumId);
+        $stadium = Stadium::find($game->stadiumId);
 
         // dd($teams, $players);
         
@@ -126,7 +126,6 @@ class GamesController extends Controller
         $teamName2 = Team::find($teams->get(1)->teamId);
 
 
-        dd($teamName1, $teamName2);
 
         $playerStatsTeam1 = PlayerStat::all()->where('teamId', $teamName1->teamId);
         $playerStatsTeam2 = PlayerStat::all()->where('teamId', $teamName2->teamId);
