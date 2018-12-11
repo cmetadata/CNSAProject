@@ -10,7 +10,7 @@
         
         <div class="login-form">
 
-        <h1 class="title2 grey-back">Edit {{$stadium->stadiumName}}</h1>
+        <a class="btn btn-default edit-button grey-back" href="/stadiums/{{$stadium->stadiumId}}/edit">Edit</a>
         
         <div class="grey-back buffer">
 
