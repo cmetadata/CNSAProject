@@ -115,8 +115,11 @@ class PersonsController extends Controller
      * @param  \App\Player  $playerId
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Person $personId)
+    public function destroy(Request $request)
     {
-        
+        //
+        $person = Person::find($request->personId);
+        $person->delete();
+        return redirect('/persons')->with('success', 'Person Deleted');
     }
 }
