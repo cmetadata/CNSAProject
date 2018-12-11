@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Player;
+use App\PlayerStat;
+use App\Person;
 use App\GameStat;
 use App\Game;
 use App\Stadium;
@@ -105,7 +108,33 @@ class GamesController extends Controller
      */
     public function show(Request $request)
     {
-        return view('games.show');
+        $game = Game::find($request->statId);
+
+        $players = PlayerStat::all()->where('gameId', $game->statId);
+
+        $teams = GameStat::all()->where('gameId', $request->statId);
+
+        $teamName1 = Team::find($teams[0]);
+        $teamName2 = Team::find($teams[1]);
+        $playerStatsTeam1 = PlayerStat::all()->where('teamId', $teams[0]->teamId);
+        $playerStatsTeam2 = PlayerStat::all()->where('teamId', $teams[1]->teamId);
+
+        $i = 0;
+        foreach ($playerStatsTeam1 as $statTeam1)
+        {
+            $statTeam1[$i] = PlayerStat::find($teams[0]->teamId);
+            $i += 1;
+        }
+
+
+        $i = 0;
+        foreach ($players as $player)
+        {
+            $statTeam2[$i] = PlayerStat::find($teams[1]->teamId);
+            $i += 1;
+        }
+
+        return view('games.show', 'game', 'statTeam1', 'statTeam2', 'teamName1', 'teamName2');
     }
 
     /**
@@ -137,8 +166,11 @@ class GamesController extends Controller
      * @param  \App\c  $c
      * @return \Illuminate\Http\Response
      */
-    public function destroy(c $c)
+    public function destroy(Request $request)
     {
         //
+        $game = Game::find($request->gameId);
+        $game->delete();
+        return redirect('/games')->with('success', 'Game Deleted');
     }
 }

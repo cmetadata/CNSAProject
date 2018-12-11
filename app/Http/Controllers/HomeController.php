@@ -17,6 +17,14 @@ class HomeController extends Controller
         $this->middleware('auth', ['only' => 'index']);
     }
 
+    public function admin(request $req) {
+        return view('middleware')->withMessage("Admin");
+    }
+
+    public function coach(request $req) {
+        return view('middleware')->withMessage("Coach");
+    }
+
     /**
      * Show the application dashboard.
      *
@@ -25,5 +33,10 @@ class HomeController extends Controller
     public function index()
     {
         return view('home');
+    }
+
+    public function create()
+    {
+        return view('sessions.create')
     }
 }

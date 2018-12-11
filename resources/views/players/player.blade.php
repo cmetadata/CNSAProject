@@ -3,7 +3,18 @@
 <div>
     <div class='btn-toolbar pull-right'>
         <div class='btn-group'>
-            <button name="edit-button" type='button' class='btn btn-default edit-button grey-back'>Edit Player</button>
+            <a class="btn btn-default edit-button grey-back" href="/players/{{$player->playerId}}/edit">Edit</a>
+        </div>
+    </div>
+    <div class='btn-toolbar pull-right'>
+        <div class='btn-group'>
+
+               <form method="POST" action="/players/{{$player->playerId}}/delete">
+                  {{ csrf_field() }}
+                  <input id="playerId" name="playerId" type="hidden" value="{{$player->playerId}}">
+                  <button type="submit" class='btn btn-default edit-button grey-back'>Delete</button>
+                </form>
+            
         </div>
     </div>
 	<div class="object-div grey-back">

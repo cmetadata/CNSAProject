@@ -123,8 +123,11 @@ class InjuriesController extends Controller
      * @param  \App\c  $c
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Injury $injury)
+    public function destroy(Request $request)
     {
         //
+        $injury = Injury::find($request->injuryId);
+        $injury->delete();
+        return redirect('/injuries')->with('success', 'Injury Deleted');
     }
 }

@@ -105,6 +105,6 @@ class PersonsController extends Controller
      */
     public function destroy(Person $personId)
     {
-
+        
     }
 }

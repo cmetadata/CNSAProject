@@ -92,9 +92,11 @@ class OrganizationsController extends Controller
      * @param  \App\c  $c
      * @return \Illuminate\Http\Response
      */
-    public function edit(c $c)
+    public function edit($organizationId)
     {
-        //
+        $organization = Organization::find($organizationId);
+
+        return view('organizations.edit', compact('organization'));
     }
 
     /**
@@ -104,9 +106,21 @@ class OrganizationsController extends Controller
      * @param  \App\c  $c
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, c $c)
+    public function update(Request $request, $organizationId)
     {
-        //
+        $this->validate(request(), [
+            'organizationName' => 'required|max:50',
+        ]);
+
+        $organization = Organization::find($organizationId);
+
+        $organization->organizationName = $request->organizationName;
+
+        $organization->save();
+
+        //Flashing a message to confirm that a team has been entered into the database
+        session()->flash('message', 'Organization has been updated'); 
+        return view('organizations.show', compact('organization'));
     }
 
     /**
@@ -115,8 +129,11 @@ class OrganizationsController extends Controller
      * @param  \App\c  $c
      * @return \Illuminate\Http\Response
      */
-    public function destroy(c $c)
+    public function destroy(Request $request)
     {
         //
+        $organization = Organization::find($request->organizationId);
+        $organization->delete();
+        return redirect('/organizations')->with('success', 'Organization Deleted');
     }
 }

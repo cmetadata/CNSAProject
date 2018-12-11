@@ -107,8 +107,11 @@ class StadiumsController extends Controller
      * @param  \App\c  $c
      * @return \Illuminate\Http\Response
      */
-    public function destroy(c $c)
+    public function destroy(Request $request)
     {
         //
+        $stadium = Stadium::find($request->stadiumId);
+        $stadium->delete();
+        return redirect('/stadiums')->with('success', 'Stadium Deleted');
     }
 }

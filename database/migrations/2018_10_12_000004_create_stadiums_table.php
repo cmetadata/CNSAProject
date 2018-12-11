@@ -25,7 +25,7 @@ class CreateStadiumsTable extends Migration
             // fk
             //$table->integer('schoolId')->unsigned();
             $table->timestamps();
-
+            $table->softDeletes();  
             
         });
 

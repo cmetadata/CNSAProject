@@ -206,9 +206,16 @@ class PlayersController extends Controller
      * @param  \App\Player  $playerId
      * @return \Illuminate\Http\Response
      */
-    public function edit($playerId, Request $request)
+    public function edit($playerId)
     {       
+        $player = Player::find($playerId);
+        $person = Person::find($player->personId);
 
+        return view('players.edit', compact(['player','person']));
+    }
+
+    public function update(Request $request, $playerId)
+    {
         // Validating the information that is being entered into the database
         $this->validate(request(), [
             'playerId'    => $playerId,
@@ -221,31 +228,29 @@ class PlayersController extends Controller
 
         //Retrieves the player
         $player = Player::find($playerId);
+        $person = Person::find($player->personId);
 
         //Updates the player
-        $player->personId = $request->personId;
-
         $player->yearEntered = $request->yearEntered;
-
         $player->position = $request->position;
-
         $player->teamId = $request->teamId;
-
         $player->playerRating = $request->playerRating;
+        $player->highSchool = $request->highSchool;  
 
-        // Don't know if we actually need this ??
-        // $player->playerStatsId = $request->playerStatsId;
+        //Updates the person
+        $person->personFirstName = $request->firstName;
+        $person->personLastName = $request->lastName;
 
-        $player->schoolId = $request->schoolId;       
-
-        //Saves the player
+        //Saves both
         $player->save();
+        $person->save();
+
 
         //Flashes a message to let the user know that they have updated a player
         session()->flash('message', 'Player has been updated');
 
         //Redirects the user back to the players page
-        return redirect()->back();
+        return redirect('/players/{playerId}');
     }
 
     /**
@@ -254,24 +259,11 @@ class PlayersController extends Controller
      * @param  \App\Player  $playerId
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Player $playerId)
+    public function destroy(Request $request)
     {
-        //Validates that the id entered is an actual Player object
-        $this->validate(request(), [
-            'playerId' => $playerId
-        ]); 
-
-        //Retrieves player information
-        $player = Player::find($playerId);
-
-        //Deletes the player record
+        //
+        $player = Player::find($request->playerId);
         $player->delete();
-
-        //Flashes a message to let the user know that they have deleted a player
-        seesion()->flash('message', 'Player has been deleted');
-
-        //Redirects the user back to the previous page
-        return redirect()->back();
-
+        return redirect('/players')->with('success', 'Player Deleted');
     }
 }
