@@ -91,7 +91,9 @@ class StadiumsController extends Controller
      */
     public function edit(c $c)
     {
-        //
+        $stadiums = Stadium::find($stadium->stadiumId);
+
+        return view('stadiums.edit', compact(['stadium']));
     }
 
     /**
@@ -103,7 +105,35 @@ class StadiumsController extends Controller
      */
     public function update(Request $request, c $c)
     {
-        //
+        // Validating the information that is being entered into the database
+        $this->validate(request(), [
+            'stadiumName'     => 'required|max:50',
+            'stadiumCapacity' => 'required',
+            'organizationId'  => 'required'
+        ]);
+
+        //Retrieves the player
+        $stadium = Stadium::find($stadiumId);
+
+        //Updates the player
+        $stadium->stadiumName = $request->stadiumName;
+        $stadium->stadiumCapacity = $request->stadiumCapacity;
+        $stadium->organizationId = $request->organizationId;
+
+        //Updates the person
+        $stadium->stadiumName = $request->stadiumName;
+        $stadium->stadiumCapacity = $request->stadiumCapacity;
+        $stadium->organizationId = $request->organizationId;
+
+        //Saves both
+        $stadium->save();
+
+
+        //Flashes a message to let the user know that they have updated a player
+        session()->flash('message', 'Stadium has been updated');
+
+        //Redirects the user back to the players page
+        return redirect('/stadiums');
     }
 
     /**
