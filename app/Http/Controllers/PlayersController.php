@@ -250,7 +250,7 @@ class PlayersController extends Controller
         session()->flash('message', 'Player has been updated');
 
         //Redirects the user back to the players page
-        return redirect('/players/{playerId}');
+        return redirect('/players/{$playerId}');
     }
 
     /**
