@@ -154,9 +154,12 @@ class GamesController extends Controller
      * @param  \App\c  $c
      * @return \Illuminate\Http\Response
      */
-    public function edit(c $c)
+    public function edit($gameId)
     {
-        //
+        $game = Player::find($playerId);
+        $person = Person::find($player->personId);
+
+        return view('players.edit', compact(['player','person']));
     }
 
     /**
