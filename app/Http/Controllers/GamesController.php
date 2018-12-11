@@ -108,6 +108,8 @@ class GamesController extends Controller
      */
     public function show(Request $request)
     {
+        dd($request);
+        
         $game = Game::find($request->statId);
 
         $players = PlayerStat::all()->where('gameId', $game->statId);
