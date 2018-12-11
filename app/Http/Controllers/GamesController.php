@@ -156,10 +156,10 @@ class GamesController extends Controller
      */
     public function edit($gameId)
     {
-        $game = Player::find($playerId);
-        $person = Person::find($player->personId);
 
-        return view('players.edit', compact(['player','person']));
+        $game = Game::find($gameId);
+
+        return view('games.edit', compact('game'));
     }
 
     /**
@@ -169,9 +169,34 @@ class GamesController extends Controller
      * @param  \App\c  $c
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, c $c)
+    public function update(Request $request, $statId)
     {
-        //
+        /*
+        //put validation here**
+
+        //Retrieves the player
+        $game = Game::find($statId);
+        $gameStats = GameStats::where('gameId', $statId);
+
+        //Updates the player
+        $game->gameDate = $request->gameDate;
+        $player->gameAttendance = $request->gameAttendance;
+        $player->stadiumId = $request->stadiumId;
+
+        //Updates the person
+        $gameStats[0]->personFirstName = $request->firstName;
+        $person->personLastName = $request->lastName;
+
+        //Saves both
+        $player->save();
+        $person->save();
+
+
+        //Flashes a message to let the user know that they have updated a player
+        session()->flash('message', 'Player has been updated');
+
+        //Redirects the user back to the players page
+        return redirect('/players');*/
     }
 
     /**
