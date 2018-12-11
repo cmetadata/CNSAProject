@@ -126,8 +126,8 @@ class GamesController extends Controller
         $teamName2 = Team::find($teams->get(1)->teamId);
 
 
-        $playerStatsTeam1 = PlayerStat::all()->where('teamId', $teams->get(0)->teamId);
-        $playerStatsTeam2 = PlayerStat::all()->where('teamId', $teams->get(1)->teamId);
+        $playerStatsTeam1 = PlayerStat::all()->where('teamId', $teamName1->teamId);
+        $playerStatsTeam2 = PlayerStat::all()->where('teamId', $teamName2->teamId);
 
         dd($playerStatsTeam1, $playerStatsTeam2);
 
