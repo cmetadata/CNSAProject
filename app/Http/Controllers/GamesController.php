@@ -138,7 +138,7 @@ class GamesController extends Controller
         //     $i += 1;
         // }
 
-        dd($teamName1, $teamName2);
+        //dd($teamName1, $teamName2);
 
         return view('games.show', compact(['teamName1', 'teamName2']));
     }
