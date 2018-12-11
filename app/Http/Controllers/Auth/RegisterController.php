@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\User;
+use App\Login;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
@@ -108,7 +108,7 @@ class RegisterController extends Controller
         ]); 
         */
         
-        $login = new User;
+        $login = new Login;
 
         $login->loginId = $request->loginId;
         
