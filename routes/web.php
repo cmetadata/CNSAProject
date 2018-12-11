@@ -514,3 +514,6 @@ Route::post('/register', 'Auth\RegisterController@store');
 
 Route::get('/login', 'Auth\LoginController@create');
 Route::post('/login', 'Auth\LoginController@store');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
