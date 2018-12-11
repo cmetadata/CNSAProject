@@ -11,9 +11,14 @@ class SchoolsController extends Controller
 
     public function __construct()
     {
-        //$this->middleware('auth')->except(['index', 'show']);
+        //Guests can see everything except for these views
+        //$this->middleware('guest', ['except' => 'create', 'edit', 'update', 'delete', 'store']);
+        //Coaches can see everything except delete functionality
+        //$this->middleware('auth', ['except' => 'delete']);
+        //Admins can see everything
+        //$this->middleware('admin');
     }
-    
+
     /**
      * Display a listing of the resource.
      *
@@ -93,15 +98,11 @@ class SchoolsController extends Controller
      * @param  \App\c  $c
      * @return \Illuminate\Http\Response
      */
-    public function edit(c $c)
+    public function edit($schoolId)
     {
-        //Validates that the information being input is valid
-        $this->validate(request(), [
-            'schoolName' => 'required|max:50',
-            'schoolRanking' => 'required'
-        ]);
+        $school = School::find($schoolId);
 
-        $school = School::edit(request(['schoolName']));
+        return view('schools.edit', compact('school'));
     }
 
     /**
@@ -111,9 +112,31 @@ class SchoolsController extends Controller
      * @param  \App\c  $c
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, c $c)
+    public function update(Request $request, $schoolId)
     {
-        //
+        //Validates that the information being input is valid
+        $this->validate(request(), [
+            'schoolName' => 'required|max:50',
+            'schoolRanking' => 'required'
+        ]);
+
+        //Retrieves the player
+        $school = School::find($schoolId);
+
+        //Updates the player
+        $school->schoolName = $request->schoolName;
+        $school->schoolRanking = $request->schoolRanking;
+        $school->schoolPopulation = $request->schoolPopulation;
+        $school->organizationId = $request->organizationId;
+
+        //Saves
+        $school->save();
+
+        //Flashes a message to let the user know that they have updated a player
+        session()->flash('message', 'School has been updated');
+
+        //Redirects the user back to the players page
+        return redirect('/schools');
     }
 
     /**

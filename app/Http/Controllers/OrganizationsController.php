@@ -12,7 +12,12 @@ class OrganizationsController extends Controller
 
     public function __construct()
     {
-        //$this->middleware('auth')->except(['index', 'show']);
+        //Guests can see everything except for these views
+        //$this->middleware('guest', ['except' => 'create', 'edit', 'update', 'delete', 'store']);
+        //Coaches can see everything except delete functionality
+        //$this->middleware('coach', ['except' => 'delete']);
+        //Admins can see everything
+        //$this->middleware('admin');
     }
     
     /**
@@ -120,7 +125,7 @@ class OrganizationsController extends Controller
 
         //Flashing a message to confirm that a team has been entered into the database
         session()->flash('message', 'Organization has been updated'); 
-        return view('organizations.show', compact('organization'));
+        return redirect('/organizations');
     }
 
     /**

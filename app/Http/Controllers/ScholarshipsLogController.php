@@ -9,6 +9,14 @@ use Illuminate\Http\Request;
 class ScholarshipsLogController extends Controller
 {
 
+    public function __construct()
+    {
+        
+        //Coaches can see everything except delete functionality
+        //$this->middleware('coach', ['except' => 'delete']);
+        //Admins can see everything
+        //$this->middleware('admin');
+    }
     /**
      * Show the form for creating a new resource.
      *

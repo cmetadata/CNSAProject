@@ -165,6 +165,8 @@ Route::get('/teams/create', 'TeamsController@create');
 //Store
 Route::post('/teams', 'TeamsController@store');
 
+Route::post('/teams/{teamId}', 'TeamsController@update');
+
 //Public, Coaches and Admin
 //Displays a teams roster 
 
@@ -229,6 +231,8 @@ Route::get('/schools/{schoolId}', 'SchoolsController@show');
 // POST (http mode post) route to /schools, calls store function
 Route::post('/schools', 'SchoolsController@store');
 
+Route::post('/schools/{schoolId}', 'SchoolsController@update');
+
 //Admin
 //Allows editing schools information
 Route::get('/schools/{schoolId}/edit', 'SchoolsController@edit');
@@ -251,6 +255,8 @@ Route::get('/stadiums', 'StadiumsController@index');
 Route::get('/stadiums/create', 'StadiumsController@create');
 
 Route::post('/stadiums', 'StadiumsController@store');
+
+Route::post('/stadiums/{stadiumId}', 'StadiumsController@update');
 
 //Public, Coaches and Admin
 //Displays a particular stadiums information
@@ -286,7 +292,7 @@ Route::get('/incidents/{incidentId}', 'IncidentsController@show');
 
 //Admin
 //Deletes the injury information
-Route::get('/incidents/{incidentId}/delete', 'IncidentsController@delete');
+Route::post('/incidents/{incidentId}/delete', 'IncidentsController@destroy');
 
 
 
@@ -397,7 +403,7 @@ Route::post('/scholarships_log', 'ScholarshipsLogController@store');
 
 
 //////////////////////////////////////////////////////////////////
-Auth::routes();
+//Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
@@ -510,7 +516,10 @@ Route::get('/positions/{positionId}/delete', 'PositionsController@delete');
 
 //Register/Login
 Route::get('/register', 'Auth\RegisterController@create');
-Route::post('/register', 'Auth\RegisterController@store');
+Route::post('/register', 'Auth\RegisterController@create');
 
 Route::get('/login', 'Auth\LoginController@create');
 Route::post('/login', 'Auth\LoginController@store');
+//Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

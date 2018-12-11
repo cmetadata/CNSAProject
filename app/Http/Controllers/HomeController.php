@@ -13,16 +13,12 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        //Makes it so that only someone who is logged in can see the home page
-        $this->middleware('auth', ['only' => 'index']);
-    }
-
-    public function admin(request $req) {
-        return view('middleware')->withMessage("Admin");
-    }
-
-    public function coach(request $req) {
-        return view('middleware')->withMessage("Coach");
+        //Guests can see everything except for these views
+        //$this->middleware('guest', ['except' => 'create', 'edit', 'update', 'delete', 'store']);
+        //Coaches can see everything except delete functionality
+        //$this->middleware('coach', ['except' => 'delete']);
+        //Admins can see everything
+        //$this->middleware('admin');
     }
 
     /**
@@ -33,10 +29,5 @@ class HomeController extends Controller
     public function index()
     {
         return view('home');
-    }
-
-    public function create()
-    {
-        return view('sessions.create')
     }
 }

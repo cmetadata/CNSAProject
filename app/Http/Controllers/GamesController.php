@@ -6,6 +6,8 @@ use App\Player;
 use App\PlayerStat;
 use App\Person;
 use App\GameStat;
+use App\InjuryLog;
+use App\Injury;
 use App\Game;
 use App\Stadium;
 Use App\Team;
@@ -13,10 +15,14 @@ use Illuminate\Http\Request;
 
 class GamesController extends Controller
 {
-
     public function __construct()
     {
-        //$this->middleware('auth')->except(['index', 'show']);
+        //Guests can see everything except for these views
+        //$this->middleware('guest', ['except' => 'create', 'edit', 'update', 'delete', 'store']);
+        //Coaches can see everything except delete functionality
+        //$this->middleware('coach', ['except' => 'delete']);
+        //Admins can see everything
+        //$this->middleware('admin');
     }
     
     /**
@@ -108,33 +114,38 @@ class GamesController extends Controller
      */
     public function show(Request $request)
     {
-        $game = Game::find($request->statId);
+        //dd($request);
 
-        $players = PlayerStat::all()->where('gameId', $game->statId);
+        //$game = Game::find($request->statId);
 
-        $teams = GameStat::all()->where('gameId', $request->statId);
+        $game = Game::find($request->gameId);
 
-        $teamName1 = Team::find($teams[0]);
-        $teamName2 = Team::find($teams[1]);
-        $playerStatsTeam1 = PlayerStat::all()->where('teamId', $teams[0]->teamId);
-        $playerStatsTeam2 = PlayerStat::all()->where('teamId', $teams[1]->teamId);
+        $players = PlayerStat::all()->where('gameId', $request->gameId);
+
+        $teams = GameStat::all()->where('gameId', $request->gameId);
+
+        $stadium = Stadium::find($game->stadiumId);
+
+        $injuries = InjuryLog::all()->where('gameId', $request->gameId);
+
+        // dd($teams, $players);
+        
+        $teamName1 = Team::find($teams->get(0)->teamId);
+        $teamName2 = Team::find($teams->get(1)->teamId);
 
         $i = 0;
-        foreach ($playerStatsTeam1 as $statTeam1)
+        foreach ($injuries as $injury)
         {
-            $statTeam1[$i] = PlayerStat::find($teams[0]->teamId);
+            $injuryNames[$i] = Injury::find($injury->injuryId);
             $i += 1;
         }
 
 
-        $i = 0;
-        foreach ($players as $player)
-        {
-            $statTeam2[$i] = PlayerStat::find($teams[1]->teamId);
-            $i += 1;
-        }
+        $playerStatsTeam1 = PlayerStat::all()->where('teamId', $teamName1->teamId);
+        $playerStatsTeam2 = PlayerStat::all()->where('teamId', $teamName2->teamId);
 
-        return view('games.show', 'game', 'statTeam1', 'statTeam2', 'teamName1', 'teamName2');
+
+        return view('games.show', compact(['game', 'teamName1', 'teamName2', 'stadium', 'playerStatsTeam1', 'playerStatsTeam2', 'injuries', 'injuryNames']));
     }
 
     /**

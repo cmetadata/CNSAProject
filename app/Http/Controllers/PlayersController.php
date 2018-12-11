@@ -20,7 +20,12 @@ class PlayersController extends Controller
 
     public function __construct()
     {
-        //$this->middleware('auth')->except(['index', 'show']);
+        //Guests can see everything except for these views
+        //$this->middleware('guest', ['except' => 'create', 'edit', 'update', 'delete', 'store']);
+        //Coaches can see everything except delete functionality
+        //$this->middleware('coach', ['except' => 'delete']);
+        //Admins can see everything
+        //$this->middleware('admin');
     }
 /**
      * Display a listing of the resource.
@@ -140,9 +145,10 @@ class PlayersController extends Controller
     // }
     public function show(Request $request) 
     {
-        
         $player = Player::find($request->playerId);
-        
+
+        // dd($player, $request);
+
         $incidents = IncidentLog::all()->where('playerId', $request->playerId);
         $injuries = InjuryLog::all()->where('playerId', $request->playerId);
         $scholarships = ScholarshipLog::all()->where('playerId', $request->playerId);
@@ -250,7 +256,7 @@ class PlayersController extends Controller
         session()->flash('message', 'Player has been updated');
 
         //Redirects the user back to the players page
-        return redirect('/players/{playerId}');
+        return redirect('/players');
     }
 
     /**

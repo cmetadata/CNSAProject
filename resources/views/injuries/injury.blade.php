@@ -9,15 +9,10 @@
     <div class='btn-toolbar pull-right'>
         <div class='btn-group'>
 
-<!--                 {!!Form::open(['action' => ['InjuriesController@destroy', $injuryNames[$loop->index]->injuryId], 'method' => 'POST', 'class' => 'pull-right'])!!}
-                   {{Form::hidden('_method', 'DELETE')}}
-                   {{Form::submit('Delete', ['class' => 'btn btn-danger'])}}
-                {!!Form::close()!!} -->
-
                 <form method="POST" action="/injuries/{{$injuryNames[$loop->index]->injuryId}}/delete">
                   {{ csrf_field() }}
                   <input id="injuryId" name="injuryId" type="hidden" value="{{$injuryNames[$loop->index]->injuryId}}">
-                  <button type="submit" class='btn btn-default edit-button grey-back'>Delete</button>
+                  <button type="submit" class='btn btn-default edit-button grey-back' onclick="return confirm('Delete Injury?')">Delete</button>
                 </form>
             
         </div>

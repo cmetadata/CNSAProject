@@ -9,6 +9,16 @@ use Illuminate\Http\Request;
 class InjuriesLogController extends Controller
 {
 
+    public function __construct()
+    {
+        //Guests can see everything except for these views
+        //$this->middleware('guest', ['except' => 'create', 'edit', 'update', 'delete', 'store']);
+        //Coaches can see everything except delete functionality
+        //$this->middleware('coach', ['except' => 'delete']);
+        //Admins can see everything
+        //$this->middleware('admin');
+    }
+    
     /**
      * Show the form for creating a new resource.
      *
@@ -42,7 +52,7 @@ class InjuriesLogController extends Controller
 
         $injuries->injuryId = $request->injuryId;
 
-       // $injuries->gameId = $request->gameId;
+        $injuries->gameId = $request->gameId;
 
         $injuries->injuryDate = $request->injuryDate;
  

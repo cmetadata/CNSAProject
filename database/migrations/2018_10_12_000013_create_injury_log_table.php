@@ -19,7 +19,7 @@ class CreateInjuryLogTable extends Migration
             $table->increments('injuryLogId');
             $table->date('injuryDate');
             // fk -- games not fully implemented yet
-            //$table->integer('gameId')->unsigned();            
+            $table->integer('gameId')->unsigned();            
             // fk
             $table->integer('injuryId')->unsigned();
             // fk
@@ -30,7 +30,7 @@ class CreateInjuryLogTable extends Migration
 
         Schema::table('injury_logs', function($table) {
             //Setting up the relationships
-            //$table->foreign('gameId')->references('id')->on('games')->onDelete('cascade');
+            $table->foreign('gameId')->references('statId')->on('games')->onDelete('cascade');
             $table->foreign('injuryId')->references('injuryId')->on('injuries')->onDelete('cascade');
             $table->foreign('playerId')->references('playerId')->on('players')->onDelete('cascade');
         });
