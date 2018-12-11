@@ -3,15 +3,15 @@
 @section ('content')
 
   <!--This page needs work... and idk why things are different sizes-->
-  <h1 class="content-header grey-back">[Team1] vs [Team2]</h1>
+  <h1 class="content-header grey-back">{{$teamName1->teamName}} vs {{$teamName2->teamName}}</h1>
   <br/>
-	<p>[Date: {{$game->gameDate}}]<br/>
-  {{$stadium->stadiumName}}</p><br/>
+	<p>Date: {{$game->gameDate}}<br/>
+     Stadium: {{$stadium->stadiumName}}</p><br/>
 
   <table width="100%">
   	<tr>
-  		<td width="50%"><a href=#>{{$teamName1->teamName}}</a></td>
-  		<td width="50%"><a href=#>{{$teamName2->teamName}}</a></td>
+  		<td width="50%">{{$teamName1->teamName}}</td>
+  		<td width="50%">{{$teamName2->teamName}}</td>
   	</tr>
   	<tr>
 		<td width="50%">
