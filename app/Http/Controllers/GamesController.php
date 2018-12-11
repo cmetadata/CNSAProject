@@ -131,7 +131,7 @@ class GamesController extends Controller
         $playerStatsTeam2 = PlayerStat::all()->where('teamId', $teamName2->teamId);
 
 
-        return view('games.show', compact(['teamName1', 'teamName2', 'stadium', 'playerStatsTeam1', 'playerStatsTeam2']));
+        return view('games.show', compact(['game', 'teamName1', 'teamName2', 'stadium', 'playerStatsTeam1', 'playerStatsTeam2']));
     }
 
     /**
