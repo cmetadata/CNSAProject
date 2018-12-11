@@ -46,8 +46,8 @@
 	Injuries:
 
 		@foreach ($injuries as $injury)
-			{{ Player ID: $injury->playerId }}
-			{{ Injury Type: {{$injuryNames[$loop->index]->injury}} }}
+			Player ID: {{ $injury->playerId }}
+			Injury Type: {{$injuryNames[$loop->index]->injury}} 
 		@endforeach
 
 @endsection
