@@ -2,6 +2,6 @@
 
 @section ('content')
 
-  <p></p>
+  <p>test</p>
 
 @endsection
