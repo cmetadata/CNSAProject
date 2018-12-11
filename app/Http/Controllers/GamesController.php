@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Player;
+use App\PlayerStat;
+use App\Person;
 use App\GameStat;
 use App\Game;
 use App\Stadium;
@@ -43,12 +46,6 @@ class GamesController extends Controller
             {
                 $index += 1;
             }    
-
-            // if ($i == 2)
-            // {
-            //     dd($gameStats, $index, $i);
-            // }
-
 
             // find the team based on teamId on gameStats array element
             $teams1[$i] = Team::find($gameStats[$i]->get($index)->teamId);
@@ -111,7 +108,35 @@ class GamesController extends Controller
      */
     public function show(Request $request)
     {
-        return view('games.show');
+        dd($request);
+        
+        $game = Game::find($request->statId);
+
+        $players = PlayerStat::all()->where('gameId', $game->statId);
+
+        $teams = GameStat::all()->where('gameId', $request->statId);
+
+        $teamName1 = Team::find($teams[0]);
+        $teamName2 = Team::find($teams[1]);
+        $playerStatsTeam1 = PlayerStat::all()->where('teamId', $teams[0]->teamId);
+        $playerStatsTeam2 = PlayerStat::all()->where('teamId', $teams[1]->teamId);
+
+        $i = 0;
+        foreach ($playerStatsTeam1 as $statTeam1)
+        {
+            $statTeam1[$i] = PlayerStat::find($teams[0]->teamId);
+            $i += 1;
+        }
+
+
+        $i = 0;
+        foreach ($players as $player)
+        {
+            $statTeam2[$i] = PlayerStat::find($teams[1]->teamId);
+            $i += 1;
+        }
+
+        return view('games.show', 'game', 'statTeam1', 'statTeam2', 'teamName1', 'teamName2');
     }
 
     /**
