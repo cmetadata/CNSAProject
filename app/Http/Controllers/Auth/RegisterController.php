@@ -76,7 +76,17 @@ class RegisterController extends Controller
      */
     public function create()
     {
-        return view('auth.register');
+        //return view('auth.register');
+        //Create the user
+        return Login::create([
+            'loginId'     => $data['loginId|max:9999|min:999'],
+            'password'    => bcrypt($data['password']),
+            'userType'    => $data['userType'],
+            'email'       => $data['email'],
+            'phoneNumber' => $data['phoneNumber'],
+            'firstName'   => $data['firstName'],
+            'lastName'    => $data['lastName'],            
+        ]); 
     }
 
 
@@ -84,7 +94,7 @@ class RegisterController extends Controller
     public function store()
     {        
         //Create the user
-        return Login::create([
+        /*return Login::create([
             'loginId'     => $data['loginId|max:9999|min:999'],
             'password'    => $data['password'],
             'userType'    => $data['userType'],
@@ -95,7 +105,7 @@ class RegisterController extends Controller
             'password'    => bcrypt($data['password'])
         ]); 
 
-        /*
+        
         $login = new LoginController;
 
         $login->loginId = $request->loginId;

@@ -6,7 +6,6 @@ use Illuminate\Notifications\Notifiable;
 //use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-use Auth;
 
 class Logins extends Authenticatable
 {
@@ -22,7 +21,7 @@ class Logins extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'loginId', 'firstName', 'lastName', 'phoneNumber', 'email', 'password', 'userType'
     ];
  
     /**
@@ -33,4 +32,9 @@ class Logins extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function teams()
+    {
+        return $this->hasMany(Players::class);
+    }
 }
