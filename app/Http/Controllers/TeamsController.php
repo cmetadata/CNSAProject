@@ -120,7 +120,7 @@ class TeamsController extends Controller
     {
          // Validating the information that is being entered into the database
         $this->validate(request(), [
-            'teamId'    => 'required'
+            'teamId'    => 'required',
             'teamName'  => 'required|max:50',         
             'schoolId'  => 'required'
         ]);
