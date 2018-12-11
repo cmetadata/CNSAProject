@@ -102,31 +102,11 @@ class TeamsController extends Controller
      * @param  \App\c  $c
      * @return \Illuminate\Http\Response
      */
-    public function edit($teamId, Request $request)
+    public function edit($teamId)
     {
-        //
-         // Validating the information that is being entered into the database
-        $this->validate(request(), [
-            'teamId'    => $teamId,
-            'teamName'  => 'required|max:50',         
-            'schoolId'  => 'required'
-        ]);
+        $team = Team::find($teamId);
 
-        //Retrieves the team
-        $teams = Team::find($teamId);
-
-        //Updates the team
-        $teams->teamName = $request->teamName;
-        $teams->schoolId = $request->schoolId;
-
-        //Saves the team
-        $teams->save();
-
-        //Flashes a message to let the user know that they have updated a team
-        session()->flash('message', 'Team has been updated');
-
-        //Redirects the user back to the teams page
-        return redirect()-back();
+        return view('teams.edit', compact('team'));
     }
 
     /**
@@ -136,9 +116,31 @@ class TeamsController extends Controller
      * @param  \App\c  $c
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, c $c)
+    public function update(Request $request, $teamId)
     {
-        //
+         // Validating the information that is being entered into the database
+        $this->validate(request(), [
+            'teamId'    => 'required',
+            'teamName'  => 'required|max:50',         
+            'schoolId'  => 'required'
+        ]);
+
+        //Retrieves the team
+        $team = Team::find($teamId);
+        $school = School::find($team->schoolId);
+
+        //Updates the team
+        $team->teamName = $request->teamName;
+        $team->schoolId = $request->schoolId;
+
+        //Saves the team
+        $team->save();
+
+        //Flashes a message to let the user know that they have updated a team
+        session()->flash('message', 'Team has been updated');
+
+        //Redirects the user back to the teams page
+        return redirect("/teams");
     }
 
     /**
