@@ -18,11 +18,7 @@ class SchoolsController extends Controller
         //Admins can see everything
         $this->middleware('admin');
     }
-    public function __construct()
-    {
-        //$this->middleware('auth')->except(['index', 'show']);
-    }
-    
+
     /**
      * Display a listing of the resource.
      *
