@@ -118,15 +118,15 @@ class GamesController extends Controller
 
         // dd($teams, $players);
         
-        $teamName1 = Team::find($teams->get(1));
-        $teamName2 = Team::find($teams->get(2));
-        $playerStatsTeam1 = PlayerStat::all()->where('teamId', $teams->get(1)->teamId);
-        $playerStatsTeam2 = PlayerStat::all()->where('teamId', $teams[1]->get(2)->teamId);
+        $teamName1 = Team::find($teams->get(0));
+        $teamName2 = Team::find($teams->get(1));
+        $playerStatsTeam1 = PlayerStat::all()->where('teamId', $teams->get(0)->teamId);
+        $playerStatsTeam2 = PlayerStat::all()->where('teamId', $teams->get(0)->teamId);
 
         $i = 0;
         foreach ($playerStatsTeam1 as $statTeam1)
         {
-            $statTeam1[$i] = PlayerStat::find($teams[0]->teamId);
+            $statTeam1[$i] = PlayerStat::find($teams->get(0)->teamId);
             $i += 1;
         }
 
@@ -134,7 +134,7 @@ class GamesController extends Controller
         $i = 0;
         foreach ($players as $player)
         {
-            $statTeam2[$i] = PlayerStat::find($teams[1]->teamId);
+            $statTeam2[$i] = PlayerStat::find($teams->get(0)->teamId);
             $i += 1;
         }
 
