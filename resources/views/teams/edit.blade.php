@@ -2,7 +2,7 @@
 
 @section ('content')
 
-    <form method="POST" action="/teams">
+    <form method="POST" action="/teams/{{$team->teamId}}">
 
         {{ csrf_field() }}
 
