@@ -140,7 +140,6 @@ class GamesController extends Controller
             $i += 1;
         }
 
-
         $playerStatsTeam1 = PlayerStat::all()->where('teamId', $teamName1->teamId);
         $playerStatsTeam2 = PlayerStat::all()->where('teamId', $teamName2->teamId);
 
