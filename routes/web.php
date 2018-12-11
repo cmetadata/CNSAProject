@@ -202,6 +202,8 @@ Route::get('/games/create', 'GamesController@create');
 //Displays a particular coaches information
 Route::get('/games/{gameId}', 'GamesController@show');
 
+Route::post('/games/{gameId}', 'GamesController@update');
+
 //Coaches and Admins
 //Allows to change information relating to the game
 Route::get('/games/{gameId}/edit', 'GamesController@edit');
