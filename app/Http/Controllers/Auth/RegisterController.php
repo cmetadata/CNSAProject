@@ -8,6 +8,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Http\Request;
 
 
 class RegisterController extends Controller
@@ -76,9 +77,9 @@ class RegisterController extends Controller
      */
     public function create()
     {
-        //return view('auth.register');
+        return view('auth.register');
         //Create the user
-        return Login::create([
+        /*return Login::create([
             'loginId'     => $data['loginId|max:9999|min:999'],
             'password'    => bcrypt($data['password']),
             'userType'    => $data['userType'],
@@ -86,31 +87,32 @@ class RegisterController extends Controller
             'phoneNumber' => $data['phoneNumber'],
             'firstName'   => $data['firstName'],
             'lastName'    => $data['lastName'],            
-        ]); 
+        ]); */
     }
 
 
 
-    public function store()
+    public function store(Request $request)
     {        
         //Create the user
-        /*return Login::create([
+        /*
+        return Login::create([
             'loginId'     => $data['loginId|max:9999|min:999'],
-            'password'    => $data['password'],
+            'password'    => bcrypt($data['password']),
             'userType'    => $data['userType'],
             'email'       => $data['email'],
             'phoneNumber' => $data['phoneNumber'],
             'firstName'   => $data['firstName'],
-            'lastName'    => $data['lastName'],
-            'password'    => bcrypt($data['password'])
+            'lastName'    => $data['lastName']
+            
         ]); 
-
+        */
         
-        $login = new LoginController;
+        $login = new User;
 
         $login->loginId = $request->loginId;
         
-        $login->password = $request->password;
+        $login->password = bcrypt($request->password);
 
         $login->userType = $request->userType;
 
@@ -122,12 +124,12 @@ class RegisterController extends Controller
 
         $login->lastName = $request->lastName;
 
-        $login->save(); */
+        $login->save();
 
         //Sign in the newly create login
         //auth()->login($login);
 
         //Redirect to the home page
-        return $redirectTo;
+        return redirect('/');
     }
 }

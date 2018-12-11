@@ -399,7 +399,7 @@ Route::post('/scholarships_log', 'ScholarshipsLogController@store');
 
 
 //////////////////////////////////////////////////////////////////
-Auth::routes();
+//Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
@@ -516,6 +516,6 @@ Route::post('/register', 'Auth\RegisterController@create');
 
 Route::get('/login', 'Auth\LoginController@create');
 Route::post('/login', 'Auth\LoginController@store');
-Auth::routes();
+//Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
