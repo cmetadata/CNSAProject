@@ -231,6 +231,8 @@ Route::get('/schools/{schoolId}', 'SchoolsController@show');
 // POST (http mode post) route to /schools, calls store function
 Route::post('/schools', 'SchoolsController@store');
 
+Route::post('/schools/{schoolId}', 'SchoolsController@update');
+
 //Admin
 //Allows editing schools information
 Route::get('/schools/{schoolId}/edit', 'SchoolsController@edit');
@@ -253,6 +255,8 @@ Route::get('/stadiums', 'StadiumsController@index');
 Route::get('/stadiums/create', 'StadiumsController@create');
 
 Route::post('/stadiums', 'StadiumsController@store');
+
+Route::post('/stadiums/{stadiumId}', 'StadiumsController@update');
 
 //Public, Coaches and Admin
 //Displays a particular stadiums information
