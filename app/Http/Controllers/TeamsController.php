@@ -14,12 +14,7 @@ class TeamsController extends Controller
 
     public function __construct()
     {
-        //Guests can see everything except for these views
-        //$this->middleware('guest', ['except' => 'create', 'edit', 'update', 'delete', 'store']);
-        //Coaches can see everything except delete functionality
-        //$this->middleware('coach', ['except' => 'delete']);
-        //Admins can see everything
-        //$this->middleware('admin');
+        //$this->middleware('auth')->except(['index', 'show']);
     }
     
     /**
@@ -87,7 +82,7 @@ class TeamsController extends Controller
         //
         $team = Team::all()->where('teamId', $request->teamId);    
         $players = Player::all()->where('teamId', $request->teamId);
-        $school = School::find($team->schoolId);
+        //$school = School::find($team->schoolId);
 
         $i = 0;
         foreach ($players as $player)
@@ -107,11 +102,31 @@ class TeamsController extends Controller
      * @param  \App\c  $c
      * @return \Illuminate\Http\Response
      */
-    public function edit($teamId)
+    public function edit($teamId, Request $request)
     {
-        $team = Team::find($teamId);
+        //
+         // Validating the information that is being entered into the database
+        $this->validate(request(), [
+            'teamId'    => $teamId,
+            'teamName'  => 'required|max:50',         
+            'schoolId'  => 'required'
+        ]);
 
-        return view('teams.edit', compact('team'));
+        //Retrieves the team
+        $teams = Team::find($teamId);
+
+        //Updates the team
+        $teams->teamName = $request->teamName;
+        $teams->schoolId = $request->schoolId;
+
+        //Saves the team
+        $teams->save();
+
+        //Flashes a message to let the user know that they have updated a team
+        session()->flash('message', 'Team has been updated');
+
+        //Redirects the user back to the teams page
+        return redirect()-back();
     }
 
     /**
@@ -121,31 +136,9 @@ class TeamsController extends Controller
      * @param  \App\c  $c
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $teamId)
+    public function update(Request $request, c $c)
     {
-         // Validating the information that is being entered into the database
-        $this->validate(request(), [
-            'teamId'    => 'required',
-            'teamName'  => 'required|max:50',         
-            'schoolId'  => 'required'
-        ]);
-
-        //Retrieves the team
-        $team = Team::find($teamId);
-        $school = School::find($team->schoolId);
-
-        //Updates the team
-        $team->teamName = $request->teamName;
-        $team->schoolId = $request->schoolId;
-
-        //Saves the team
-        $team->save();
-
-        //Flashes a message to let the user know that they have updated a team
-        session()->flash('message', 'Team has been updated');
-
-        //Redirects the user back to the teams page
-        return redirect("/teams");
+        //
     }
 
     /**
