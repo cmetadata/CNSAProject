@@ -288,7 +288,7 @@ Route::get('/incidents/{incidentId}', 'IncidentsController@show');
 
 //Admin
 //Deletes the injury information
-Route::get('/incidents/{incidentId}/delete', 'IncidentsController@delete');
+Route::post('/incidents/{incidentId}/delete', 'IncidentsController@destroy');
 
 
 
