@@ -112,7 +112,7 @@ class SchoolsController extends Controller
      * @param  \App\c  $c
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, schoolId)
+    public function update(Request $request, $schoolId)
     {
         //Validates that the information being input is valid
         $this->validate(request(), [
