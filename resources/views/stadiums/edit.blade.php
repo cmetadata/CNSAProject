@@ -2,15 +2,13 @@
 
 @section ('content')
 
-    <form method="POST" action="/stadium/{{$stadium->stadiumId}}">
+    <form method="POST" action="/stadiums/{{$stadium->stadiumId}}">
 
         {{ csrf_field() }}
 
         <div class="parent-div"> 
         
         <div class="login-form">
-
-        <a class="btn btn-default edit-button grey-back" href="/stadiums/{{$stadium->stadiumId}}/edit">Edit</a>
         
         <div class="grey-back buffer">
 
