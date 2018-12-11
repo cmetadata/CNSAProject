@@ -6,6 +6,8 @@ use App\Player;
 use App\PlayerStat;
 use App\Person;
 use App\GameStat;
+use App\InjuryLog;
+use App\Injury;
 use App\Game;
 use App\Stadium;
 Use App\Team;
