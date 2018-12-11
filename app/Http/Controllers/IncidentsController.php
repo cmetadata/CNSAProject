@@ -116,8 +116,11 @@ class IncidentsController extends Controller
      * @param  \App\c  $c
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Incident $incident)
+    public function destroy(Request $request)
     {
         //
+        $incident = Incident::find($request->incidentId);
+        $incident->delete();
+        return redirect('/incidents')->with('success', 'Incident Deleted');
     }
 }

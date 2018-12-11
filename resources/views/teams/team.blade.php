@@ -12,7 +12,7 @@
                 <form method="POST" action="/teams/{{$team->teamId}}/delete">
                   {{ csrf_field() }}
                   <input id="teamId" name="teamId" type="hidden" value="{{$team->teamId}}">
-                  <button type="submit" class='btn btn-default edit-button grey-back'>Delete</button>
+                  <button type="submit" class='btn btn-default edit-button grey-back' onclick="return confirm('Delete Team?')">Delete</button>
                 </form>
             
         </div>

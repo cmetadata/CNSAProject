@@ -12,7 +12,7 @@
                 <form method="POST" action="/scholarships/{{$scholarship->scholarshipId}}/delete">
                   {{ csrf_field() }}
                   <input id="scholarshipId" name="scholarshipId" type="hidden" value="{{$scholarship->scholarshipId}}">
-                  <button type="submit" class='btn btn-default edit-button grey-back'>Delete</button>
+                  <button type="submit" class='btn btn-default edit-button grey-back' onclick="return confirm('Delete Scholarship?')">Delete</button>
                 </form>
             
         </div>

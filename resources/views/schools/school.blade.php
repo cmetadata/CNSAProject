@@ -12,7 +12,7 @@
                 <form method="POST" action="/schools/{{$school->schoolId}}/delete">
                   {{ csrf_field() }}
                   <input id="schoolId" name="schoolId" type="hidden" value="{{$school->schoolId }}">
-                  <button type="submit" class='btn btn-default edit-button grey-back'>Delete</button>
+                  <button type="submit" class='btn btn-default edit-button grey-back' onclick="return confirm('Delete School?')">Delete</button>
                 </form>
             
         </div>
