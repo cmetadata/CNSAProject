@@ -112,35 +112,26 @@ class GamesController extends Controller
 
         //$game = Game::find($request->statId);
 
+        $game = Game::find('statId', $request->gameId);
+
         $players = PlayerStat::all()->where('gameId', $request->gameId);
 
         $teams = GameStat::all()->where('gameId', $request->gameId);
+
+        $stadium = Stadium::find('stadiumId', $game->stadiumId);
 
         // dd($teams, $players);
         
         $teamName1 = Team::find($teams->get(0)->teamId);
         $teamName2 = Team::find($teams->get(1)->teamId);
-        // $playerStatsTeam1 = PlayerStat::all()->where('teamId', $teams->get(0)->teamId);
-        // $playerStatsTeam2 = PlayerStat::all()->where('teamId', $teams->get(1)->teamId);
-
-        // $i = 0;
-        // foreach ($playerStatsTeam1 as $statTeam1)
-        // {
-        //     $statTeam1[$i] = PlayerStat::find($teams->get(0)->teamId);
-        //     $i += 1;
-        // }
 
 
-        // $i = 0;
-        // foreach ($players as $player)
-        // {
-        //     $statTeam2[$i] = PlayerStat::find($teams->get(1)->teamId);
-        //     $i += 1;
-        // }
+        $playerStatsTeam1 = PlayerStat::all()->where('teamId', $teams->get(0)->teamId);
+        $playerStatsTeam2 = PlayerStat::all()->where('teamId', $teams->get(1)->teamId);
 
         //dd($teamName1, $teamName2);
 
-        return view('games.show', compact(['teamName1', 'teamName2']));
+        return view('games.show', compact(['teamName1', 'teamName2', 'stadium', 'playerStatsTeam1', 'playerStatsTeam2']));
     }
 
     /**
