@@ -120,25 +120,25 @@ class GamesController extends Controller
         
         $teamName1 = Team::find($teams->get(0));
         $teamName2 = Team::find($teams->get(1));
-        $playerStatsTeam1 = PlayerStat::all()->where('teamId', $teams->get(0)->teamId);
-        $playerStatsTeam2 = PlayerStat::all()->where('teamId', $teams->get(0)->teamId);
+        // $playerStatsTeam1 = PlayerStat::all()->where('teamId', $teams->get(0)->teamId);
+        // $playerStatsTeam2 = PlayerStat::all()->where('teamId', $teams->get(1)->teamId);
 
-        $i = 0;
-        foreach ($playerStatsTeam1 as $statTeam1)
-        {
-            $statTeam1[$i] = PlayerStat::find($teams->get(0)->teamId);
-            $i += 1;
-        }
+        // $i = 0;
+        // foreach ($playerStatsTeam1 as $statTeam1)
+        // {
+        //     $statTeam1[$i] = PlayerStat::find($teams->get(0)->teamId);
+        //     $i += 1;
+        // }
 
 
-        $i = 0;
-        foreach ($players as $player)
-        {
-            $statTeam2[$i] = PlayerStat::find($teams->get(0)->teamId);
-            $i += 1;
-        }
+        // $i = 0;
+        // foreach ($players as $player)
+        // {
+        //     $statTeam2[$i] = PlayerStat::find($teams->get(1)->teamId);
+        //     $i += 1;
+        // }
 
-        return view('games.show', 'game', 'statTeam1', 'statTeam2', 'teamName1', 'teamName2');
+        return view('games.show', 'teamName1', 'teamName2');
     }
 
     /**
