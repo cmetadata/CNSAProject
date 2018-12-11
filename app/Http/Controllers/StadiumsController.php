@@ -91,7 +91,7 @@ class StadiumsController extends Controller
      */
     public function edit($stadiumId)
     {
-        $stadium = Stadium::find($stadiums->stadiumId);
+        $stadium = Stadium::find($stadiumId);
 
         return view('stadiums.edit', compact(['stadium']));
     }
