@@ -22,9 +22,9 @@ class PlayerStatController extends Controller
     public function __construct()
     {
         //Coaches can see everything except delete functionality
-        $this->middleware('coach', ['except' => 'delete']);
+        //$this->middleware('coach', ['except' => 'delete']);
         //Admins can see everything
-        $this->middleware('admin');
+        //$this->middleware('admin');
     }
     /**
      * Show the form for creating a new resource.
