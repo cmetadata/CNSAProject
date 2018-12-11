@@ -120,18 +120,26 @@ class GamesController extends Controller
 
         $stadium = Stadium::find($game->stadiumId);
 
+        $injuries = InjuryLog::all()->where('gameId', $request->gameId);
+
         // dd($teams, $players);
         
         $teamName1 = Team::find($teams->get(0)->teamId);
         $teamName2 = Team::find($teams->get(1)->teamId);
 
+        $i = 0;
+        foreach ($injuries as $injury)
+        {
+            $injuryNames[$i] = Injury::find($injury->injuryId);
+            $i += 1;
+        }
 
 
         $playerStatsTeam1 = PlayerStat::all()->where('teamId', $teamName1->teamId);
         $playerStatsTeam2 = PlayerStat::all()->where('teamId', $teamName2->teamId);
 
 
-        return view('games.show', compact(['game', 'teamName1', 'teamName2', 'stadium', 'playerStatsTeam1', 'playerStatsTeam2']));
+        return view('games.show', compact(['game', 'teamName1', 'teamName2', 'stadium', 'playerStatsTeam1', 'playerStatsTeam2', 'injuries', 'injuryNames']));
     }
 
     /**
