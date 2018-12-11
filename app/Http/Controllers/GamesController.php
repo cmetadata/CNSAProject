@@ -104,6 +104,8 @@ class GamesController extends Controller
         $gameStat2->teamId = $request->teamId2;
         $gameStat2->gameId = $game->statId;
         $gameStat2->save(); 
+
+        return redirect("/games");
     }
 
     /**

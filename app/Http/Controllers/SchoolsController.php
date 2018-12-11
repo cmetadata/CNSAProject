@@ -71,7 +71,9 @@ class SchoolsController extends Controller
         $schools->save();
 
         //Flashing a message to confirm that a team has been entered into the database
-        session()->flash('message', 'School has been inserted');        
+        session()->flash('message', 'School has been inserted'); 
+
+        return redirect("/schools");       
     }
 
     /**

@@ -75,7 +75,9 @@ class PersonsController extends Controller
         // $player->save();
 
         //Flashing a message to confirm that the player has been entered into the database
-        session()->flash('message', 'Person has been inserted');  
+        session()->flash('message', 'Person has been inserted'); 
+
+        return redirect("/persons"); 
 
     }
     
