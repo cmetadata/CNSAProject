@@ -117,8 +117,11 @@ class ScholarshipsController extends Controller
      * @param  \App\c  $c
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Scholarship $scholarship)
+    public function destroy(Request $request)
     {
         //
+        $scholarship = Scholarship::find($request->scholarshipId);
+        $scholarship->delete();
+        return redirect('/scholarships')->with('success', 'Scholarship Deleted');
     }
 }

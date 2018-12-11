@@ -52,7 +52,7 @@ class InjuriesLogController extends Controller
 
         $injuries->injuryId = $request->injuryId;
 
-       // $injuries->gameId = $request->gameId;
+        $injuries->gameId = $request->gameId;
 
         $injuries->injuryDate = $request->injuryDate;
  

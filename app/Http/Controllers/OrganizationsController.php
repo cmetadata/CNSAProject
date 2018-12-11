@@ -125,7 +125,7 @@ class OrganizationsController extends Controller
 
         //Flashing a message to confirm that a team has been entered into the database
         session()->flash('message', 'Organization has been updated'); 
-        return view('organizations.show', compact('organization'));
+        return redirect('/organizations');
     }
 
     /**

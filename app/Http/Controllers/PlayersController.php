@@ -145,9 +145,10 @@ class PlayersController extends Controller
     // }
     public function show(Request $request) 
     {
-        
         $player = Player::find($request->playerId);
-        
+
+        // dd($player, $request);
+
         $incidents = IncidentLog::all()->where('playerId', $request->playerId);
         $injuries = InjuryLog::all()->where('playerId', $request->playerId);
         $scholarships = ScholarshipLog::all()->where('playerId', $request->playerId);
@@ -255,7 +256,7 @@ class PlayersController extends Controller
         session()->flash('message', 'Player has been updated');
 
         //Redirects the user back to the players page
-        return redirect('/players/{playerId}');
+        return redirect('/players');
     }
 
     /**

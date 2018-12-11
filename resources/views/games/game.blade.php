@@ -20,10 +20,11 @@
       <div class="object-div grey-back">
         <table width="100%">
         <tr>
-            <td width="25%">Game ID: {{$game->statId}}</td>
+            
+            <td width="25%"><a href="/games/{{$game->statId}}">Game ID: {{$game->statId}} </a></td>
             <td width="25%">Date: {{$game->gameDate}}</td>
             <td width="25%">Attendance: {{$game->gameAttendance}}</td>
-            <td width="25%"><a href=#>Stadium: {{$stadium[$loop->index]->stadiumName}}</a></td>
+            <td width="25%"><a href=#>Stadium: {{$stadium[$loop->index]->stadiumName}}</td>
         </tr>
         <tr>
             <td width="25%">Team 1: {{$teams1[$loop->index]->teamName}}</td>

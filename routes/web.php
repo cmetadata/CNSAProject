@@ -165,6 +165,8 @@ Route::get('/teams/create', 'TeamsController@create');
 //Store
 Route::post('/teams', 'TeamsController@store');
 
+Route::post('/teams/{teamId}', 'TeamsController@update');
+
 //Public, Coaches and Admin
 //Displays a teams roster 
 
@@ -370,7 +372,7 @@ Route::get('/scholarships/{scholarshipId}', 'ScholarshipsController@show');
 
 //Admin
 //Deletes the injury information
-Route::get('/scholarships/{scholarshipId}/delete', 'ScholarshipsController@delete');
+Route::post('/scholarships/{scholarshipId}/delete', 'ScholarshipsController@destroy');
 
 
 
